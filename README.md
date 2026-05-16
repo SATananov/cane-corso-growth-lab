@@ -120,6 +120,38 @@ data/reference/photo-quality-gate-rules.json
 docs/ml/photo-quality-gate-warning-system.md
 ```
 
+
+
+## Image Source & Dataset Acquisition Plan
+
+Step 24 adds a responsible source acquisition plan for the future visual/neural model.
+
+The project now tracks candidate sources and dataset rules in:
+
+```txt
+data/images/source-catalog.json
+data/images/labels/source-manifest-template.csv
+data/images/source-acquisition-notes.md
+scripts/ml/validate_image_source_catalog.py
+src/lib/ml/image-source-acquisition.ts
+src/components/image-source-acquisition-panel.tsx
+```
+
+This step does not download images or train a neural network. It defines which sources may be considered, how licenses/permissions must be checked, which target classes are needed and why raw images should usually stay outside Git.
+
+The intended visual dataset will teach the model:
+
+- whether a photo is suitable for comparison;
+- whether a photo shows Cane Corso visual type or a similar breed class;
+- whether the uploaded image can be compared with reference geometry;
+- which photos must be rejected before a visual match score is shown.
+
+To validate the source catalog:
+
+```bash
+python scripts/ml/validate_image_source_catalog.py
+```
+
 ## Machine learning foundation
 
 The repository now includes the ML research base:

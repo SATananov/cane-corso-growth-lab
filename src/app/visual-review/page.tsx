@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/page-hero";
 import { PageShell } from "@/components/page-shell";
 import { ImageDatasetStructurePanel } from "@/components/image-dataset-structure-panel";
+import { ImageSourceAcquisitionPanel } from "@/components/image-source-acquisition-panel";
 import { VisualReviewWorkspace } from "@/components/visual-review-workspace";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function VisualReviewPage() {
         <PageHero copyKey="visualReview" />
         <VisualReviewWorkspace />
         <ImageDatasetStructurePanel />
+        <ImageSourceAcquisitionPanel />
       </div>
     </PageShell>
   );
