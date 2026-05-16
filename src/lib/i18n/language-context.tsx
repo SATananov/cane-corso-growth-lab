@@ -6,7 +6,7 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useState,
+  useSyncExternalStore,
   type ReactNode,
 } from "react";
 import { dictionaries, type Dictionary } from "@/lib/i18n/dictionaries";
@@ -16,10 +16,12 @@ import {
 } from "@/lib/i18n/languages";
 
 const LANGUAGE_STORAGE_KEY = "ccgl-language";
+const LANGUAGE_CHANGE_EVENT = "ccgl-language-change";
+const DEFAULT_LANGUAGE: LanguageCode = "en";
 
-function getInitialLanguage(): LanguageCode {
+function readBrowserLanguage(): LanguageCode {
   if (typeof window === "undefined") {
-    return "en";
+    return DEFAULT_LANGUAGE;
   }
 
   const storedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
@@ -32,7 +34,35 @@ function getInitialLanguage(): LanguageCode {
     return browserLanguage;
   }
 
-  return "en";
+  return DEFAULT_LANGUAGE;
+}
+
+function readServerLanguage(): LanguageCode {
+  return DEFAULT_LANGUAGE;
+}
+
+function subscribeToLanguageChanges(onStoreChange: () => void) {
+  if (typeof window === "undefined") {
+    return () => undefined;
+  }
+
+  const handleStorageChange = (event: StorageEvent) => {
+    if (event.key === null || event.key === LANGUAGE_STORAGE_KEY) {
+      onStoreChange();
+    }
+  };
+
+  const handleLocalLanguageChange = () => {
+    onStoreChange();
+  };
+
+  window.addEventListener("storage", handleStorageChange);
+  window.addEventListener(LANGUAGE_CHANGE_EVENT, handleLocalLanguageChange);
+
+  return () => {
+    window.removeEventListener("storage", handleStorageChange);
+    window.removeEventListener(LANGUAGE_CHANGE_EVENT, handleLocalLanguageChange);
+  };
 }
 
 type LanguageContextValue = {
@@ -44,18 +74,24 @@ type LanguageContextValue = {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<LanguageCode>(getInitialLanguage);
+  const language = useSyncExternalStore(
+    subscribeToLanguageChanges,
+    readBrowserLanguage,
+    readServerLanguage,
+  );
 
   useEffect(() => {
     document.documentElement.lang = language;
   }, [language]);
 
   const setLanguage = useCallback((nextLanguage: LanguageCode) => {
-    setLanguageState(nextLanguage);
-
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLanguage);
+    if (typeof window === "undefined") {
+      return;
     }
+
+    window.localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLanguage);
+    document.documentElement.lang = nextLanguage;
+    window.dispatchEvent(new Event(LANGUAGE_CHANGE_EVENT));
   }, []);
 
   const value = useMemo<LanguageContextValue>(
