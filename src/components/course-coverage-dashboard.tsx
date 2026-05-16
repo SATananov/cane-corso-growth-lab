@@ -11,15 +11,16 @@ export function CourseCoverageDashboard() {
     <div className="grid gap-6">
       <section className="rounded-[2rem] border border-amber-200/10 bg-white/[0.035] p-6">
         <p className="text-sm uppercase tracking-[0.25em] text-amber-300/70">
-          Course Coverage
+          Project Methodology
         </p>
         <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">
-          ML course topics mapped to the app.
+          Machine learning topics mapped to app features.
         </h2>
         <p className="mt-4 max-w-3xl text-base leading-7 text-stone-400">
-          This page shows how the app covers the main machine learning topics:
-          regression, classification, clustering, feature engineering,
-          dimensionality reduction and MLflow tracking.
+          This page keeps the review layer separate from the user layer. A user
+          can run the growth check, while a reviewer can see how regression,
+          classification, clustering, feature engineering, PCA and tracking are
+          demonstrated inside the project.
         </p>
       </section>
 
@@ -44,7 +45,7 @@ export function CourseCoverageDashboard() {
 
             <div className="mt-5 grid gap-4 lg:grid-cols-2">
               <div className="rounded-2xl border border-stone-700 bg-white/[0.03] p-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-stone-500">Project files</p>
+                <p className="text-xs uppercase tracking-[0.18em] text-stone-500">Implementation files</p>
                 <ul className="mt-3 grid gap-2 text-sm leading-6 text-stone-300">
                   {item.projectFiles.map((file) => (
                     <li key={file}>• {file}</li>
@@ -61,7 +62,7 @@ export function CourseCoverageDashboard() {
       </section>
 
       <section className="rounded-[2rem] border border-amber-200/10 bg-amber-300/10 p-6">
-        <p className="text-sm font-semibold text-amber-100">Final roadmap</p>
+        <p className="text-sm font-semibold text-amber-100">Final project roadmap</p>
         <ul className="mt-4 grid gap-3 text-sm leading-6 text-amber-100/80 md:grid-cols-2">
           {finalRoadmap.map((item) => (
             <li key={item}>• {item}</li>

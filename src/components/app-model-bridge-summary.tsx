@@ -13,13 +13,12 @@ export function AppModelBridgeSummary() {
             App Model Bridge
           </p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">
-            Exported ML evidence becomes app logic.
+            Model evidence becomes app logic.
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-stone-400">
-            Step 8 creates a bridge between the notebook research and the live
-            calculator. The app now documents which model evidence is imported,
-            what coefficients were exported and how the browser-side logic uses
-            them without pretending to be a medical system.
+            The bridge connects notebook results with the live growth check. It
+            documents which model evidence is imported, what coefficients are
+            used and how the browser-side logic stays fast, visible and safe.
           </p>
         </div>
 
@@ -42,7 +41,7 @@ export function AppModelBridgeSummary() {
         <BridgeMetric
           label="Live app curve"
           value={appModelBridgeSummary.liveAppCurve}
-          detail="Fast TypeScript bridge used by the calculator."
+          detail="Fast TypeScript bridge used by the growth check."
         />
         <BridgeMetric
           label="Export file"
@@ -54,21 +53,21 @@ export function AppModelBridgeSummary() {
       <div className="mt-6 grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
         <article className="rounded-2xl border border-stone-700 bg-black/25 p-5">
           <p className="text-xs uppercase tracking-[0.2em] text-stone-500">
-            Exported baseline equation
+            Baseline equation
           </p>
           <p className="mt-3 font-mono text-sm leading-7 text-amber-100/90">
             {exportedRegressionCoefficients.simpleLinear.equation}
           </p>
           <p className="mt-3 text-sm leading-6 text-stone-400">
-            This simple coefficient set is kept as explainable notebook evidence.
-            The live calculator uses the calibrated growth curve bridge so the
-            app stays readable and stable for a first product prototype.
+            This coefficient set is kept as explainable model evidence. The live
+            app uses a calibrated growth curve so the user experience remains
+            readable while the project methodology remains reviewable.
           </p>
         </article>
 
         <article className="rounded-2xl border border-stone-700 bg-black/25 p-5">
           <p className="text-xs uppercase tracking-[0.2em] text-stone-500">
-            App feature contract
+            Feature contract
           </p>
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             {appModelFeatures.map((feature) => (

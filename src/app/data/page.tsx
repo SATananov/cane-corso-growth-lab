@@ -8,9 +8,9 @@ import { PageShell } from "@/components/page-shell";
 import { datasetOverview } from "@/lib/ml/dataset-overview";
 
 export const metadata: Metadata = {
-  title: "Data Overview | Cane Corso Growth Geometry Lab",
+  title: "Data & References | Cane Corso Growth Geometry Lab",
   description:
-    "Dataset explorer and data transparency page for the Cane Corso Growth Geometry Lab ML app.",
+    "Data sources, processed samples and feature logic for the Cane Corso Growth Geometry Lab app.",
 };
 
 export default function DataOverviewPage() {

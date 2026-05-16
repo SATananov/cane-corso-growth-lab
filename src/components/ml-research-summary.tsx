@@ -22,9 +22,9 @@ export function MlResearchSummary() {
     <div className="grid gap-6">
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         <SummaryCard
-          label="Research Status"
+          label="Methodology Status"
           value={mlFoundationSummary.status}
-          hint="Notebook base is now inside the repo"
+          hint="Notebook base is connected to the app"
         />
         <SummaryCard
           label="Best Regression"
@@ -37,7 +37,7 @@ export function MlResearchSummary() {
           hint={`F1 ${formatMetric(mlFoundationSummary.classificationBestF1)}`}
         />
         <SummaryCard
-          label="Research Assets"
+          label="Methodology Assets"
           value={`${mlFoundationSummary.notebookCount} notebooks`}
           hint={`${mlFoundationSummary.dataFiles} data files / ${mlFoundationSummary.figures} figures`}
         />

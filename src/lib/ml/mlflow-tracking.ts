@@ -48,7 +48,7 @@ export const mlflowRunSummaries: MlflowRunSummary[] = [
 
 export const mlflowTrackingPrinciples = [
   "Track parameters, metrics and artifacts for each experiment.",
-  "Separate research runs from app-bridge candidates.",
-  "Never treat an educational run as a production veterinary model.",
+  "Separate methodology runs from app-bridge candidates.",
+  "Never treat a project run as an official veterinary model.",
   "Keep the exported model bridge small enough for a browser app.",
 ];

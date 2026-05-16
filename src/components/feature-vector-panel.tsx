@@ -11,14 +11,15 @@ export function FeatureVectorPanel({ prediction }: FeatureVectorPanelProps) {
     <section className="rounded-[2rem] border border-amber-200/10 bg-white/[0.04] p-5 shadow-2xl shadow-black/20">
       <div className="rounded-[1.5rem] border border-amber-200/10 bg-black/25 p-5">
         <p className="text-xs uppercase tracking-[0.25em] text-amber-300/70">
-          Feature Engineering Layer
+          Feature Engineering
         </p>
         <h3 className="mt-2 text-2xl font-semibold text-white">
           Model-ready growth features
         </h3>
         <p className="mt-3 text-sm leading-6 text-stone-400">
-          The app transforms owner input into a compact feature vector before it
-          explains regression, classification, clustering and geometry signals.
+          User inputs are transformed into a compact feature vector before the
+          app explains regression, classification, clustering and geometry
+          signals.
         </p>
 
         <div className="mt-5 grid gap-3 md:grid-cols-2">

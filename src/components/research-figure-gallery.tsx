@@ -7,14 +7,13 @@ export function ResearchFigureGallery() {
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <p className="text-sm uppercase tracking-[0.25em] text-amber-300/70">
-            Research Gallery
+            Methodology Gallery
           </p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">
-            Visual evidence for the ML idea.
+            Visual evidence for the growth model.
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-stone-400">
-            These figures turn the notebooks into something visible inside the app:
-            points, lines, curves, boundaries and future profile groups.
+            These figures make the methodology visible inside the app: points, lines, curves, boundaries and profile groups.
           </p>
         </div>
 
@@ -59,7 +58,7 @@ export function ResearchFigureGallery() {
 
               <div className="mt-5 rounded-2xl border border-stone-700 bg-white/[0.03] p-4">
                 <p className="text-xs uppercase tracking-[0.2em] text-stone-500">
-                  App connection
+                  App use
                 </p>
                 <p className="mt-2 text-sm leading-6 text-stone-300">
                   {figure.appConnection}
@@ -67,7 +66,7 @@ export function ResearchFigureGallery() {
               </div>
 
               <p className="mt-4 text-xs leading-5 text-stone-500">
-                Source file: <span className="text-stone-400">{figure.sourcePath}</span>
+                Reference file: <span className="text-stone-400">{figure.sourcePath}</span>
               </p>
             </div>
           </article>

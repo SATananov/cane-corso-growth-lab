@@ -23,7 +23,7 @@ export function UsgLabVisualSystemPanel() {
           <p className="mt-5 text-sm leading-7 text-stone-400">
             The visual system keeps the black-gold USG identity, but the copy and
             evidence panels make it clear that this is a growth intelligence lab:
-            an educational ML app with transparent formulas, tables and limits.
+            an orientation app with transparent formulas, tables and limits.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-2">

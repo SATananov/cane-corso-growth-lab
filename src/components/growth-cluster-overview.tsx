@@ -4,14 +4,14 @@ export function GrowthClusterOverview() {
   return (
     <section className="rounded-[2rem] border border-amber-200/10 bg-white/[0.035] p-6">
       <p className="text-sm uppercase tracking-[0.25em] text-amber-300/70">
-        Clustering Experiment
+        Growth Profile Groups
       </p>
       <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">
         Similar growth profiles become groups.
       </h2>
       <p className="mt-4 max-w-3xl text-base leading-7 text-stone-400">
         Unsupervised learning is represented as a growth-profile grouping layer.
-        The app compares a dog point to educational centroids and explains the
+        The app compares a dog point to reference centroids and explains the
         closest group without turning it into a diagnosis.
       </p>
 

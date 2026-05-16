@@ -4,6 +4,15 @@
 
 The project is built as a separate research-and-application lab. It is not part of the main USG / Cane Corso Platform codebase, but it can later become a foundation for a future growth intelligence module.
 
+## Product & project language lock
+
+The app is intentionally split into two layers:
+
+- **Product layer:** Growth Check, Data & References, About — written as a usable orientation app.
+- **Project layer:** ML Methodology and Project Evidence — keeps the machine learning work reviewable for course assessment.
+
+The visible app avoids development wording such as patch/step/route labels, while the documentation still preserves the full step history for traceability.
+
 ## Project idea
 
 I use this project to experiment with a simple but visual idea:

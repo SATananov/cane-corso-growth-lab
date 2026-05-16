@@ -3,32 +3,32 @@ export const dictionaries = {
     app: {
       name: "Cane Corso Growth Geometry Lab",
       shortName: "Growth Lab",
-      eyebrow: "USG-Inspired ML Growth Lab",
+      eyebrow: "USG Growth Intelligence",
       labSeal: "USG Lab",
       headline:
-        "Visualize Cane Corso growth through coordinates, curves and machine learning.",
+        "Check Cane Corso growth with clear geometry, model evidence and safe visual guidance.",
       description:
-        "A separate experimental app for exploring Cane Corso growth patterns with regression, classification, clustering and geometry-based visual thinking.",
+        "A focused app for orientation, learning and transparent ML methodology around Cane Corso growth. It combines user-friendly checks with project-ready evidence.",
       disclaimer:
-        "This project is an educational machine learning experiment. It is not a veterinary diagnostic system and does not replace professional veterinary advice.",
-      educationalMl: "Educational ML",
+        "This tool provides orientation only. It does not prove health status, breed purity, pedigree or official Cane Corso status, and it does not replace professional veterinary advice.",
+      educationalMl: "Orientation tool",
     },
     nav: {
       label: "Main navigation",
       languageLabel: "Language",
       home: "Home",
-      calculator: "Calculator",
-      data: "Data",
-      experiments: "Experiments",
-      course: "Course",
+      calculator: "Growth Check",
+      data: "Data & References",
+      experiments: "ML Methodology",
+      course: "Project Evidence",
       about: "About",
       descriptions: {
-        home: "Premium app overview",
-        calculator: "Interactive growth point",
-        data: "Dataset explorer",
-        experiments: "ML evidence and figures",
-        course: "Course coverage roadmap",
-        about: "Scope, limits and visual system",
+        home: "App overview",
+        calculator: "Run a growth orientation check",
+        data: "Data sources and feature logic",
+        experiments: "Models, metrics and visual evidence",
+        course: "ML project evidence",
+        about: "Scope, safety and technology",
       },
     },
     home: {
@@ -37,7 +37,7 @@ export const dictionaries = {
         "USG-inspired lab interface",
       ],
       steps: ["Input", "Model", "Explain"],
-      openCalculator: "Open Growth Calculator",
+      openCalculator: "Open Growth Check",
       viewFoundation: "View ML Foundation",
       conceptEyebrow: "Growth Coordinate Concept",
       conceptTitle: "Every dog starts as a point.",
@@ -60,52 +60,52 @@ export const dictionaries = {
         },
       ],
       foundationEyebrow: "ML Foundation",
-      foundationTitle: "Research notebooks stay connected to the app.",
+      foundationTitle: "The ML methodology stays visible.",
       foundationDescription:
-        "Regression, classification, clustering, feature engineering, PCA and MLflow are presented as transparent learning layers instead of hidden black-box claims.",
+        "Regression, classification, clustering, feature engineering, PCA and MLflow are shown as transparent methodology layers, not hidden black-box claims.",
     },
     pageHeroes: {
       calculator: {
-        eyebrow: "Growth Calculator",
+        eyebrow: "Growth Check",
         title: "Build the current growth point.",
         description:
-          "Enter a Cane Corso profile and see how the current measurement appears inside the coordinate-based growth model. The result is an educational signal for learning and visualization.",
-        badge: "v0.3 route",
+          "Enter a Cane Corso profile and see how the current measurement appears inside the coordinate-based growth model. The result is an orientation signal for learning and owner review, not a diagnosis.",
+        badge: "Growth signal",
       },
       data: {
-        eyebrow: "Dataset Explorer",
-        title: "The app shows what data supports the ML experiments.",
+        eyebrow: "Data & References",
+        title: "The app shows what data supports the model logic.",
         description:
-          "This page explains the prototype, processed and classification datasets used by the research layer. It keeps the app transparent: what is included, how each dataset is used and where the educational limits are.",
-        badge: "Step 7 Data Overview",
+          "This page explains the reference samples, processed data and engineered features used by the methodology layer. It keeps the app transparent: what is included, how each dataset is used and where the limits are.",
+        badge: "Transparent data",
       },
       experiments: {
-        eyebrow: "ML Experiments",
-        title: "The app now has a visible research foundation.",
+        eyebrow: "ML Methodology",
+        title: "The model evidence behind the growth check.",
         description:
-          "This page connects the imported notebook work with the product layer: regression for curves, classification for review zones, clustering, PCA and geometry for visual understanding. The app keeps the ML educational and safe, not diagnostic.",
-        badge: "Step 8 Model Bridge",
+          "This page connects the app with the machine learning methods behind it: regression for curves, classification for review zones, clustering for profile groups, PCA for visual maps and MLflow-style tracking for experiment history.",
+        badge: "Model evidence",
       },
       course: {
-        eyebrow: "Final ML Roadmap",
-        title: "From course topics to a working growth intelligence app.",
+        eyebrow: "Project Evidence",
+        title: "Machine learning topics shown in a working app.",
         description:
-          "This page maps the project to the main machine learning topics: regression, classification, clustering, feature engineering, dimensionality reduction and MLflow. It helps keep the app aligned with the course while staying product-like and safe.",
-        badge: "Step 14 Course Coverage",
+          "This page keeps the project review layer clear: it maps regression, classification, clustering, feature engineering, dimensionality reduction and MLflow to the app surfaces where they are demonstrated.",
+        badge: "Course-ready",
       },
       about: {
-        eyebrow: "About the Lab",
-        title: "A separate experimental app, not the main platform.",
+        eyebrow: "About the App",
+        title: "A focused Cane Corso growth orientation app.",
         description:
-          "This project is designed as a focused app experiment for Cane Corso growth intelligence. It can grow independently, and later the strongest ideas can inspire a future module in the larger USG ecosystem.",
-        badge: "Separate repo",
+          "The app combines a clean product experience with transparent machine learning methodology. It is designed for orientation, learning and future expansion, not official certification or veterinary diagnosis.",
+        badge: "Scope & safety",
       },
     },
     calculator: {
-      eyebrow: "Interactive App Experiment",
-      title: "Growth calculator with coordinate feedback.",
+      eyebrow: "Growth Orientation",
+      title: "Growth check with coordinate feedback.",
       description:
-        "Enter a Cane Corso profile and the app places the dog as a point in a growth coordinate system. The result is an educational ML-style signal, not a medical conclusion.",
+        "Enter a Cane Corso profile and the app places the dog as a point in a growth coordinate system. The result is a review signal for orientation, not a medical conclusion.",
       inputEyebrow: "Dog Profile Input",
       inputTitle: "Build the current growth point",
       livePreview: "Live preview",
@@ -125,7 +125,7 @@ export const dictionaries = {
         "Educational scale from 1 to 9. Middle values are calmer signals.",
     },
     prediction: {
-      eyebrow: "Prediction Panel",
+      eyebrow: "Growth Signal",
       expectedNow: "Expected now",
       referenceCurvePoint: "Reference curve point",
       difference: "Difference",
@@ -137,12 +137,12 @@ export const dictionaries = {
       recommendedNextStep: "Recommended next step",
     },
     formulas: {
-      eyebrow: "Formula Evidence",
-      title: "How the result is calculated.",
+      eyebrow: "Formula Logic",
+      title: "How the signal is calculated.",
       description:
-        "These formulas make the app logic visible: the dog is plotted as a point, compared with a curve and translated into a safe educational growth signal.",
+        "These formulas make the app logic visible: the dog is plotted as a point, compared with a curve and translated into a safe orientation signal.",
       badge: "transparent math",
-      tableHeaders: ["Step", "Formula", "Live value"],
+      tableHeaders: ["Stage", "Formula", "Live value"],
       rows: {
         growthProgress: "Growth progress",
         expectedWeightNow: "Expected weight now",
@@ -151,11 +151,11 @@ export const dictionaries = {
       },
     },
     tables: {
-      evaluationEyebrow: "Evaluation Tables",
+      evaluationEyebrow: "Model Evaluation",
       evaluationTitle:
         "Model results are visible, comparable and connected to the app.",
       evaluationDescription:
-        "The tables below make the ML evidence easier to review: regression explains the growth curve, while classification supports the educational review-zone signal.",
+        "The tables below make the ML evidence easy to review: regression explains the growth curve, while classification supports the review-zone signal.",
       regressionTitle: "Regression model comparison",
       regressionDescription:
         "Lower MAE/RMSE and higher R² are better for this growth-curve experiment.",
@@ -185,13 +185,13 @@ export const dictionaries = {
       comparisonBaseline: "Comparison baseline",
       bestCurrentSignal: "Best current signal evidence",
       boundaryComparison: "Boundary comparison",
-      featureFormulaEyebrow: "Feature Formula Table",
+      featureFormulaEyebrow: "Feature Logic",
       featureFormulaTitle:
-        "Raw fields are converted into model-ready signals.",
+        "Owner inputs are converted into model-ready signals.",
       featureFormulaDescription:
-        "This table makes the data logic explicit. The app does not hide the transformation between owner-friendly inputs and the ML-style feature vector.",
+        "This table makes the data logic explicit. The app does not hide the transformation between user inputs and the model feature vector.",
       featureHeaders: ["Feature", "Formula", "Purpose"],
-      derivedAppFeature: "derived app feature",
+      derivedAppFeature: "derived feature",
     },
     evidence: {
       eyebrow: "Final Evidence Matrix",
@@ -231,35 +231,35 @@ export const dictionaries = {
       eyebrow: "USG ML лаборатория за растеж",
       labSeal: "USG Lab",
       headline:
-        "Визуализирай растежа на Cane Corso чрез координати, криви и машинно обучение.",
+        "Провери растежа на Cane Corso чрез ясна геометрия, модели и безопасна ориентация.",
       description:
-        "Отделно експериментално приложение за изследване на модели на растеж при Cane Corso чрез регресия, класификация, clustering и геометрична визуална логика.",
+        "Фокусирано приложение за ориентация, обучение и прозрачна ML методология около растежа на Cane Corso. Комбинира удобна проверка с доказуема проектна логика.",
       disclaimer:
         "Този проект е образователен експеримент с машинно обучение. Не е ветеринарна диагностична система и не замества професионален ветеринарен съвет.",
-      educationalMl: "Образователен ML",
+      educationalMl: "Ориентировъчен инструмент",
     },
     nav: {
       label: "Основна навигация",
       languageLabel: "Език",
       home: "Начало",
-      calculator: "Калкулатор",
-      data: "Данни",
-      experiments: "Експерименти",
-      course: "Курс",
-      about: "За проекта",
+      calculator: "Проверка на растежа",
+      data: "Данни и еталони",
+      experiments: "ML методология",
+      course: "Проектни доказателства",
+      about: "За приложението",
       descriptions: {
-        home: "Премиум преглед на приложението",
-        calculator: "Интерактивна точка на растежа",
-        data: "Преглед на dataset-ите",
-        experiments: "ML доказателства и фигури",
-        course: "Карта на покритите теми",
-        about: "Обхват, граници и визуална система",
+        home: "Преглед на приложението",
+        calculator: "Ориентировъчна проверка на растежа",
+        data: "Данни, еталони и feature логика",
+        experiments: "Модели, метрики и визуални доказателства",
+        course: "Доказателства за ML проекта",
+        about: "Обхват, безопасност и технология",
       },
     },
     home: {
       chips: ["Координатна логика за растеж", "USG-inspired лабораторен интерфейс"],
       steps: ["Въвеждане", "Модел", "Обяснение"],
-      openCalculator: "Отвори калкулатора",
+      openCalculator: "Отвори проверката",
       viewFoundation: "Виж ML основата",
       conceptEyebrow: "Координатна идея за растеж",
       conceptTitle: "Всяко куче започва като точка.",
@@ -282,52 +282,52 @@ export const dictionaries = {
         },
       ],
       foundationEyebrow: "ML основа",
-      foundationTitle: "Research notebook-ите остават свързани с app-а.",
+      foundationTitle: "ML методологията остава видима.",
       foundationDescription:
-        "Regression, classification, clustering, feature engineering, PCA и MLflow са представени като прозрачни учебни слоеве, а не като скрити black-box твърдения.",
+        "Regression, Classification, Clustering, Feature Engineering, PCA и MLflow са представени като прозрачни методологични слоеве, а не като скрити black-box твърдения.",
     },
     pageHeroes: {
       calculator: {
-        eyebrow: "Калкулатор на растежа",
+        eyebrow: "Проверка на растежа",
         title: "Изгради текущата точка на растеж.",
         description:
-          "Въведи профил на Cane Corso и виж как текущото измерване се появява в координатния модел на растеж. Резултатът е образователен сигнал за учене и визуализация.",
-        badge: "v0.3 маршрут",
+          "Въведи профил на Cane Corso и виж как текущото измерване попада в координатния модел на растеж. Резултатът е ориентировъчен сигнал за преглед, не диагноза.",
+        badge: "Сигнал за растеж",
       },
       data: {
-        eyebrow: "Dataset Explorer",
-        title: "App-ът показва какви данни подкрепят ML експериментите.",
+        eyebrow: "Данни и еталони",
+        title: "Приложението показва какви данни подкрепят моделите.",
         description:
-          "Тази страница обяснява prototype, processed и classification dataset-ите, използвани от research слоя. Целта е прозрачност: какво е включено, за какво се използва всеки dataset и къде са образователните граници.",
-        badge: "Step 7 Data Overview",
+          "Тази страница обяснява референтните извадки, обработените данни и създадените features, използвани от методологичния слой. Целта е прозрачност: какво е включено, за какво се използва и къде са ограниченията.",
+        badge: "Прозрачни данни",
       },
       experiments: {
-        eyebrow: "ML експерименти",
-        title: "App-ът вече има видима research основа.",
+        eyebrow: "ML методология",
+        title: "Моделните доказателства зад проверката на растежа.",
         description:
-          "Тази страница свързва notebook работата с продуктовия слой: regression за криви, classification за review зони, clustering, PCA и geometry за визуално разбиране. ML частта остава образователна и безопасна, не диагностична.",
-        badge: "Step 8 Model Bridge",
+          "Тази страница свързва приложението с методите зад него: Regression за криви, Classification за зони за преглед, Clustering за профилни групи, PCA за визуални карти и MLflow-style tracking за история на експериментите.",
+        badge: "Моделни доказателства",
       },
       course: {
-        eyebrow: "Финална ML карта",
-        title: "От темите в курса към работещ growth intelligence app.",
+        eyebrow: "Проектни доказателства",
+        title: "ML темите са показани в работещо приложение.",
         description:
-          "Тази страница свързва проекта с основните теми от машинното обучение: regression, classification, clustering, feature engineering, dimensionality reduction и MLflow. Така app-ът остава подреден спрямо курса и същевременно изглежда като продукт.",
-        badge: "Step 14 Course Coverage",
+          "Тази страница държи проектната част ясна: показва как Regression, Classification, Clustering, Feature Engineering, Dimensionality Reduction и MLflow се демонстрират в приложението.",
+        badge: "Готово за курс",
       },
       about: {
-        eyebrow: "За лабораторията",
-        title: "Отделно експериментално приложение, не основната платформа.",
+        eyebrow: "За приложението",
+        title: "Фокусирано приложение за ориентация при растежа на Cane Corso.",
         description:
-          "Този проект е фокусиран app експеримент за Cane Corso growth intelligence. Може да се развива самостоятелно, а най-силните идеи по-късно да вдъхновят бъдещ модул в по-голямата USG екосистема.",
-        badge: "Отделно repo",
+          "Приложението комбинира чисто потребителско изживяване с прозрачна методология по машинно обучение. То е за ориентация, обучение и бъдещо развитие, не за официална сертификация или ветеринарна диагноза.",
+        badge: "Обхват и безопасност",
       },
     },
     calculator: {
-      eyebrow: "Интерактивен app експеримент",
-      title: "Калкулатор на растежа с координатна обратна връзка.",
+      eyebrow: "Ориентация за растеж",
+      title: "Проверка на растежа с координатна обратна връзка.",
       description:
-        "Въведи профил на Cane Corso и app-ът поставя кучето като точка в координатна система на растежа. Резултатът е образователен ML-style сигнал, не медицинско заключение.",
+        "Въведи профил на Cane Corso и приложението поставя кучето като точка в координатна система на растежа. Резултатът е ориентировъчен сигнал, не медицинско заключение.",
       inputEyebrow: "Въвеждане на профил",
       inputTitle: "Изгради текущата точка на растеж",
       livePreview: "Жив преглед",
@@ -347,7 +347,7 @@ export const dictionaries = {
         "Образователна скала от 1 до 9. Средните стойности дават по-спокоен сигнал.",
     },
     prediction: {
-      eyebrow: "Prediction панел",
+      eyebrow: "Сигнал за растеж",
       expectedNow: "Очаквано сега",
       referenceCurvePoint: "Точка от референтната крива",
       difference: "Разлика",
@@ -359,8 +359,8 @@ export const dictionaries = {
       recommendedNextStep: "Препоръчана следваща стъпка",
     },
     formulas: {
-      eyebrow: "Formula Evidence",
-      title: "Как се изчислява резултатът.",
+      eyebrow: "Formula Logic",
+      title: "Как се изчислява сигналът.",
       description:
         "Тези формули правят логиката видима: кучето се поставя като точка, сравнява се с крива и се превежда в безопасен образователен growth сигнал.",
       badge: "прозрачна математика",
@@ -373,9 +373,9 @@ export const dictionaries = {
       },
     },
     tables: {
-      evaluationEyebrow: "Evaluation Tables",
+      evaluationEyebrow: "Model Evaluation",
       evaluationTitle:
-        "Резултатите от моделите са видими, сравними и свързани с app-а.",
+        "Резултатите от моделите са видими, сравними и свързани с приложението.",
       evaluationDescription:
         "Таблиците по-долу правят ML evidence по-лесен за преглед: regression обяснява кривата на растежа, а classification подкрепя образователния review-zone сигнал.",
       regressionTitle: "Сравнение на regression модели",
@@ -384,7 +384,7 @@ export const dictionaries = {
       classificationTitle: "Сравнение на classification модели",
       classificationDescription:
         "F1 и AUC помагат да сравним образователния review-zone сигнал, без да го наричаме диагноза.",
-      regressionHeaders: ["Модел", "Геометрия", "Features", "MAE", "RMSE", "R²", "Роля в app-а"],
+      regressionHeaders: ["Модел", "Геометрия", "Features", "MAE", "RMSE", "R²", "Роля в приложението"],
       classificationHeaders: [
         "Модел",
         "Геометрия",
@@ -393,22 +393,22 @@ export const dictionaries = {
         "Recall",
         "F1",
         "AUC",
-        "Роля в app-а",
+        "Роля в приложението",
       ],
       selectedBridgeEvidence: "Избрано bridge evidence",
       comparisonBaseline: "Базов модел за сравнение",
       bestCurrentSignal: "Най-добро текущо signal evidence",
       boundaryComparison: "Сравнение на граници",
-      featureFormulaEyebrow: "Feature Formula Table",
+      featureFormulaEyebrow: "Feature Logic",
       featureFormulaTitle:
-        "Raw полетата се превръщат в model-ready сигнали.",
+        "Въведените данни се превръщат в сигнали, готови за модел.",
       featureFormulaDescription:
         "Тази таблица прави data логиката ясна. App-ът не скрива трансформацията между owner-friendly входа и ML-style feature vector-а.",
       featureHeaders: ["Feature", "Формула", "Цел"],
-      derivedAppFeature: "derived app feature",
+      derivedAppFeature: "derived feature",
     },
     evidence: {
-      eyebrow: "Финална evidence матрица",
+      eyebrow: "Финална матрица с доказателства",
       title: "Визуална яснота плюс логическо доказателство.",
       stats: {
         formulas: "Формули",
@@ -442,38 +442,38 @@ export const dictionaries = {
     app: {
       name: "Laboratorio di Geometria della Crescita Cane Corso",
       shortName: "Growth Lab",
-      eyebrow: "Laboratorio ML di crescita ispirato a USG",
+      eyebrow: "USG laboratorio crescita",
       labSeal: "USG Lab",
       headline:
-        "Visualizza la crescita del Cane Corso con coordinate, curve e machine learning.",
+        "Controlla la crescita del Cane Corso con geometria chiara, evidenze del modello e orientamento sicuro.",
       description:
         "Un'app sperimentale separata per esplorare i pattern di crescita del Cane Corso con regressione, classificazione, clustering e logica geometrica visuale.",
       disclaimer:
-        "Questo progetto è un esperimento educativo di machine learning. Non è un sistema diagnostico veterinario e non sostituisce il parere di un veterinario professionista.",
-      educationalMl: "ML educativo",
+        "Questo strumento offre solo orientamento. Non dimostra stato di salute, purezza di razza, pedigree o status ufficiale Cane Corso e non sostituisce il parere veterinario professionale.",
+      educationalMl: "Strumento orientativo",
     },
     nav: {
       label: "Navigazione principale",
       languageLabel: "Lingua",
       home: "Home",
-      calculator: "Calcolatore",
-      data: "Dati",
-      experiments: "Esperimenti",
-      course: "Corso",
+      calculator: "Controllo crescita",
+      data: "Dati e riferimenti",
+      experiments: "Metodologia ML",
+      course: "Evidenze progetto",
       about: "Informazioni",
       descriptions: {
-        home: "Panoramica premium dell'app",
-        calculator: "Punto di crescita interattivo",
-        data: "Esploratore dataset",
-        experiments: "Evidenze ML e figure",
-        course: "Roadmap dei temi del corso",
-        about: "Scopo, limiti e sistema visuale",
+        home: "Panoramica dell’app",
+        calculator: "Controllo orientativo della crescita",
+        data: "Fonti dati e logica delle feature",
+        experiments: "Modelli, metriche ed evidenze visuali",
+        course: "Evidenze del progetto ML",
+        about: "Ambito, sicurezza e tecnologia",
       },
     },
     home: {
       chips: ["Intelligenza della crescita basata su coordinate", "Interfaccia lab ispirata a USG"],
       steps: ["Input", "Modello", "Spiegazione"],
-      openCalculator: "Apri il calcolatore",
+      openCalculator: "Apri il controllo crescita",
       viewFoundation: "Vedi la base ML",
       conceptEyebrow: "Concetto di coordinate di crescita",
       conceptTitle: "Ogni cane inizia come un punto.",
@@ -496,52 +496,52 @@ export const dictionaries = {
         },
       ],
       foundationEyebrow: "Base ML",
-      foundationTitle: "I research notebook restano collegati all'app.",
+      foundationTitle: "La metodologia ML resta visibile.",
       foundationDescription:
-        "Regression, classification, clustering, feature engineering, PCA e MLflow sono presentati come livelli educativi trasparenti, non come affermazioni black-box nascoste.",
+        "Regression, Classification, Clustering, Feature Engineering, PCA e MLflow sono presentati come livelli metodologici trasparenti, non come affermazioni black-box nascoste.",
     },
     pageHeroes: {
       calculator: {
-        eyebrow: "Calcolatore di crescita",
+        eyebrow: "Controllo crescita",
         title: "Costruisci il punto di crescita attuale.",
         description:
-          "Inserisci un profilo Cane Corso e guarda come la misurazione attuale appare nel modello di crescita basato su coordinate. Il risultato è un segnale educativo per apprendimento e visualizzazione.",
-        badge: "v0.3 route",
+          "Inserisci un profilo Cane Corso e guarda come la misurazione attuale appare nel modello di crescita basato su coordinate. Il risultato è un segnale orientativo per revisione, non una diagnosi.",
+        badge: "Segnale crescita",
       },
       data: {
-        eyebrow: "Dataset Explorer",
-        title: "L'app mostra quali dati supportano gli esperimenti ML.",
+        eyebrow: "Dati e riferimenti",
+        title: "L’app mostra quali dati supportano la logica del modello.",
         description:
-          "Questa pagina spiega i dataset prototype, processed e classification usati dal livello research. Mantiene l'app trasparente: cosa è incluso, come viene usato ogni dataset e dove sono i limiti educativi.",
-        badge: "Step 7 Data Overview",
+          "Questa pagina spiega i campioni di riferimento, i dati elaborati e le feature create dal livello metodologico. Mantiene l’app trasparente: cosa è incluso, come viene usato e dove sono i limiti.",
+        badge: "Dati trasparenti",
       },
       experiments: {
-        eyebrow: "Esperimenti ML",
-        title: "L'app ora ha una base research visibile.",
+        eyebrow: "Metodologia ML",
+        title: "Le evidenze del modello dietro il controllo crescita.",
         description:
-          "Questa pagina collega il lavoro nei notebook con il livello prodotto: regression per le curve, classification per le review zones, clustering, PCA e geometry per la comprensione visuale. L'ML resta educativo e sicuro, non diagnostico.",
-        badge: "Step 8 Model Bridge",
+          "Questa pagina collega l’app ai metodi dietro il risultato: Regression per le curve, Classification per le zone di revisione, Clustering per i gruppi di profilo, PCA per le mappe visuali e tracking stile MLflow per la storia degli esperimenti.",
+        badge: "Evidenze modello",
       },
       course: {
-        eyebrow: "Roadmap ML finale",
-        title: "Dai temi del corso a una growth intelligence app funzionante.",
+        eyebrow: "Evidenze progetto",
+        title: "I temi ML sono dimostrati in un’app funzionante.",
         description:
-          "Questa pagina mappa il progetto ai principali temi di machine learning: regression, classification, clustering, feature engineering, dimensionality reduction e MLflow. Aiuta l'app a restare allineata al corso e allo stesso tempo simile a un prodotto reale.",
-        badge: "Step 14 Course Coverage",
+          "Questa pagina mantiene chiaro il livello di revisione del progetto: mostra come Regression, Classification, Clustering, Feature Engineering, Dimensionality Reduction e MLflow vengono dimostrati nelle superfici dell’app.",
+        badge: "Готово за курс",
       },
       about: {
-        eyebrow: "Informazioni sul Lab",
-        title: "Un'app sperimentale separata, non la piattaforma principale.",
+        eyebrow: "Informazioni sull’app",
+        title: "Un’app focalizzata sull’orientamento della crescita del Cane Corso.",
         description:
-          "Questo progetto è pensato come esperimento focalizzato per la growth intelligence del Cane Corso. Può crescere in modo indipendente e le idee migliori potranno ispirare un futuro modulo nell'ecosistema USG più ampio.",
-        badge: "Repo separato",
+          "L’app combina un’esperienza pulita con una metodologia ML trasparente. È pensata per orientamento, apprendimento ed evoluzione futura, non per certificazione ufficiale o diagnosi veterinaria.",
+        badge: "Ambito e sicurezza",
       },
     },
     calculator: {
-      eyebrow: "Esperimento app interattivo",
-      title: "Calcolatore di crescita con feedback a coordinate.",
+      eyebrow: "Orientamento crescita",
+      title: "Controllo crescita con feedback a coordinate.",
       description:
-        "Inserisci un profilo Cane Corso e l'app posiziona il cane come punto in un sistema di coordinate della crescita. Il risultato è un segnale ML-style educativo, non una conclusione medica.",
+        "Inserisci un profilo Cane Corso e l’app posiziona il cane come punto in un sistema di coordinate della crescita. Il risultato è un segnale orientativo, non una conclusione medica.",
       inputEyebrow: "Input profilo cane",
       inputTitle: "Costruisci il punto di crescita attuale",
       livePreview: "Anteprima live",
@@ -574,9 +574,9 @@ export const dictionaries = {
     },
     formulas: {
       eyebrow: "Evidenza delle formule",
-      title: "Come viene calcolato il risultato.",
+      title: "Come viene calcolato il segnale.",
       description:
-        "Queste formule rendono visibile la logica dell'app: il cane viene posizionato come punto, confrontato con una curva e tradotto in un segnale educativo di crescita sicuro.",
+        "Queste formule rendono visibile la logica dell’app: il cane viene posizionato come punto, confrontato con una curva e tradotto in un segnale orientativo sicuro.",
       badge: "matematica trasparente",
       tableHeaders: ["Passo", "Formula", "Valore live"],
       rows: {
@@ -587,17 +587,17 @@ export const dictionaries = {
       },
     },
     tables: {
-      evaluationEyebrow: "Evaluation Tables",
+      evaluationEyebrow: "Model Evaluation",
       evaluationTitle:
         "I risultati dei modelli sono visibili, confrontabili e collegati all'app.",
       evaluationDescription:
-        "Le tabelle sotto rendono le evidenze ML più facili da revisionare: regression spiega la curva di crescita, mentre classification supporta il segnale educativo di review-zone.",
+        "Le tabelle sotto rendono le evidenze ML più facili da revisionare: Regression spiega la curva di crescita, mentre Classification supporta il segnale della zona di revisione.",
       regressionTitle: "Confronto modelli regression",
       regressionDescription:
         "MAE/RMSE più bassi e R² più alto sono migliori per questo esperimento di curva di crescita.",
       classificationTitle: "Confronto modelli classification",
       classificationDescription:
-        "F1 e AUC aiutano a confrontare il segnale educativo di review-zone senza chiamarlo diagnosi.",
+        "F1 e AUC aiutano a confrontare il segnale della zona di revisione senza chiamarlo diagnosi.",
       regressionHeaders: ["Modello", "Geometria", "Features", "MAE", "RMSE", "R²", "Ruolo app"],
       classificationHeaders: [
         "Modello",
@@ -613,13 +613,13 @@ export const dictionaries = {
       comparisonBaseline: "Baseline di confronto",
       bestCurrentSignal: "Migliore evidenza segnale attuale",
       boundaryComparison: "Confronto dei confini",
-      featureFormulaEyebrow: "Feature Formula Table",
+      featureFormulaEyebrow: "Feature Logic",
       featureFormulaTitle:
-        "I campi raw vengono convertiti in segnali pronti per il modello.",
+        "Gli input dell’utente vengono convertiti in segnali pronti per il modello.",
       featureFormulaDescription:
-        "Questa tabella rende esplicita la logica dei dati. L'app non nasconde la trasformazione tra input owner-friendly e feature vector ML-style.",
+        "Questa tabella rende esplicita la logica dei dati. L’app non nasconde la trasformazione tra input dell’utente e feature vector del modello.",
       featureHeaders: ["Feature", "Formula", "Scopo"],
-      derivedAppFeature: "feature derivata dell'app",
+      derivedAppFeature: "feature derivata",
     },
     evidence: {
       eyebrow: "Matrice finale delle evidenze",
@@ -648,7 +648,7 @@ export const dictionaries = {
         "Nessun sistema reale di account proprietario nella prima versione",
         "Nessun database nella prima versione",
         "Nessuna API ML esterna nella prima versione",
-        "Solo orientamento educativo sulla crescita",
+        "Solo orientamento sulla crescita",
       ],
     },
   },

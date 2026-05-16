@@ -46,7 +46,7 @@ export function ModelBridgePanel({ prediction }: ModelBridgePanelProps) {
 
       <div className="mt-5 grid gap-5 xl:grid-cols-[0.95fr_1.05fr]">
         <BridgeList title="Feature vector" items={bridge.featureVector} />
-        <BridgeList title="Live app signals" items={bridge.appSignals} />
+        <BridgeList title="Live signals" items={bridge.appSignals} />
       </div>
 
       <div className="mt-5 rounded-2xl border border-amber-200/10 bg-amber-300/[0.05] p-4">

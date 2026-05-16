@@ -106,7 +106,7 @@ export const projectEvidenceChecklist: ProjectEvidenceChecklistRow[] = [
   {
     area: "Visual ML logic",
     appSurface: "/calculator + /experiments",
-    evidence: "Coordinate map, PCA-style map, research gallery and model bridge summary.",
+    evidence: "Coordinate map, PCA-style map, methodology gallery and model bridge summary.",
     whyItMatters:
       "The project explains models visually as points, curves, boundaries, groups and projections.",
   },

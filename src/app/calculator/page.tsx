@@ -4,9 +4,9 @@ import { PageHero } from "@/components/page-hero";
 import { PageShell } from "@/components/page-shell";
 
 export const metadata: Metadata = {
-  title: "Growth Calculator | Cane Corso Growth Geometry Lab",
+  title: "Growth Check | Cane Corso Growth Geometry Lab",
   description:
-    "Interactive educational Cane Corso growth calculator with coordinate feedback.",
+    "Cane Corso growth orientation check with coordinate feedback, formulas and transparent ML evidence.",
 };
 
 export default function CalculatorPage() {

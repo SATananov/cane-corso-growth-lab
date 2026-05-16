@@ -7,16 +7,16 @@ import {
 
 const conceptCards = [
   {
-    title: "Coordinate Story",
+    title: "Coordinate Logic",
     tag: "Geometry",
     description:
-      "The central idea: a dog profile is a point, growth is a trajectory and models become lines, curves, surfaces or boundaries.",
+      "A dog profile is represented as a point, growth is shown as a trajectory and models become lines, curves, surfaces or boundaries.",
   },
   {
-    title: "Clustering Concept",
+    title: "Profile Grouping",
     tag: "Groups",
     description:
-      "The next experiment will look for similar growth profiles without predefined labels, using unsupervised learning.",
+      "Unsupervised learning groups similar growth profiles without predefined labels.",
   },
 ];
 

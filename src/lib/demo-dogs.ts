@@ -271,22 +271,22 @@ export const demoDogProfiles: DemoDogProfile[] = [
         name: "LUNA — пример за review сигнал",
         role: "Образователен attention сценарий",
         summary:
-          "Нарочно симулиран профил, който показва как app-ът обяснява review signal без медицински твърдения.",
+          "Нарочно симулиран профил, който показва как приложението обяснява сигнал за преглед без медицински твърдения.",
         geometryNote:
           "Точката трябва да се появи под спокойната референтна зона и да активира по-внимателно обяснение.",
         modelUse:
-          "Подходящ за демонстрация на classification boundary език, owner checklist и safety limits.",
+          "Подходящ за демонстрация на Classification граница, списък за преглед и безопасни ограничения.",
         tags: ["review", "classification", "safety"],
       },
       it: {
         name: "LUNA — esempio segnale review",
         role: "Scenario educativo di attenzione",
         summary:
-          "Un profilo simulato apposta per mostrare come l'app spiega un review signal senza fare affermazioni mediche.",
+          "Un profilo simulato apposta per mostrare come l’app spiega un segnale di revisione senza fare affermazioni mediche.",
         geometryNote:
           "Il punto dovrebbe apparire sotto l'area di riferimento calma e attivare una spiegazione più cauta.",
         modelUse:
-          "Utile per dimostrare linguaggio classification boundary, checklist owner e safety limits.",
+          "Utile per dimostrare il confine di Classification, la checklist di revisione e i limiti di sicurezza.",
         tags: ["review", "classification", "safety"],
       },
     },

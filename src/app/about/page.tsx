@@ -7,7 +7,7 @@ import { UsgLabVisualSystemPanel } from "@/components/usg-lab-visual-system-pane
 export const metadata: Metadata = {
   title: "About | Cane Corso Growth Geometry Lab",
   description:
-    "Scope, limitations and technology direction for Cane Corso Growth Geometry Lab.",
+    "Scope, safety boundaries and technology direction for Cane Corso Growth Geometry Lab.",
 };
 
 export default function AboutPage() {

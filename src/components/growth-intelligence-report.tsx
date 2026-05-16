@@ -82,7 +82,7 @@ export function GrowthIntelligenceReport({
       <div className="mt-5 grid gap-5 lg:grid-cols-[1fr_0.9fr]">
         <div className="rounded-3xl border border-stone-700 bg-white/[0.03] p-5">
           <p className="text-xs uppercase tracking-[0.25em] text-amber-300/70">
-            How the app explains the model
+            How the app explains the signal
           </p>
           <div className="mt-4 grid gap-3">
             {report.modelExplanation.map((section) => (
@@ -116,7 +116,7 @@ export function GrowthIntelligenceReport({
 
       <div className="mt-5 grid gap-4 lg:grid-cols-2">
         <div className="rounded-2xl border border-stone-700 bg-black/20 p-4">
-          <p className="text-sm font-semibold text-white">Technical summary</p>
+          <p className="text-sm font-semibold text-white">Methodology summary</p>
           <p className="mt-2 text-sm leading-6 text-stone-400">
             {report.technicalSummary}
           </p>

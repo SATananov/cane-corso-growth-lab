@@ -86,7 +86,7 @@ export const exportedRegressionCoefficients = {
     {
       feature: "activity_level_low",
       coefficient: -1.555904,
-      appMeaning: "Activity can shift the expected growth estimate in the prototype.",
+      appMeaning: "Activity can shift the expected growth estimate in the reference model.",
     },
     {
       feature: "activity_level_medium",
@@ -287,7 +287,7 @@ export function buildAppModelBridgeOutput(
         : "Ridge evidence imported",
       exportedEquation: exportedRegressionCoefficients.simpleLinear.equation,
       appUsage:
-        "The live app uses a calibrated growth-curve bridge inspired by the regression research and scaled by adult reference weight.",
+        "The live app uses a calibrated growth-curve bridge inspired by regression evidence and scaled by adult reference weight.",
     },
     classification: {
       modelName:
@@ -298,7 +298,7 @@ export function buildAppModelBridgeOutput(
           )}`
         : "Random Forest evidence imported",
       appUsage:
-        "The live app uses review-zone rules inspired by the classification research, not a medical diagnosis classifier.",
+        "The live app uses review-zone rules inspired by classification evidence, not a medical diagnosis classifier.",
     },
     featureVector,
     appSignals,

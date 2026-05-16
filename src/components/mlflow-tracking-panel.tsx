@@ -4,15 +4,15 @@ export function MlflowTrackingPanel() {
   return (
     <section className="rounded-[2rem] border border-amber-200/10 bg-white/[0.035] p-6">
       <p className="text-sm uppercase tracking-[0.25em] text-amber-300/70">
-        MLflow Tracking Concept
+        Experiment Tracking
       </p>
       <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">
-        Experiments need history, metrics and artifacts.
+        Models need history, metrics and artifacts.
       </h2>
       <p className="mt-4 max-w-3xl text-base leading-7 text-stone-400">
-        Step 13 adds a lightweight MLflow-ready tracking plan. The app can show
-        which runs produced the current model bridge and which artifacts support
-        the educational signal.
+        The tracking layer shows which model runs support the current app logic.
+        It keeps the project evidence traceable without turning the app into a
+        full clinical ML system.
       </p>
 
       <div className="mt-6 grid gap-4 lg:grid-cols-3">

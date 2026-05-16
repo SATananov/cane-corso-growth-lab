@@ -27,16 +27,16 @@ export const datasetOverview: DatasetOverviewItem[] = [
   {
     id: "prototype-growth-sample",
     stage: "Prototype",
-    title: "Prototype Cane Corso Growth Sample",
+    title: "Reference Cane Corso Growth Sample",
     path: "data/prototype/cane_corso_growth_sample.csv",
     rows: 32,
     columns: 8,
-    source: "Small educational prototype dataset created for beginner-friendly growth regression experiments.",
-    role: "Simple controlled sample for explaining age, weight and height as a coordinate relationship.",
+    source: "Small reference sample created for beginner-friendly growth regression exercises.",
+    role: "Controlled sample for explaining age, weight and height as a coordinate relationship.",
     usedFor: [
       "First age-to-weight regression baseline",
       "Growth coordinate map explanation",
-      "Beginner-friendly notebook demonstrations",
+      "Notebook demonstrations",
     ],
     keyFields: [
       "dog_id",
@@ -56,7 +56,7 @@ export const datasetOverview: DatasetOverviewItem[] = [
       },
       {
         label: "Limitation",
-        value: "small sample, not production evidence",
+        value: "small sample, not official evidence",
         tone: "caution",
       },
     ],
@@ -91,8 +91,8 @@ export const datasetOverview: DatasetOverviewItem[] = [
     path: "data/processed/dog_growth_public_sample.csv",
     rows: 10000,
     columns: 12,
-    source: "Processed public sample prepared for wider growth-pattern experimentation.",
-    role: "Broader reference table for model experiments, feature-space thinking and app-safe summaries.",
+    source: "Processed public sample prepared for wider growth-pattern analysis.",
+    role: "Broader reference table for model comparison, feature-space thinking and app-safe summaries.",
     usedFor: [
       "Multi-dimensional regression experiments",
       "Feature-space exploration",
@@ -112,7 +112,7 @@ export const datasetOverview: DatasetOverviewItem[] = [
     qualitySignals: [
       {
         label: "Best use",
-        value: "research foundation and feature engineering",
+        value: "methodology foundation and feature engineering",
         tone: "safe",
       },
       {
@@ -152,7 +152,7 @@ export const datasetOverview: DatasetOverviewItem[] = [
     path: "data/processed/dog_growth_classification_sample.csv",
     rows: 10000,
     columns: 15,
-    source: "Prepared sample with educational growth-status labels derived for classification experiments.",
+    source: "Prepared sample with review-zone labels derived for classification comparison.",
     role: "Training/evaluation base for review-zone classification, not for medical diagnosis.",
     usedFor: [
       "Logistic Regression and tree-based classification",
@@ -208,13 +208,13 @@ export const datasetOverview: DatasetOverviewItem[] = [
 ];
 
 export const datasetExplorerSummary = {
-  title: "Dataset Explorer",
-  subtitle: "What data supports the ML layer?",
+  title: "Data & References",
+  subtitle: "What data supports the model layer?",
   totalDatasets: datasetOverview.length,
   totalRows: datasetOverview.reduce((sum, item) => sum + item.rows, 0),
   totalColumnsTracked: datasetOverview.reduce((sum, item) => sum + item.columns, 0),
-  rawPolicy: "Large raw files stay outside the repo. The app uses documented processed samples and small educational prototype data.",
-  safeUse: "The data is used for learning, visualization and experimental model evidence only. It is not a medical record system.",
+  rawPolicy: "Large raw files stay outside the app package. The app uses documented processed samples and small reference data.",
+  safeUse: "The data is used for learning, visualization and model evidence only. It is not a medical record system.",
 };
 
 export function formatNumber(value: number) {

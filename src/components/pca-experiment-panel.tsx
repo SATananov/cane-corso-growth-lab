@@ -10,9 +10,9 @@ export function PcaExperimentPanel() {
         PCA turns many features into one visual map.
       </h2>
       <p className="mt-4 max-w-3xl text-base leading-7 text-stone-400">
-        The app uses a PCA-style projection to explain dimensionality reduction:
-        several engineered features are compressed into a 2D growth space that
-        can be shown in the browser.
+        The PCA-style projection explains dimensionality reduction: several
+        engineered features are compressed into a 2D growth space that can be
+        shown directly in the browser.
       </p>
 
       <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">

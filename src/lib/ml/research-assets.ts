@@ -41,7 +41,7 @@ export const dataAssets: ResearchAsset[] = [
     type: "Dataset",
     title: "Prototype Growth Sample",
     path: "data/prototype/cane_corso_growth_sample.csv",
-    description: "Small prototype sample for beginner-friendly regression experiments.",
+    description: "Small reference sample for beginner-friendly regression exercises.",
   },
   {
     type: "Dataset",

@@ -24,15 +24,15 @@ export function DatasetExplorerSummary() {
       <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <div>
           <p className="text-sm uppercase tracking-[0.28em] text-amber-300/70">
-            Data Overview
+            Data Transparency
           </p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white md:text-5xl">
-            Dataset transparency before model trust.
+            The model shows what it uses before it shows a signal.
           </h2>
           <p className="mt-5 text-base leading-8 text-stone-400">
-            The ML layer should explain what it uses before it explains what it
-            predicts. This page keeps the source, role and limitations of each
-            dataset visible inside the app.
+            This page keeps the source, role and limitations of each dataset
+            visible. The data layer is part of the project methodology and helps
+            the app avoid unclear black-box claims.
           </p>
         </div>
 
