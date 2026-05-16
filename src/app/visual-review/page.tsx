@@ -5,6 +5,7 @@ import { PageHero } from "@/components/page-hero";
 import { PageShell } from "@/components/page-shell";
 import { PhotoReadinessModelPanel } from "@/components/photo-readiness-model-panel";
 import { VisionDatasetReadinessPanel } from "@/components/vision-dataset-readiness-panel";
+import { VisualBreedClassifierPanel } from "@/components/visual-breed-classifier-panel";
 import { VisualReviewWorkspace } from "@/components/visual-review-workspace";
 
 export default function VisualReviewPage() {
@@ -23,6 +24,7 @@ export default function VisualReviewPage() {
         <BreedClassifierTrainingPanel />
         <VisionDatasetReadinessPanel />
         <PhotoReadinessModelPanel />
+        <VisualBreedClassifierPanel />
       </div>
     </PageShell>
   );

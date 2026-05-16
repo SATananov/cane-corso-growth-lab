@@ -512,3 +512,20 @@ Current app surfaces:
 - `/experiments` explains how standard geometry becomes measurable app evidence.
 
 The layer is reference-only. It does not prove pedigree, breed purity, official registry status or health status. Future visual comparison will first require photo readiness checks before any image-based similarity score is shown.
+
+## Visual Breed Classifier Notebook
+
+The visual ML roadmap now includes a notebook and training starter for a future Cane Corso visual breed classifier:
+
+- photo readiness runs first;
+- the visual classifier compares Cane Corso against similar breeds;
+- the output is a visual similarity signal, not proof of pedigree or breed purity;
+- training remains blocked until a licensed and labelled image dataset is collected.
+
+Key files:
+
+```txt
+notebooks/08_visual_breed_classifier.ipynb
+scripts/ml/train_visual_breed_classifier.py
+reports/vision/visual-breed-classifier-plan.json
+```
