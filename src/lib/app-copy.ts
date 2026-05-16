@@ -1,45 +1,32 @@
-export const appCopy = {
-  name: "Cane Corso Growth Geometry Lab",
-  shortName: "Growth Lab",
-  eyebrow: "USG-Inspired ML Growth Lab",
-  labSeal: "USG Lab",
-  headline:
-    "Visualize Cane Corso growth through coordinates, curves and machine learning.",
-  description:
-    "A separate experimental app for exploring Cane Corso growth patterns with regression, classification, clustering and geometry-based visual thinking.",
-  disclaimer:
-    "This project is an educational machine learning experiment. It is not a veterinary diagnostic system and does not replace professional veterinary advice.",
-};
+import { dictionaries } from "@/lib/i18n/dictionaries";
+
+export const appCopy = dictionaries.en.app;
 
 export const appNavigation = [
   {
-    label: "Home",
+    key: "home" as const,
     href: "/",
-    description: "Premium app overview",
   },
   {
-    label: "Calculator",
+    key: "calculator" as const,
     href: "/calculator",
-    description: "Interactive growth point",
   },
   {
-    label: "Data",
+    key: "data" as const,
     href: "/data",
-    description: "Dataset explorer",
   },
   {
-    label: "Experiments",
+    key: "experiments" as const,
     href: "/experiments",
-    description: "ML evidence and figures",
   },
   {
-    label: "Course",
+    key: "course" as const,
     href: "/course",
-    description: "Course coverage roadmap",
   },
   {
-    label: "About",
+    key: "about" as const,
     href: "/about",
-    description: "Scope, limits and visual system",
   },
 ];
+
+export type AppNavigationKey = (typeof appNavigation)[number]["key"];

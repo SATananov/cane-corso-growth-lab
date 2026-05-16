@@ -1,27 +1,32 @@
+"use client";
+
+import { useLanguage } from "@/lib/i18n/language-context";
 import {
   finalEvidenceSummary,
   projectEvidenceChecklist,
 } from "@/lib/ml/final-evidence";
 
 export function FinalEvidenceMatrix() {
+  const { dictionary } = useLanguage();
+
   return (
     <section className="rounded-[2rem] border border-amber-200/10 bg-white/[0.035] p-6">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
         <div>
           <p className="text-sm uppercase tracking-[0.25em] text-amber-300/70">
-            Final Evidence Matrix
+            {dictionary.evidence.eyebrow}
           </p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">
-            Visual clarity plus logical proof.
+            {dictionary.evidence.title}
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-stone-400">
             {finalEvidenceSummary.subtitle}
           </p>
         </div>
         <div className="grid min-w-64 grid-cols-3 gap-3 rounded-3xl border border-stone-700 bg-black/25 p-4 text-center">
-          <EvidenceStat label="Formulas" value={finalEvidenceSummary.formulaRows} />
-          <EvidenceStat label="Evidence" value={finalEvidenceSummary.evidenceRows} />
-          <EvidenceStat label="Topics" value={finalEvidenceSummary.modelFamilies} />
+          <EvidenceStat label={dictionary.evidence.stats.formulas} value={finalEvidenceSummary.formulaRows} />
+          <EvidenceStat label={dictionary.evidence.stats.evidence} value={finalEvidenceSummary.evidenceRows} />
+          <EvidenceStat label={dictionary.evidence.stats.topics} value={finalEvidenceSummary.modelFamilies} />
         </div>
       </div>
 
@@ -30,10 +35,9 @@ export function FinalEvidenceMatrix() {
           <table className="w-full min-w-[880px] text-left text-sm">
             <thead className="bg-white/[0.04] text-xs uppercase tracking-[0.16em] text-stone-500">
               <tr>
-                <th className="px-5 py-4">Area</th>
-                <th className="px-5 py-4">App surface</th>
-                <th className="px-5 py-4">Evidence</th>
-                <th className="px-5 py-4">Why it matters</th>
+                {dictionary.evidence.headers.map((header) => (
+                  <th key={header} className="px-5 py-4">{header}</th>
+                ))}
               </tr>
             </thead>
             <tbody className="divide-y divide-stone-800">

@@ -17,12 +17,7 @@ export default function DataOverviewPage() {
   return (
     <PageShell>
       <div className="grid gap-8">
-        <PageHero
-          eyebrow="Dataset Explorer"
-          title="The app shows what data supports the ML experiments."
-          description="This page explains the prototype, processed and classification datasets used by the research layer. It keeps the app transparent: what is included, how each dataset is used and where the educational limits are."
-          badge="Step 7 Data Overview"
-        />
+        <PageHero copyKey="data" />
 
         <DatasetExplorerSummary />
 

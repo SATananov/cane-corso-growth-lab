@@ -1,3 +1,6 @@
+"use client";
+
+import { useLanguage } from "@/lib/i18n/language-context";
 import {
   classificationResults,
   formatMetric,
@@ -6,25 +9,25 @@ import {
 } from "@/lib/ml/model-results";
 
 export function ModelEvaluationTables() {
+  const { dictionary } = useLanguage();
+
   return (
     <section className="rounded-[2rem] border border-amber-200/10 bg-white/[0.035] p-6">
       <p className="text-sm uppercase tracking-[0.25em] text-amber-300/70">
-        Evaluation Tables
+        {dictionary.tables.evaluationEyebrow}
       </p>
       <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">
-        Model results are visible, comparable and connected to the app.
+        {dictionary.tables.evaluationTitle}
       </h2>
       <p className="mt-4 max-w-3xl text-base leading-7 text-stone-400">
-        The tables below make the ML evidence easier to review: regression
-        explains the growth curve, while classification supports the educational
-        review-zone signal.
+        {dictionary.tables.evaluationDescription}
       </p>
 
       <div className="mt-6 grid gap-6">
         <EvaluationTable
-          title="Regression model comparison"
-          description="Lower MAE/RMSE and higher R² are better for this growth-curve experiment."
-          headers={["Model", "Geometry", "Features", "MAE", "RMSE", "R²", "App role"]}
+          title={dictionary.tables.regressionTitle}
+          description={dictionary.tables.regressionDescription}
+          headers={[...dictionary.tables.regressionHeaders]}
           rows={regressionResults.map((result) => [
             result.model,
             result.geometry,
@@ -33,15 +36,15 @@ export function ModelEvaluationTables() {
             formatMetric(result.rmse),
             formatMetric(result.r2Score),
             result.model === "Ridge Regression"
-              ? "Selected bridge evidence"
-              : "Comparison baseline",
+              ? dictionary.tables.selectedBridgeEvidence
+              : dictionary.tables.comparisonBaseline,
           ])}
         />
 
         <EvaluationTable
-          title="Classification model comparison"
-          description="F1 and AUC help compare the educational review-zone signal without calling it a diagnosis."
-          headers={["Model", "Geometry", "Accuracy", "Precision", "Recall", "F1", "AUC", "App role"]}
+          title={dictionary.tables.classificationTitle}
+          description={dictionary.tables.classificationDescription}
+          headers={[...dictionary.tables.classificationHeaders]}
           rows={classificationResults.map((result) => [
             result.model,
             result.geometry,
@@ -51,8 +54,8 @@ export function ModelEvaluationTables() {
             formatMetric(result.f1Score),
             formatMetric(result.auc),
             result.model === "Random Forest"
-              ? "Best current signal evidence"
-              : "Boundary comparison",
+              ? dictionary.tables.bestCurrentSignal
+              : dictionary.tables.boundaryComparison,
           ])}
         />
       </div>

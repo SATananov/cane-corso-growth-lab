@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useLanguage } from "@/lib/i18n/language-context";
 import { GrowthCoordinateMap } from "@/components/growth-coordinate-map";
 import { FeatureVectorPanel } from "@/components/feature-vector-panel";
 import { GrowthClusterPanel } from "@/components/growth-cluster-panel";
@@ -29,6 +30,7 @@ const inputClass =
   "mt-2 w-full rounded-2xl border border-amber-200/15 bg-black/35 px-4 py-3 text-sm text-white outline-none transition placeholder:text-stone-600 focus:border-amber-300/55 focus:ring-2 focus:ring-amber-300/10";
 
 export function DogGrowthCalculator() {
+  const { dictionary } = useLanguage();
   const [input, setInput] = useState<DogGrowthInput>(initialInput);
 
   const prediction = useMemo(() => calculateGrowthPrediction(input), [input]);
@@ -54,15 +56,13 @@ export function DogGrowthCalculator() {
     <section id="growth-calculator" className="py-10">
       <div className="mb-6 max-w-3xl">
         <p className="text-sm uppercase tracking-[0.3em] text-amber-300/70">
-          Interactive App Experiment
+          {dictionary.calculator.eyebrow}
         </p>
         <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">
-          Growth calculator with coordinate feedback.
+          {dictionary.calculator.title}
         </h2>
         <p className="mt-4 text-base leading-7 text-stone-400">
-          Enter a Cane Corso profile and the app places the dog as a point in a
-          growth coordinate system. The result is an educational ML-style signal,
-          not a medical conclusion.
+          {dictionary.calculator.description}
         </p>
       </div>
 
@@ -72,42 +72,42 @@ export function DogGrowthCalculator() {
             <div className="mb-5 flex items-start justify-between gap-4">
               <div>
                 <p className="text-xs uppercase tracking-[0.25em] text-amber-300/70">
-                  Dog Profile Input
+                  {dictionary.calculator.inputEyebrow}
                 </p>
                 <h3 className="mt-2 text-2xl font-semibold text-white">
-                  Build the current growth point
+                  {dictionary.calculator.inputTitle}
                 </h3>
               </div>
               <div className="usg-lab-chip rounded-full px-3 py-1 text-xs font-semibold">
-                Live preview
+                {dictionary.calculator.livePreview}
               </div>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="block text-sm font-medium text-stone-300 sm:col-span-2">
-                Dog name
+                {dictionary.calculator.labels.dogName}
                 <input
                   className={inputClass}
                   value={input.name}
                   onChange={(event) => updateField("name", event.target.value)}
-                  placeholder="Example: MARK I"
+                  placeholder={dictionary.calculator.placeholderName}
                 />
               </label>
 
               <label className="block text-sm font-medium text-stone-300">
-                Sex
+                {dictionary.calculator.labels.sex}
                 <select
                   className={inputClass}
                   value={input.sex}
                   onChange={(event) => updateField("sex", event.target.value as DogSex)}
                 >
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
+                  <option value="male">{dictionary.calculator.labels.male}</option>
+                  <option value="female">{dictionary.calculator.labels.female}</option>
                 </select>
               </label>
 
               <label className="block text-sm font-medium text-stone-300">
-                Age months
+                {dictionary.calculator.labels.ageMonths}
                 <input
                   className={inputClass}
                   type="number"
@@ -119,7 +119,7 @@ export function DogGrowthCalculator() {
               </label>
 
               <label className="block text-sm font-medium text-stone-300">
-                Current weight kg
+                {dictionary.calculator.labels.currentWeightKg}
                 <input
                   className={inputClass}
                   type="number"
@@ -131,7 +131,7 @@ export function DogGrowthCalculator() {
               </label>
 
               <label className="block text-sm font-medium text-stone-300">
-                Height cm
+                {dictionary.calculator.labels.heightCm}
                 <input
                   className={inputClass}
                   type="number"
@@ -143,7 +143,7 @@ export function DogGrowthCalculator() {
               </label>
 
               <label className="block text-sm font-medium text-stone-300">
-                Body condition score
+                {dictionary.calculator.labels.bodyConditionScore}
                 <input
                   className={inputClass}
                   type="number"
@@ -155,12 +155,12 @@ export function DogGrowthCalculator() {
                   }
                 />
                 <span className="mt-2 block text-xs leading-5 text-stone-500">
-                  Educational scale from 1 to 9. Middle values are calmer signals.
+                  {dictionary.calculator.bcsHint}
                 </span>
               </label>
 
               <label className="block text-sm font-medium text-stone-300">
-                Adult reference kg
+                {dictionary.calculator.labels.adultReferenceKg}
                 <input
                   className={inputClass}
                   type="number"

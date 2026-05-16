@@ -354,3 +354,25 @@ The main goals are:
 The app now has a locked USG-inspired visual direction: dark graphite foundation, gold signal accents, ivory readability, premium glass-like cards and a clear lab identity. The design keeps the project connected to the USG aesthetic while preserving the educational boundary: this is an experimental ML growth lab, not a veterinary diagnostic product or official registry authority.
 
 The visual lock adds a reusable USG Lab seal, refined global background treatment, improved navigation, stronger hero panels, a premium footer disclaimer and an About-page visual system explanation.
+
+## Multilingual app interface
+
+Step 17 adds a professional language switcher for the visible app interface:
+
+```txt
+EN | BG | IT
+```
+
+The switcher is available in the main navigation and stores the selected language in the browser with `localStorage`. The main product UI, navigation, page heroes, calculator labels, prediction panel headings, formula labels and evidence-table headings are localized in English, Bulgarian and Italian.
+
+Technical notebooks, raw ML artifacts and model names remain in English where that is clearer for machine learning review. The app still keeps the safety boundary visible in every language: it is an educational ML experiment, not a veterinary diagnostic system.
+
+Implemented in:
+
+```txt
+src/lib/i18n/
+src/components/language-switcher.tsx
+src/components/app-navigation.tsx
+src/components/page-hero.tsx
+src/components/dog-growth-calculator.tsx
+```

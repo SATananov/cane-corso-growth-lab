@@ -1,13 +1,17 @@
+"use client";
+
 import type { ReactNode } from "react";
 import { AppNavigation } from "@/components/app-navigation";
 import { UsgLabSeal } from "@/components/usg-lab-seal";
-import { appCopy } from "@/lib/app-copy";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 type PageShellProps = {
   children: ReactNode;
 };
 
 export function PageShell({ children }: PageShellProps) {
+  const { dictionary } = useLanguage();
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#090806] text-stone-100">
       <div className="pointer-events-none absolute inset-0 usg-lab-grid opacity-45" />
@@ -23,14 +27,16 @@ export function PageShell({ children }: PageShellProps) {
               <div className="flex items-center gap-4">
                 <UsgLabSeal />
                 <div>
-                  <p className="text-sm font-semibold text-amber-100">{appCopy.labSeal}</p>
+                  <p className="text-sm font-semibold text-amber-100">
+                    {dictionary.app.labSeal}
+                  </p>
                   <p className="mt-1 max-w-3xl text-sm leading-6 text-stone-400">
-                    {appCopy.disclaimer}
+                    {dictionary.app.disclaimer}
                   </p>
                 </div>
               </div>
               <div className="w-fit rounded-full border border-amber-200/15 bg-black/30 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-amber-100/75">
-                Educational ML
+                {dictionary.app.educationalMl}
               </div>
             </div>
           </div>

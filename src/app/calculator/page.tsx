@@ -13,12 +13,7 @@ export default function CalculatorPage() {
   return (
     <PageShell>
       <div className="grid gap-8">
-        <PageHero
-          eyebrow="Growth Calculator"
-          title="Build the current growth point."
-          description="Enter a Cane Corso profile and see how the current measurement appears inside the coordinate-based growth model. The result is an educational signal for learning and visualization."
-          badge="v0.3 route"
-        />
+        <PageHero copyKey="calculator" />
         <DogGrowthCalculator />
       </div>
     </PageShell>

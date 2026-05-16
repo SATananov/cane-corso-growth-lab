@@ -1,4 +1,7 @@
+"use client";
+
 import type { GrowthPrediction } from "@/lib/growth-model";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 type PredictionSummaryProps = {
   prediction: GrowthPrediction;
@@ -12,26 +15,27 @@ const statusStyles: Record<GrowthPrediction["status"], string> = {
 };
 
 export function PredictionSummary({ prediction }: PredictionSummaryProps) {
+  const { dictionary } = useLanguage();
   const cards = [
     {
-      label: "Expected now",
+      label: dictionary.prediction.expectedNow,
       value: `${prediction.expectedWeightNowKg} kg`,
-      hint: "Reference curve point",
+      hint: dictionary.prediction.referenceCurvePoint,
     },
     {
-      label: "Difference",
+      label: dictionary.prediction.difference,
       value: `${prediction.weightDifferenceKg > 0 ? "+" : ""}${prediction.weightDifferenceKg} kg`,
-      hint: `${prediction.weightDifferencePercent > 0 ? "+" : ""}${prediction.weightDifferencePercent}% from reference`,
+      hint: `${prediction.weightDifferencePercent > 0 ? "+" : ""}${prediction.weightDifferencePercent}% ${dictionary.prediction.fromReference}`,
     },
     {
-      label: "Estimated adult",
+      label: dictionary.prediction.estimatedAdult,
       value: `${prediction.estimatedAdultWeightKg} kg`,
-      hint: "Educational estimate",
+      hint: dictionary.prediction.educationalEstimate,
     },
     {
-      label: "Confidence",
+      label: dictionary.prediction.confidence,
       value: `${prediction.confidencePercent}%`,
-      hint: "Input completeness signal",
+      hint: dictionary.prediction.inputCompleteness,
     },
   ];
 
@@ -40,7 +44,7 @@ export function PredictionSummary({ prediction }: PredictionSummaryProps) {
       <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.25em] text-amber-300/70">
-            Prediction Panel
+            {dictionary.prediction.eyebrow}
           </p>
           <h3 className="mt-2 text-2xl font-semibold text-white">
             {prediction.dogName}: {prediction.statusLabel}
@@ -73,7 +77,7 @@ export function PredictionSummary({ prediction }: PredictionSummaryProps) {
       </div>
 
       <div className="mt-5 rounded-2xl border border-amber-200/10 bg-amber-200/[0.04] p-4">
-        <p className="text-sm font-semibold text-amber-100">Recommended next step</p>
+        <p className="text-sm font-semibold text-amber-100">{dictionary.prediction.recommendedNextStep}</p>
         <p className="mt-2 text-sm leading-6 text-stone-400">
           {prediction.recommendation}
         </p>

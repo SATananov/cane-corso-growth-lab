@@ -31,12 +31,7 @@ export default function ExperimentsPage() {
   return (
     <PageShell>
       <div className="grid gap-8">
-        <PageHero
-          eyebrow="ML Experiments"
-          title="The app now has a visible research foundation."
-          description="This page connects the imported notebook work with the product layer: regression for curves, classification for review zones, clustering as the next experiment and geometry for visual understanding. The app keeps the ML educational and safe, not diagnostic."
-          badge="Step 8 Model Bridge"
-        />
+        <PageHero copyKey="experiments" />
 
         <MlResearchSummary />
 
