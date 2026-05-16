@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { GrowthCoordinateMap } from "@/components/growth-coordinate-map";
+import { ModelBridgePanel } from "@/components/model-bridge-panel";
 import { PredictionSummary } from "@/components/prediction-summary";
 import {
   calculateGrowthPrediction,
@@ -167,6 +168,7 @@ export function DogGrowthCalculator() {
 
         <div className="grid gap-5">
           <PredictionSummary prediction={prediction} />
+          <ModelBridgePanel prediction={prediction} />
           <GrowthCoordinateMap prediction={prediction} />
         </div>
       </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AppModelBridgeSummary } from "@/components/app-model-bridge-summary";
 import { MlExperimentGrid } from "@/components/ml-experiment-grid";
 import { MlResearchSummary } from "@/components/ml-research-summary";
 import { PageHero } from "@/components/page-hero";
@@ -18,6 +19,7 @@ const workflow = [
   "Use classification models as educational review-zone signals",
   "Connect the notebook evidence to the TypeScript app layer",
   "Show visual evidence directly in the Research Gallery",
+  "Export app model coefficients and bridge them into calculator logic",
   "Explore clustering later for similar growth profile groups",
 ];
 
@@ -29,10 +31,12 @@ export default function ExperimentsPage() {
           eyebrow="ML Experiments"
           title="The app now has a visible research foundation."
           description="This page connects the imported notebook work with the product layer: regression for curves, classification for review zones, clustering as the next experiment and geometry for visual understanding. The app keeps the ML educational and safe, not diagnostic."
-          badge="Step 6 Research Gallery"
+          badge="Step 8 Model Bridge"
         />
 
         <MlResearchSummary />
+
+        <AppModelBridgeSummary />
 
         <ResearchFigureGallery />
 

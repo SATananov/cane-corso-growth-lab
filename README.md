@@ -142,6 +142,35 @@ The app is planned around these ML ideas:
 5. **Clustering** — future experiment for grouping similar growth profiles.
 6. **Coordinate interpretation** — visualizing the dog as a point and the growth process as a curve or zone.
 
+
+## App model bridge
+
+Step 8 adds a visible bridge between the imported ML research and the live app calculator.
+
+The bridge is implemented in:
+
+```txt
+src/lib/ml/app-model-bridge.ts
+src/lib/growth-model.ts
+src/components/model-bridge-panel.tsx
+reports/model-exports/app-model-bridge-v0.1.json
+scripts/ml/export_app_model_bridge.py
+```
+
+The bridge exposes:
+
+- exported simple linear regression coefficients;
+- Ridge Regression and Random Forest evidence metrics;
+- a calibrated growth-curve bridge for the browser app;
+- a clear feature contract for age, weight, height, sex, body condition score and adult reference weight;
+- visible safety boundaries so the app stays educational and non-diagnostic.
+
+To regenerate the JSON export manually:
+
+```bash
+python scripts/ml/export_app_model_bridge.py
+```
+
 ## Important limitation
 
 This project is an educational machine learning and visualization experiment.

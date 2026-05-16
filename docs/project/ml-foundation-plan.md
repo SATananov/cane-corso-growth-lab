@@ -82,3 +82,19 @@ The project uses:
 ## Interpretation principle
 
 Every model result should be explained in plain language. The output should help a user understand the pattern, not make a veterinary decision.
+
+
+## Step 8 — App model bridge
+
+The ML foundation is now connected to the app through a TypeScript bridge.
+
+The bridge keeps notebook evidence and app logic separate:
+
+- notebooks remain the research layer;
+- exported metrics and coefficients are stored in `reports/model-exports/`;
+- `src/lib/ml/app-model-bridge.ts` turns the research evidence into app-readable model context;
+- `src/lib/growth-model.ts` uses the bridge for expected growth curve calculation and model explanation output;
+- `/calculator` shows a live bridge panel;
+- `/experiments` explains the bridge as part of the ML foundation.
+
+This is still an educational app model. It does not run a medical diagnostic classifier and should not be used as veterinary advice.

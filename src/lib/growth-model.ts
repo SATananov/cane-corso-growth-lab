@@ -1,3 +1,10 @@
+import {
+  buildAppModelBridgeOutput,
+  buildBridgeExpectedGrowthCurve,
+  estimateGrowthProgressFromBridge,
+  type AppModelBridgeOutput,
+} from "@/lib/ml/app-model-bridge";
+
 export type DogSex = "male" | "female";
 
 export type GrowthStatus =
@@ -39,6 +46,7 @@ export type GrowthPrediction = {
     yWeightKg: number;
   };
   curve: GrowthCurvePoint[];
+  modelBridge: AppModelBridgeOutput;
 };
 
 function clamp(value: number, min: number, max: number) {
@@ -51,28 +59,11 @@ function round(value: number, digits = 1) {
 }
 
 export function estimateGrowthProgress(ageMonths: number) {
-  const age = clamp(ageMonths, 1, 30);
-
-  if (age <= 2) return 0.18;
-  if (age <= 3) return 0.28;
-  if (age <= 4) return 0.4;
-  if (age <= 5) return 0.52;
-  if (age <= 6) return 0.62;
-  if (age <= 8) return 0.74;
-  if (age <= 10) return 0.84;
-  if (age <= 12) return 0.91;
-  if (age <= 15) return 0.96;
-
-  return 1;
+  return estimateGrowthProgressFromBridge(ageMonths);
 }
 
 export function buildExpectedGrowthCurve(adultReferenceWeightKg: number) {
-  const ages = [2, 3, 4, 5, 6, 8, 10, 12, 15, 18, 24];
-
-  return ages.map((ageMonths) => ({
-    ageMonths,
-    expectedWeightKg: round(adultReferenceWeightKg * estimateGrowthProgress(ageMonths)),
-  }));
+  return buildBridgeExpectedGrowthCurve(adultReferenceWeightKg);
 }
 
 export function calculateGrowthPrediction(input: DogGrowthInput): GrowthPrediction {
@@ -147,17 +138,22 @@ export function calculateGrowthPrediction(input: DogGrowthInput): GrowthPredicti
     92,
   );
 
+  const roundedExpectedWeightNowKg = round(expectedWeightNowKg);
+  const roundedWeightDifferenceKg = round(weightDifferenceKg);
+  const roundedWeightDifferencePercent = round(weightDifferencePercent);
+  const roundedConfidencePercent = round(confidencePercent, 0);
+
   return {
     dogName: input.name.trim() || "Cane Corso",
     status,
     statusLabel,
     statusTone,
-    expectedWeightNowKg: round(expectedWeightNowKg),
-    weightDifferenceKg: round(weightDifferenceKg),
-    weightDifferencePercent: round(weightDifferencePercent),
+    expectedWeightNowKg: roundedExpectedWeightNowKg,
+    weightDifferenceKg: roundedWeightDifferenceKg,
+    weightDifferencePercent: roundedWeightDifferencePercent,
     estimatedAdultWeightKg: round(weightKg / growthProgress),
     growthProgressPercent: round(growthProgress * 100, 0),
-    confidencePercent: round(confidencePercent, 0),
+    confidencePercent: roundedConfidencePercent,
     reviewMessage,
     recommendation,
     coordinate: {
@@ -165,5 +161,22 @@ export function calculateGrowthPrediction(input: DogGrowthInput): GrowthPredicti
       yWeightKg: round(weightKg),
     },
     curve: buildExpectedGrowthCurve(adultReferenceWeightKg),
+    modelBridge: buildAppModelBridgeOutput(
+      {
+        ...input,
+        ageMonths,
+        weightKg,
+        heightCm,
+        bodyConditionScore,
+        adultReferenceWeightKg,
+      },
+      {
+        status,
+        expectedWeightNowKg: roundedExpectedWeightNowKg,
+        weightDifferenceKg: roundedWeightDifferenceKg,
+        weightDifferencePercent: roundedWeightDifferencePercent,
+        confidencePercent: roundedConfidencePercent,
+      },
+    ),
   };
 }
