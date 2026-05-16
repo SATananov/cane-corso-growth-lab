@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { GrowthCoordinateMap } from "@/components/growth-coordinate-map";
+import { GrowthIntelligenceReport } from "@/components/growth-intelligence-report";
 import { ModelBridgePanel } from "@/components/model-bridge-panel";
 import { PredictionSummary } from "@/components/prediction-summary";
 import {
@@ -37,7 +38,12 @@ export function DogGrowthCalculator() {
 
   function updateNumberField<Key extends keyof DogGrowthInput>(key: Key, value: string) {
     const numericValue = Number(value);
-    updateField(key, Number.isFinite(numericValue) ? (numericValue as DogGrowthInput[Key]) : (0 as DogGrowthInput[Key]));
+    updateField(
+      key,
+      Number.isFinite(numericValue)
+        ? (numericValue as DogGrowthInput[Key])
+        : (0 as DogGrowthInput[Key]),
+    );
   }
 
   return (
@@ -168,6 +174,7 @@ export function DogGrowthCalculator() {
 
         <div className="grid gap-5">
           <PredictionSummary prediction={prediction} />
+          <GrowthIntelligenceReport prediction={prediction} />
           <ModelBridgePanel prediction={prediction} />
           <GrowthCoordinateMap prediction={prediction} />
         </div>

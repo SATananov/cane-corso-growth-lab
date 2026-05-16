@@ -26,6 +26,7 @@ The current version includes:
 - dataset explorer page for ML transparency
 - imported notebook research foundation
 - model metrics summary inside the app
+- Growth Intelligence Report explainability panel inside `/calculator`
 - Research Gallery with ML visual evidence inside `/experiments`
 - scope and limitations page
 - educational safety disclaimer
@@ -169,6 +170,32 @@ To regenerate the JSON export manually:
 
 ```bash
 python scripts/ml/export_app_model_bridge.py
+```
+
+
+## Growth Intelligence Report
+
+Step 9 adds a human-readable explainability panel to the `/calculator` page.
+
+The report explains:
+
+- the dog's current coordinate position;
+- distance from the educational reference curve;
+- body condition score as a review signal;
+- age-range and input confidence;
+- how regression, classification and geometry contribute to the app result;
+- practical owner review checklist;
+- technical feature summary;
+- safety boundary.
+
+The report is designed for clarity: it does not claim veterinary diagnosis or clinical certainty. It translates the model output into an educational owner-facing interpretation.
+
+Implemented in:
+
+```txt
+src/lib/ml/growth-explainability.ts
+src/components/growth-intelligence-report.tsx
+src/lib/growth-model.ts
 ```
 
 ## Important limitation
