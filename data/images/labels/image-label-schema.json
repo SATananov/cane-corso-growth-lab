@@ -1,0 +1,32 @@
+{
+  "version": "0.1",
+  "purpose": "Label schema for future Cane Corso visual ML experiments.",
+  "allowed_values": {
+    "split": ["train", "validation", "test"],
+    "breed_label": [
+      "cane_corso",
+      "presa_canario",
+      "boerboel",
+      "rottweiler",
+      "american_bully",
+      "mixed_large_dog",
+      "not_suitable_photo"
+    ],
+    "view_type": ["side_body", "front_body", "head_profile", "head_front", "unsuitable"],
+    "photo_quality": ["good", "limited", "low"],
+    "comparison_readiness": ["accepted", "limited", "rejected"],
+    "source_type": ["owner_uploaded", "licensed_reference", "demo_placeholder", "rejected_example"]
+  },
+  "fields": [
+    { "name": "image_id", "required": true, "type": "string" },
+    { "name": "file_path", "required": true, "type": "string" },
+    { "name": "split", "required": true, "type": "enum" },
+    { "name": "breed_label", "required": true, "type": "enum" },
+    { "name": "view_type", "required": true, "type": "enum" },
+    { "name": "photo_quality", "required": true, "type": "enum" },
+    { "name": "comparison_readiness", "required": true, "type": "enum" },
+    { "name": "issues", "required": false, "type": "semicolon-separated string" },
+    { "name": "source_type", "required": true, "type": "enum" },
+    { "name": "notes", "required": false, "type": "string" }
+  ]
+}

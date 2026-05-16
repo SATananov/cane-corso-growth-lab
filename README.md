@@ -75,6 +75,28 @@ photo guide → upload → photo quality gate → accepted/limited/rejected → 
 
 The result must remain a visual similarity signal. It cannot prove pedigree, breed purity, official registration or health status from a photo.
 
+
+## Visual Image Dataset & Labeling
+
+Step 22 prepares the future Computer Vision training structure. The app now documents how image labels will teach the model to separate:
+
+- suitable vs unsuitable photos;
+- side body, front body, head profile and head front views;
+- Cane Corso visual type vs selected similar comparison classes;
+- accepted, limited and rejected comparison readiness states.
+
+The dataset contract lives in:
+
+```txt
+data/images/
+data/images/labels/image-label-schema.json
+data/images/labels/sample-image-labels.csv
+scripts/ml/validate_image_labels.py
+src/lib/ml/image-dataset-labeling.ts
+```
+
+This step does not train a neural network yet. It prepares the structure needed to train the future photo readiness classifier, breed/type classifier and visual similarity model.
+
 ## Machine learning foundation
 
 The repository now includes the ML research base:

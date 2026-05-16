@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/page-hero";
 import { PageShell } from "@/components/page-shell";
+import { ImageDatasetStructurePanel } from "@/components/image-dataset-structure-panel";
 import { VisualReviewWorkspace } from "@/components/visual-review-workspace";
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export default function VisualReviewPage() {
       <div className="grid gap-8">
         <PageHero copyKey="visualReview" />
         <VisualReviewWorkspace />
+        <ImageDatasetStructurePanel />
       </div>
     </PageShell>
   );
