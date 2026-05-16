@@ -12,6 +12,10 @@ import {
   buildGrowthClusterAnalysis,
   type GrowthClusterAnalysis,
 } from "@/lib/ml/growth-clustering";
+import {
+  buildGrowthFeatureVector,
+  type GrowthFeatureVector,
+} from "@/lib/ml/feature-engineering";
 
 export type DogSex = "male" | "female";
 
@@ -57,6 +61,7 @@ export type GrowthPrediction = {
   modelBridge: AppModelBridgeOutput;
   intelligenceReport: GrowthIntelligenceReport;
   clusterAnalysis: GrowthClusterAnalysis;
+  featureEngineering: GrowthFeatureVector;
 };
 
 function clamp(value: number, min: number, max: number) {
@@ -175,6 +180,8 @@ export function calculateGrowthPrediction(input: DogGrowthInput): GrowthPredicti
     confidencePercent: roundedConfidencePercent,
   };
 
+  const featureEngineering = buildGrowthFeatureVector(normalizedInput, reportContext);
+
   return {
     dogName: input.name.trim() || "Cane Corso",
     status,
@@ -196,5 +203,6 @@ export function calculateGrowthPrediction(input: DogGrowthInput): GrowthPredicti
     modelBridge: buildAppModelBridgeOutput(normalizedInput, reportContext),
     intelligenceReport: buildGrowthIntelligenceReport(normalizedInput, reportContext),
     clusterAnalysis: buildGrowthClusterAnalysis(normalizedInput, reportContext),
+    featureEngineering,
   };
 }

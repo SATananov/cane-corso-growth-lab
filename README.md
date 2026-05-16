@@ -209,6 +209,12 @@ Step 10 adds an unsupervised-learning layer. The calculator now assigns the curr
 
 The `/experiments` page explains these groups as clustering centroids. This is a visualization and learning layer, not a diagnostic category.
 
+## Feature engineering layer
+
+Step 11 adds a visible feature-engineering layer. The app now converts raw owner input into model-ready features such as maturity ratio, adult weight ratio, weight/height ratio, BCS deviation, curve delta and normalized mass index.
+
+This is shown in `/calculator` and explained in `/data`.
+
 ## Important limitation
 
 This project is an educational machine learning and visualization experiment.

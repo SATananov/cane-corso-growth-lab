@@ -6,3 +6,4 @@ export * from "./research-gallery";
 export * from "./app-model-bridge";
 export * from "./growth-explainability";
 export * from "./growth-clustering";
+export * from "./feature-engineering";
