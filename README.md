@@ -25,6 +25,7 @@ The current version includes:
 - ML experiments page
 - imported notebook research foundation
 - model metrics summary inside the app
+- Research Gallery with ML visual evidence inside `/experiments`
 - scope and limitations page
 - educational safety disclaimer
 
@@ -71,7 +72,26 @@ The app connects to summarized model results through:
 src/lib/ml/model-results.ts
 src/lib/ml/research-assets.ts
 src/components/ml-research-summary.tsx
+src/components/research-figure-gallery.tsx
+src/lib/ml/research-gallery.ts
 ```
+
+
+## Research Gallery
+
+The `/experiments` page now includes a visual research gallery. The original figures remain in:
+
+```txt
+reports/figures/
+```
+
+The app-accessible copies are placed in:
+
+```txt
+public/research/figures/
+```
+
+This allows the app to show the machine learning idea visually: the dog as a point, growth as a trajectory, classification as a review boundary and clustering as future grouping.
 
 ## Current imported model results
 

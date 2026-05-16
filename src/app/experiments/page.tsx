@@ -3,6 +3,7 @@ import { MlExperimentGrid } from "@/components/ml-experiment-grid";
 import { MlResearchSummary } from "@/components/ml-research-summary";
 import { PageHero } from "@/components/page-hero";
 import { PageShell } from "@/components/page-shell";
+import { ResearchFigureGallery } from "@/components/research-figure-gallery";
 
 export const metadata: Metadata = {
   title: "ML Experiments | Cane Corso Growth Geometry Lab",
@@ -16,6 +17,7 @@ const workflow = [
   "Train regression models for expected growth curves",
   "Use classification models as educational review-zone signals",
   "Connect the notebook evidence to the TypeScript app layer",
+  "Show visual evidence directly in the Research Gallery",
   "Explore clustering later for similar growth profile groups",
 ];
 
@@ -25,12 +27,14 @@ export default function ExperimentsPage() {
       <div className="grid gap-8">
         <PageHero
           eyebrow="ML Experiments"
-          title="The app now has a real research foundation."
-          description="This page connects the imported notebook work with the product layer: regression for curves, classification for review zones and geometry for visual understanding. The app keeps the ML educational and safe, not diagnostic."
-          badge="Step 5 ML import"
+          title="The app now has a visible research foundation."
+          description="This page connects the imported notebook work with the product layer: regression for curves, classification for review zones, clustering as the next experiment and geometry for visual understanding. The app keeps the ML educational and safe, not diagnostic."
+          badge="Step 6 Research Gallery"
         />
 
         <MlResearchSummary />
+
+        <ResearchFigureGallery />
 
         <section className="rounded-[2rem] border border-amber-200/10 bg-white/[0.035] p-6">
           <p className="text-sm uppercase tracking-[0.25em] text-amber-300/70">
