@@ -376,3 +376,25 @@ src/components/app-navigation.tsx
 src/components/page-hero.tsx
 src/components/dog-growth-calculator.tsx
 ```
+
+
+## Step 18 — Demo dog profiles
+
+Step 18 adds a demo mode to `/calculator`. The app now includes simulated Cane Corso sample profiles that can be loaded with one click:
+
+- MARK I — balanced growth baseline
+- THOR — power growth profile
+- HERA — adult reference profile
+- BRUTUS — early puppy trajectory
+- LUNA — review-signal example
+
+The demo profiles make the app easier to present and test because every ML layer reacts immediately: prediction summary, formulas, explainability report, clustering panel, feature vector, PCA map, model bridge and growth coordinate map.
+
+The source data is stored in:
+
+```txt
+src/lib/demo-dogs.ts
+data/prototype/demo-dog-profiles.json
+```
+
+All demo profiles are simulated educational examples. They are not veterinary records and are not used as clinical references.

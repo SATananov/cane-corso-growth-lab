@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { GrowthCoordinateMap } from "@/components/growth-coordinate-map";
+import { DemoDogSelector } from "@/components/demo-dog-selector";
 import { FeatureVectorPanel } from "@/components/feature-vector-panel";
 import { GrowthClusterPanel } from "@/components/growth-cluster-panel";
 import { GrowthFormulaPanel } from "@/components/growth-formula-panel";
@@ -15,16 +16,11 @@ import {
   type DogGrowthInput,
   type DogSex,
 } from "@/lib/growth-model";
+import { demoDogProfiles, type DemoDogProfile } from "@/lib/demo-dogs";
 
-const initialInput: DogGrowthInput = {
-  name: "MARK I",
-  sex: "male",
-  ageMonths: 6,
-  weightKg: 34,
-  heightCm: 58,
-  bodyConditionScore: 5,
-  adultReferenceWeightKg: 50,
-};
+const initialDemoDog = demoDogProfiles[0];
+
+const initialInput: DogGrowthInput = { ...initialDemoDog.input };
 
 const inputClass =
   "mt-2 w-full rounded-2xl border border-amber-200/15 bg-black/35 px-4 py-3 text-sm text-white outline-none transition placeholder:text-stone-600 focus:border-amber-300/55 focus:ring-2 focus:ring-amber-300/10";
@@ -32,13 +28,20 @@ const inputClass =
 export function DogGrowthCalculator() {
   const { dictionary } = useLanguage();
   const [input, setInput] = useState<DogGrowthInput>(initialInput);
+  const [selectedDemoDogId, setSelectedDemoDogId] = useState(initialDemoDog.id);
 
   const prediction = useMemo(() => calculateGrowthPrediction(input), [input]);
+
+  function loadDemoDog(demoDog: DemoDogProfile) {
+    setInput({ ...demoDog.input });
+    setSelectedDemoDogId(demoDog.id);
+  }
 
   function updateField<Key extends keyof DogGrowthInput>(
     key: Key,
     value: DogGrowthInput[Key],
   ) {
+    setSelectedDemoDogId("custom-input");
     setInput((current) => ({ ...current, [key]: value }));
   }
 
@@ -68,6 +71,11 @@ export function DogGrowthCalculator() {
 
       <div className="grid gap-5 xl:grid-cols-[0.85fr_1.15fr]">
         <form className="usg-lab-surface rounded-[2rem] p-5">
+          <DemoDogSelector
+            selectedDemoDogId={selectedDemoDogId}
+            onSelectDemoDog={loadDemoDog}
+          />
+
           <div className="relative z-10 rounded-[1.5rem] border border-amber-200/10 bg-black/25 p-5">
             <div className="mb-5 flex items-start justify-between gap-4">
               <div>

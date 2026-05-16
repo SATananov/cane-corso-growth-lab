@@ -1,0 +1,69 @@
+{
+  "profiles": [
+    {
+      "id": "mark-i-balanced-growth",
+      "name": "MARK I",
+      "sex": "male",
+      "age_months": 6,
+      "weight_kg": 34,
+      "height_cm": 58,
+      "body_condition_score": 5,
+      "adult_reference_weight_kg": 50,
+      "demo_role": "Balanced reference puppy",
+      "educational_use": "Baseline profile close to the educational reference curve.",
+      "is_simulated": true
+    },
+    {
+      "id": "thor-power-profile",
+      "name": "THOR",
+      "sex": "male",
+      "age_months": 8,
+      "weight_kg": 45,
+      "height_cm": 63,
+      "body_condition_score": 6,
+      "adult_reference_weight_kg": 58,
+      "demo_role": "Heavier male trajectory",
+      "educational_use": "Power-growth profile for above-curve and cluster movement testing.",
+      "is_simulated": true
+    },
+    {
+      "id": "hera-adult-reference",
+      "name": "HERA",
+      "sex": "female",
+      "age_months": 18,
+      "weight_kg": 43,
+      "height_cm": 61,
+      "body_condition_score": 5,
+      "adult_reference_weight_kg": 45,
+      "demo_role": "Mature female reference",
+      "educational_use": "Near-adult profile for maturity-ratio and stable-signal review.",
+      "is_simulated": true
+    },
+    {
+      "id": "brutus-puppy-trajectory",
+      "name": "BRUTUS",
+      "sex": "male",
+      "age_months": 4,
+      "weight_kg": 22,
+      "height_cm": 48,
+      "body_condition_score": 5,
+      "adult_reference_weight_kg": 52,
+      "demo_role": "Young growth trajectory",
+      "educational_use": "Early-age point for explaining why one measurement is only a start.",
+      "is_simulated": true
+    },
+    {
+      "id": "luna-review-signal",
+      "name": "LUNA",
+      "sex": "female",
+      "age_months": 7,
+      "weight_kg": 23,
+      "height_cm": 51,
+      "body_condition_score": 3,
+      "adult_reference_weight_kg": 45,
+      "demo_role": "Educational attention scenario",
+      "educational_use": "Simulated below-curve review-signal example with safe language.",
+      "is_simulated": true
+    }
+  ]
+}
