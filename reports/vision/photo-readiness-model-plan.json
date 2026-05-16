@@ -2,29 +2,51 @@
   "model": "photo_readiness_classifier",
   "status": "not_ready_for_training",
   "purpose": "Classify uploaded dog photos as accepted, limited, or rejected before visual Cane Corso comparison.",
-  "readiness_classes": [
-    "accepted",
-    "limited",
-    "rejected"
-  ],
+  "labels_path": "data\\images\\labels\\sample-image-labels.csv",
+  "rows": 4,
+  "readiness_class_counts": {
+    "accepted": 3,
+    "rejected": 1
+  },
+  "view_type_counts": {
+    "side_body": 2,
+    "head_profile": 1,
+    "unsuitable": 1
+  },
+  "breed_label_counts": {
+    "cane_corso": 2,
+    "presa_canario": 1,
+    "not_suitable_photo": 1
+  },
   "minimum_per_class": 50,
   "recommended_per_class": 200,
-  "current_policy": {
-    "accepted": "Comparison can proceed with orientation-only disclaimer.",
-    "limited": "Comparison can proceed only with a visible reliability warning.",
-    "rejected": "Visual match score must be blocked and a new photo requested."
+  "classes_ready": false,
+  "recommended_ready": false,
+  "schema_compatibility": {
+    "accepted_image_reference_columns": [
+      "filename",
+      "file_path",
+      "image_id"
+    ],
+    "accepted_readiness_columns": [
+      "comparison_ready",
+      "comparison_readiness"
+    ],
+    "normalized_output_columns": [
+      "filename",
+      "comparison_ready",
+      "comparison_readiness_class"
+    ]
   },
-  "training_inputs": [
-    "image file",
-    "view_type label",
-    "photo_quality label",
-    "comparison_ready label",
-    "issues labels"
-  ],
-  "planned_outputs": [
-    "readiness class",
-    "confidence estimate",
-    "detected issues",
-    "user-facing warning"
+  "safety_policy": {
+    "accepted": "Allow comparison with orientation-only disclaimer.",
+    "limited": "Allow limited comparison only with visible warning.",
+    "rejected": "Block visual match score and request a new photo."
+  },
+  "next_steps": [
+    "Collect licensed or owner-approved images.",
+    "Label photo readiness, view type, quality and issues.",
+    "Balance accepted, limited and rejected examples.",
+    "Train a lightweight baseline classifier, then a transfer-learning image model."
   ]
 }

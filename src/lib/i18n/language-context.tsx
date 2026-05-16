@@ -17,6 +17,24 @@ import {
 
 const LANGUAGE_STORAGE_KEY = "ccgl-language";
 
+function getInitialLanguage(): LanguageCode {
+  if (typeof window === "undefined") {
+    return "en";
+  }
+
+  const storedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
+  if (isSupportedLanguage(storedLanguage)) {
+    return storedLanguage;
+  }
+
+  const browserLanguage = window.navigator.language.slice(0, 2);
+  if (isSupportedLanguage(browserLanguage)) {
+    return browserLanguage;
+  }
+
+  return "en";
+}
+
 type LanguageContextValue = {
   language: LanguageCode;
   dictionary: Dictionary;
@@ -26,21 +44,7 @@ type LanguageContextValue = {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<LanguageCode>("en");
-
-  useEffect(() => {
-    const storedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
-    const browserLanguage = window.navigator.language.slice(0, 2);
-
-    if (isSupportedLanguage(storedLanguage)) {
-      setLanguageState(storedLanguage);
-      return;
-    }
-
-    if (isSupportedLanguage(browserLanguage)) {
-      setLanguageState(browserLanguage);
-    }
-  }, []);
+  const [language, setLanguageState] = useState<LanguageCode>(getInitialLanguage);
 
   useEffect(() => {
     document.documentElement.lang = language;
@@ -48,7 +52,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const setLanguage = useCallback((nextLanguage: LanguageCode) => {
     setLanguageState(nextLanguage);
-    window.localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLanguage);
+
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLanguage);
+    }
   }, []);
 
   const value = useMemo<LanguageContextValue>(
