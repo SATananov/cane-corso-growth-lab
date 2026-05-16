@@ -16,6 +16,10 @@ import {
   buildGrowthFeatureVector,
   type GrowthFeatureVector,
 } from "@/lib/ml/feature-engineering";
+import {
+  projectGrowthToPcaSpace,
+  type PcaProjection,
+} from "@/lib/ml/dimensionality-reduction";
 
 export type DogSex = "male" | "female";
 
@@ -62,6 +66,7 @@ export type GrowthPrediction = {
   intelligenceReport: GrowthIntelligenceReport;
   clusterAnalysis: GrowthClusterAnalysis;
   featureEngineering: GrowthFeatureVector;
+  pcaProjection: PcaProjection;
 };
 
 function clamp(value: number, min: number, max: number) {
@@ -181,6 +186,8 @@ export function calculateGrowthPrediction(input: DogGrowthInput): GrowthPredicti
   };
 
   const featureEngineering = buildGrowthFeatureVector(normalizedInput, reportContext);
+  const clusterAnalysis = buildGrowthClusterAnalysis(normalizedInput, reportContext);
+  const pcaProjection = projectGrowthToPcaSpace(featureEngineering, clusterAnalysis);
 
   return {
     dogName: input.name.trim() || "Cane Corso",
@@ -202,7 +209,8 @@ export function calculateGrowthPrediction(input: DogGrowthInput): GrowthPredicti
     curve: buildExpectedGrowthCurve(adultReferenceWeightKg),
     modelBridge: buildAppModelBridgeOutput(normalizedInput, reportContext),
     intelligenceReport: buildGrowthIntelligenceReport(normalizedInput, reportContext),
-    clusterAnalysis: buildGrowthClusterAnalysis(normalizedInput, reportContext),
+    clusterAnalysis,
     featureEngineering,
+    pcaProjection,
   };
 }

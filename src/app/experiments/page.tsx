@@ -4,6 +4,7 @@ import { GrowthClusterOverview } from "@/components/growth-cluster-overview";
 import { MlExperimentGrid } from "@/components/ml-experiment-grid";
 import { MlResearchSummary } from "@/components/ml-research-summary";
 import { PageHero } from "@/components/page-hero";
+import { PcaExperimentPanel } from "@/components/pca-experiment-panel";
 import { PageShell } from "@/components/page-shell";
 import { ResearchFigureGallery } from "@/components/research-figure-gallery";
 
@@ -42,6 +43,8 @@ export default function ExperimentsPage() {
         <ResearchFigureGallery />
 
         <GrowthClusterOverview />
+
+        <PcaExperimentPanel />
 
         <section className="rounded-[2rem] border border-amber-200/10 bg-white/[0.035] p-6">
           <p className="text-sm uppercase tracking-[0.25em] text-amber-300/70">

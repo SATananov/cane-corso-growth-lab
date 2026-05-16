@@ -215,6 +215,12 @@ Step 11 adds a visible feature-engineering layer. The app now converts raw owner
 
 This is shown in `/calculator` and explained in `/data`.
 
+## PCA-style growth map
+
+Step 12 adds dimensionality reduction. The calculator now includes a PCA-style 2D growth space that compresses engineered features into a visual coordinate map.
+
+This strengthens the core idea: growth can be studied geometrically as points, distances, clusters and projections.
+
 ## Important limitation
 
 This project is an educational machine learning and visualization experiment.
