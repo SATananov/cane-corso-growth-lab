@@ -1,0 +1,54 @@
+{
+  "step": "Step 29",
+  "name": "Visual Similarity / Embedding Prototype",
+  "status": "prototype_plan_ready",
+  "purpose": "Prepare an app-safe image embedding layer that compares an accepted user photo with a permitted Cane Corso reference set.",
+  "required_before_real_training": [
+    "licensed_or_owner_permitted_reference_images",
+    "photo_readiness_labels",
+    "view_type_labels",
+    "breed_class_labels",
+    "train_validation_test_splits",
+    "evaluation_metrics_and_error_review"
+  ],
+  "pipeline": [
+    "photo_quality_gate",
+    "photo_type_detection",
+    "visual_breed_classifier",
+    "embedding_similarity_against_reference_set",
+    "breed_reference_geometry_comparison",
+    "visual_cane_corso_match_report"
+  ],
+  "prototype_formula": {
+    "expression": "match = gate(readiness) * (0.35 * classifier + 0.30 * embedding_similarity + 0.25 * geometry + 0.10 * confidence_adjustment)",
+    "blocked_when": [
+      "readiness=rejected",
+      "missing_reference_set",
+      "missing_model_evaluation"
+    ],
+    "safe_output_name": "Visual Cane Corso Match"
+  },
+  "signals": [
+    {
+      "id": "photo_readiness_gate",
+      "readiness": "formula_ready"
+    },
+    {
+      "id": "embedding_similarity",
+      "readiness": "needs_reference_images"
+    },
+    {
+      "id": "breed_classifier_probability",
+      "readiness": "needs_trained_model"
+    },
+    {
+      "id": "geometry_closeness",
+      "readiness": "formula_ready"
+    },
+    {
+      "id": "confidence_adjustment",
+      "readiness": "formula_ready"
+    }
+  ],
+  "safety_boundary": "The result is a visual similarity signal only. It does not prove breed purity, pedigree, genetic origin or official registration."
+}

@@ -20,3 +20,4 @@ export * from "./breed-classifier-training";
 export * from "./vision-dataset-readiness";
 export * from "./photo-readiness-model";
 export * from "./visual-breed-classifier";
+export * from "./visual-similarity";

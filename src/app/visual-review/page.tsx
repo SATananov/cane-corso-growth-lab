@@ -7,6 +7,7 @@ import { PhotoReadinessModelPanel } from "@/components/photo-readiness-model-pan
 import { VisionDatasetReadinessPanel } from "@/components/vision-dataset-readiness-panel";
 import { VisualBreedClassifierPanel } from "@/components/visual-breed-classifier-panel";
 import { VisualReviewWorkspace } from "@/components/visual-review-workspace";
+import { VisualSimilarityPanel } from "@/components/visual-similarity-panel";
 
 export default function VisualReviewPage() {
   return (
@@ -25,6 +26,7 @@ export default function VisualReviewPage() {
         <VisionDatasetReadinessPanel />
         <PhotoReadinessModelPanel />
         <VisualBreedClassifierPanel />
+        <VisualSimilarityPanel />
       </div>
     </PageShell>
   );
