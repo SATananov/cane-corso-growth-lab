@@ -14,11 +14,14 @@ export function DemoDogSelector({
 }: DemoDogSelectorProps) {
   const { language } = useLanguage();
   const copy = demoDogSelectorCopy[language];
+  const selectedDog =
+    demoDogProfiles.find((demoDog) => demoDog.id === selectedDemoDogId) ?? demoDogProfiles[0];
+  const selectedText = selectedDog.localized[language];
 
   return (
     <section className="mb-5 rounded-[1.5rem] border border-amber-200/10 bg-black/25 p-5">
-      <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-        <div>
+      <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+        <div className="min-w-0">
           <p className="text-xs uppercase tracking-[0.25em] text-amber-300/70">
             {copy.eyebrow}
           </p>
@@ -28,86 +31,55 @@ export function DemoDogSelector({
           </p>
         </div>
 
-        <div className="w-fit rounded-full border border-amber-200/15 bg-amber-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-amber-100/80">
+        <div className="w-fit shrink-0 rounded-full border border-amber-200/15 bg-amber-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-amber-100/80">
           {copy.simulatedBadge}
         </div>
       </div>
 
-      <div className="mt-5 grid gap-3 lg:grid-cols-5">
-        {demoDogProfiles.map((demoDog) => {
-          const text = demoDog.localized[language];
-          const isSelected = selectedDemoDogId === demoDog.id;
+      <label className="mt-5 block text-sm font-medium text-stone-300">
+        {copy.loadLabel}
+        <select
+          className="mt-2 w-full rounded-2xl border border-amber-200/15 bg-black/35 px-4 py-3 text-sm text-white outline-none transition focus:border-amber-300/55 focus:ring-2 focus:ring-amber-300/10"
+          value={selectedDog.id}
+          onChange={(event) => {
+            const nextDog = demoDogProfiles.find((demoDog) => demoDog.id === event.target.value);
+            if (nextDog) onSelectDemoDog(nextDog);
+          }}
+        >
+          {demoDogProfiles.map((demoDog) => (
+            <option key={demoDog.id} value={demoDog.id}>
+              {demoDog.localized[language].name}
+            </option>
+          ))}
+        </select>
+      </label>
 
-          return (
-            <button
-              key={demoDog.id}
-              type="button"
-              onClick={() => onSelectDemoDog(demoDog)}
-              className={`rounded-3xl border p-4 text-left transition ${
-                isSelected
-                  ? "border-amber-200/75 bg-amber-300 text-stone-950 shadow-[0_0_35px_rgba(212,175,55,0.22)]"
-                  : "border-amber-200/10 bg-white/[0.035] text-stone-200 hover:border-amber-200/35 hover:bg-amber-200/10"
-              }`}
-              aria-pressed={isSelected}
-            >
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <p
-                    className={`text-sm font-semibold ${
-                      isSelected ? "text-stone-950" : "text-white"
-                    }`}
-                  >
-                    {text.name}
-                  </p>
-                  <p
-                    className={`mt-1 text-xs uppercase tracking-[0.16em] ${
-                      isSelected ? "text-stone-800" : "text-amber-200/70"
-                    }`}
-                  >
-                    {text.role}
-                  </p>
-                </div>
-                {isSelected ? (
-                  <span className="rounded-full bg-stone-950 px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-amber-200">
-                    {copy.activeLabel}
-                  </span>
-                ) : null}
-              </div>
+      <article className="mt-4 rounded-3xl border border-amber-200/15 bg-white/[0.035] p-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+          <div className="min-w-0">
+            <p className="text-sm font-semibold text-white">{selectedText.name}</p>
+            <p className="mt-1 text-xs uppercase tracking-[0.16em] text-amber-200/70">
+              {selectedText.role}
+            </p>
+          </div>
+          <span className="w-fit shrink-0 rounded-full border border-amber-200/15 bg-amber-300/10 px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-amber-100">
+            {copy.activeLabel}
+          </span>
+        </div>
 
-              <p
-                className={`mt-3 text-xs leading-5 ${
-                  isSelected ? "text-stone-800" : "text-stone-400"
-                }`}
-              >
-                {text.summary}
-              </p>
+        <p className="mt-3 text-sm leading-6 text-stone-400">{selectedText.summary}</p>
 
-              <div className="mt-4 flex flex-wrap gap-1.5">
-                {text.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className={`rounded-full px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.12em] ${
-                      isSelected
-                        ? "bg-stone-950/10 text-stone-800"
-                        : "bg-amber-300/10 text-amber-100/70"
-                    }`}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <span
-                className={`mt-4 inline-flex text-xs font-semibold ${
-                  isSelected ? "text-stone-950" : "text-amber-100"
-                }`}
-              >
-                {copy.loadLabel}
-              </span>
-            </button>
-          );
-        })}
-      </div>
+        <div className="mt-4 grid gap-3 text-xs leading-5 text-stone-400 sm:grid-cols-2">
+          <div className="rounded-2xl border border-stone-700 bg-black/20 p-3">
+            <p className="font-semibold text-amber-100">{copy.geometryLabel}</p>
+            <p className="mt-1">{selectedText.geometryNote}</p>
+          </div>
+          <div className="rounded-2xl border border-stone-700 bg-black/20 p-3">
+            <p className="font-semibold text-amber-100">{copy.modelUseLabel}</p>
+            <p className="mt-1">{selectedText.modelUse}</p>
+          </div>
+        </div>
+      </article>
     </section>
   );
 }

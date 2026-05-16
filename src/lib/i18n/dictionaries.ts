@@ -20,7 +20,7 @@ export const dictionaries = {
       calculator: "Growth Check",
       data: "Data & References",
       visualReview: "Visual Review",
-      experiments: "ML Methodology",
+      experiments: "Methodology",
       course: "Project Evidence",
       about: "About",
       descriptions: {
@@ -28,7 +28,7 @@ export const dictionaries = {
         calculator: "Run a growth orientation check",
         data: "Data sources and feature logic",
         visualReview: "Photo guide and visual geometry workspace",
-        experiments: "Models, metrics and visual evidence",
+        experiments: "Models, metrics and evidence",
         course: "ML project evidence",
         about: "Scope, safety and technology",
       },
@@ -89,7 +89,7 @@ export const dictionaries = {
         badge: "Photo criteria",
       },
       experiments: {
-        eyebrow: "ML Methodology",
+        eyebrow: "Methodology",
         title: "The model evidence behind the growth check.",
         description:
           "This page connects the app with the machine learning methods behind it: regression for curves, classification for review zones, clustering for profile groups, PCA for visual maps and MLflow-style tracking for experiment history.",
@@ -146,7 +146,7 @@ export const dictionaries = {
       recommendedNextStep: "Recommended next step",
     },
     formulas: {
-      eyebrow: "Formula Logic",
+      eyebrow: "Формули",
       title: "How the signal is calculated.",
       description:
         "These formulas make the app logic visible: the dog is plotted as a point, compared with a curve and translated into a safe orientation signal.",
@@ -160,11 +160,11 @@ export const dictionaries = {
       },
     },
     tables: {
-      evaluationEyebrow: "Model Evaluation",
+      evaluationEyebrow: "Оценка на моделите",
       evaluationTitle:
         "Model results are visible, comparable and connected to the app.",
       evaluationDescription:
-        "The tables below make the ML evidence easy to review: regression explains the growth curve, while classification supports the review-zone signal.",
+        "The tables below make the ML доказателствата easy to review: regression explains the growth curve, while classification supports the review-zone signal.",
       regressionTitle: "Regression model comparison",
       regressionDescription:
         "Lower MAE/RMSE and higher R² are better for this growth-curve experiment.",
@@ -174,7 +174,7 @@ export const dictionaries = {
       regressionHeaders: [
         "Model",
         "Geometry",
-        "Features",
+        "Характеристики",
         "MAE",
         "RMSE",
         "R²",
@@ -183,9 +183,9 @@ export const dictionaries = {
       classificationHeaders: [
         "Model",
         "Geometry",
-        "Accuracy",
-        "Precision",
-        "Recall",
+        "Точност",
+        "Прецизност",
+        "Обхват",
         "F1",
         "AUC",
         "App role",
@@ -194,23 +194,23 @@ export const dictionaries = {
       comparisonBaseline: "Comparison baseline",
       bestCurrentSignal: "Best current signal evidence",
       boundaryComparison: "Boundary comparison",
-      featureFormulaEyebrow: "Feature Logic",
+      featureFormulaEyebrow: "Логика на характеристиките",
       featureFormulaTitle:
         "Owner inputs are converted into model-ready signals.",
       featureFormulaDescription:
         "This table makes the data logic explicit. The app does not hide the transformation between user inputs and the model feature vector.",
-      featureHeaders: ["Feature", "Formula", "Purpose"],
-      derivedAppFeature: "derived feature",
+      featureHeaders: ["Характеристика", "Formula", "Purpose"],
+      derivedAppFeature: "създадена характеристика",
     },
     evidence: {
       eyebrow: "Final Evidence Matrix",
       title: "Visual clarity plus logical proof.",
       stats: {
         formulas: "Formulas",
-        evidence: "Evidence",
+        evidence: "Доказателства",
         topics: "Topics",
       },
-      headers: ["Area", "App surface", "Evidence", "Why it matters"],
+      headers: ["Area", "App surface", "Доказателства", "Why it matters"],
     },
     visualReview: {
       guide: {
@@ -226,7 +226,7 @@ export const dictionaries = {
         uploadEyebrow: "User photo",
         uploadTitle: "Upload a photo for readiness preview",
         uploadDescription:
-          "This first version previews the photo and shows the comparison-readiness states. It prepares the UI for a future ML photo-quality gate.",
+          "Preview the photo and run a clear readiness check before any visual comparison. The app must warn the user when the photo is not suitable.",
         dropTitle: "Upload dog photo",
         dropDescription:
           "Use a clear side-body photo first. Later versions will validate the image automatically before comparison.",
@@ -308,7 +308,7 @@ export const dictionaries = {
       description:
         "Фокусирано приложение за ориентация, обучение и прозрачна ML методология около растежа на Cane Corso. Комбинира удобна проверка с доказуема проектна логика.",
       disclaimer:
-        "Този проект е образователен експеримент с машинно обучение. Не е ветеринарна диагностична система и не замества професионален ветеринарен съвет.",
+        "Този инструмент дава само ориентировъчна информация. Не доказва здравен статус, породна чистота, родословие или официален Cane Corso статус и не замества професионален ветеринарен съвет.",
       educationalMl: "Ориентировъчен инструмент",
     },
     nav: {
@@ -318,7 +318,7 @@ export const dictionaries = {
       calculator: "Проверка на растежа",
       data: "Данни и еталони",
       visualReview: "Визуален преглед",
-      experiments: "ML методология",
+      experiments: "Методология",
       course: "Проектни доказателства",
       about: "За приложението",
       descriptions: {
@@ -326,7 +326,7 @@ export const dictionaries = {
         calculator: "Ориентировъчна проверка на растежа",
         data: "Данни, еталони и feature логика",
         visualReview: "Фото указания и геометрично сравнение",
-        experiments: "Модели, метрики и визуални доказателства",
+        experiments: "Модели, метрики и доказателства",
         course: "Доказателства за ML проекта",
         about: "Обхват, безопасност и технология",
       },
@@ -384,7 +384,7 @@ export const dictionaries = {
         badge: "Фото критерии",
       },
       experiments: {
-        eyebrow: "ML методология",
+        eyebrow: "Методология",
         title: "Моделните доказателства зад проверката на растежа.",
         description:
           "Тази страница свързва приложението с методите зад него: Regression за криви, Classification за зони за преглед, Clustering за профилни групи, PCA за визуални карти и MLflow-style tracking за история на експериментите.",
@@ -421,7 +421,7 @@ export const dictionaries = {
         ageMonths: "Възраст в месеци",
         currentWeightKg: "Текущо тегло kg",
         heightCm: "Височина cm",
-        bodyConditionScore: "Body condition score",
+        bodyConditionScore: "Оценка на телесно състояние (BCS)",
         adultReferenceKg: "Референтно тегло като възрастен kg",
       },
       placeholderName: "Пример: MARK I",
@@ -441,10 +441,10 @@ export const dictionaries = {
       recommendedNextStep: "Препоръчана следваща стъпка",
     },
     formulas: {
-      eyebrow: "Formula Logic",
+      eyebrow: "Формули",
       title: "Как се изчислява сигналът.",
       description:
-        "Тези формули правят логиката видима: кучето се поставя като точка, сравнява се с крива и се превежда в безопасен образователен growth сигнал.",
+        "Тези формули правят логиката видима: кучето се поставя като точка, сравнява се с крива и се превежда в безопасен образователен сигнал за растеж.",
       badge: "прозрачна математика",
       tableHeaders: ["Стъпка", "Формула", "Жива стойност"],
       rows: {
@@ -455,49 +455,49 @@ export const dictionaries = {
       },
     },
     tables: {
-      evaluationEyebrow: "Model Evaluation",
+      evaluationEyebrow: "Оценка на моделите",
       evaluationTitle:
         "Резултатите от моделите са видими, сравними и свързани с приложението.",
       evaluationDescription:
-        "Таблиците по-долу правят ML evidence по-лесен за преглед: regression обяснява кривата на растежа, а classification подкрепя образователния review-zone сигнал.",
+        "Таблиците по-долу правят ML доказателствата по-лесен за преглед: Regression обяснява кривата на растежа, а Classification подкрепя образователния сигнал за зона за преглед.",
       regressionTitle: "Сравнение на regression модели",
       regressionDescription:
-        "По-ниски MAE/RMSE и по-високо R² са по-добри за този growth-curve експеримент.",
+        "По-ниски MAE/RMSE и по-високо R² са по-добри за този експеримент с крива на растежа.",
       classificationTitle: "Сравнение на classification модели",
       classificationDescription:
-        "F1 и AUC помагат да сравним образователния review-zone сигнал, без да го наричаме диагноза.",
-      regressionHeaders: ["Модел", "Геометрия", "Features", "MAE", "RMSE", "R²", "Роля в приложението"],
+        "F1 и AUC помагат да сравним образователния сигнал за зона за преглед, без да го наричаме диагноза.",
+      regressionHeaders: ["Модел", "Геометрия", "Характеристики", "MAE", "RMSE", "R²", "Роля в приложението"],
       classificationHeaders: [
         "Модел",
         "Геометрия",
-        "Accuracy",
-        "Precision",
-        "Recall",
+        "Точност",
+        "Прецизност",
+        "Обхват",
         "F1",
         "AUC",
         "Роля в приложението",
       ],
-      selectedBridgeEvidence: "Избрано bridge evidence",
+      selectedBridgeEvidence: "Избрано доказателство за връзката",
       comparisonBaseline: "Базов модел за сравнение",
-      bestCurrentSignal: "Най-добро текущо signal evidence",
+      bestCurrentSignal: "Най-добро текущо доказателство",
       boundaryComparison: "Сравнение на граници",
-      featureFormulaEyebrow: "Feature Logic",
+      featureFormulaEyebrow: "Логика на характеристиките",
       featureFormulaTitle:
         "Въведените данни се превръщат в сигнали, готови за модел.",
       featureFormulaDescription:
-        "Тази таблица прави data логиката ясна. App-ът не скрива трансформацията между owner-friendly входа и ML-style feature vector-а.",
-      featureHeaders: ["Feature", "Формула", "Цел"],
-      derivedAppFeature: "derived feature",
+        "Тази таблица прави логиката на данните ясна. Приложението не скрива трансформацията между удобния за потребителя вход и ML вектора от характеристики.",
+      featureHeaders: ["Характеристика", "Формула", "Цел"],
+      derivedAppFeature: "създадена характеристика",
     },
     evidence: {
       eyebrow: "Финална матрица с доказателства",
       title: "Визуална яснота плюс логическо доказателство.",
       stats: {
         formulas: "Формули",
-        evidence: "Evidence",
+        evidence: "Доказателства",
         topics: "Теми",
       },
-      headers: ["Област", "App повърхност", "Evidence", "Защо е важно"],
+      headers: ["Област", "Екран в приложението", "Доказателства", "Защо е важно"],
     },
     visualReview: {
       guide: {
@@ -513,7 +513,7 @@ export const dictionaries = {
         uploadEyebrow: "Снимка на потребителя",
         uploadTitle: "Качи снимка за preview на готовността",
         uploadDescription:
-          "Тази първа версия показва снимката и състоянията за готовност за сравнение. Така подготвяме UI слоя за бъдещ ML photo-quality gate.",
+          "Секцията показва снимката и статуса за готовност. Така потребителят разбира дали изображението може да се използва за надеждно визуално сравнение.",
         dropTitle: "Качи снимка на Cane-то",
         dropDescription:
           "Първо използвай ясна странична снимка на цялото тяло. Следващите версии ще валидират изображението автоматично преди сравнение.",
@@ -522,7 +522,7 @@ export const dictionaries = {
           label: "Изчакване",
           title: "Още няма качена снимка.",
           description:
-            "Качи снимка, за да видиш как бъдещият photo-quality gate ще води процеса на сравнение.",
+            "Качи снимка, за да видиш как проверката за качество насочва процеса на сравнение.",
         },
         readiness: {
           accepted: {
@@ -605,7 +605,7 @@ export const dictionaries = {
       calculator: "Controllo crescita",
       data: "Dati e riferimenti",
       visualReview: "Revisione visuale",
-      experiments: "Metodologia ML",
+      experiments: "Metodologia",
       course: "Evidenze progetto",
       about: "Informazioni",
       descriptions: {
@@ -613,7 +613,7 @@ export const dictionaries = {
         calculator: "Controllo orientativo della crescita",
         data: "Fonti dati e logica delle feature",
         visualReview: "Guida foto e spazio di confronto geometrico",
-        experiments: "Modelli, metriche ed evidenze visuali",
+        experiments: "Modelli, metriche ed evidenze",
         course: "Evidenze del progetto ML",
         about: "Ambito, sicurezza e tecnologia",
       },
@@ -671,7 +671,7 @@ export const dictionaries = {
         badge: "Criteri foto",
       },
       experiments: {
-        eyebrow: "Metodologia ML",
+        eyebrow: "Metodologia",
         title: "Le evidenze del modello dietro il controllo crescita.",
         description:
           "Questa pagina collega l’app ai metodi dietro il risultato: Regression per le curve, Classification per le zone di revisione, Clustering per i gruppi di profilo, PCA per le mappe visuali e tracking stile MLflow per la storia degli esperimenti.",
@@ -682,7 +682,7 @@ export const dictionaries = {
         title: "I temi ML sono dimostrati in un’app funzionante.",
         description:
           "Questa pagina mantiene chiaro il livello di revisione del progetto: mostra come Regression, Classification, Clustering, Feature Engineering, Dimensionality Reduction e MLflow vengono dimostrati nelle superfici dell’app.",
-        badge: "Готово за курс",
+        badge: "Pronto per il corso",
       },
       about: {
         eyebrow: "Informazioni sull’app",
@@ -708,7 +708,7 @@ export const dictionaries = {
         ageMonths: "Età in mesi",
         currentWeightKg: "Peso attuale kg",
         heightCm: "Altezza cm",
-        bodyConditionScore: "Body condition score",
+        bodyConditionScore: "Valutazione condizione corporea (BCS)",
         adultReferenceKg: "Peso adulto di riferimento kg",
       },
       placeholderName: "Esempio: MARK I",
@@ -742,7 +742,7 @@ export const dictionaries = {
       },
     },
     tables: {
-      evaluationEyebrow: "Model Evaluation",
+      evaluationEyebrow: "Оценка на моделите",
       evaluationTitle:
         "I risultati dei modelli sono visibili, confrontabili e collegati all'app.",
       evaluationDescription:
@@ -753,13 +753,13 @@ export const dictionaries = {
       classificationTitle: "Confronto modelli classification",
       classificationDescription:
         "F1 e AUC aiutano a confrontare il segnale della zona di revisione senza chiamarlo diagnosi.",
-      regressionHeaders: ["Modello", "Geometria", "Features", "MAE", "RMSE", "R²", "Ruolo app"],
+      regressionHeaders: ["Modello", "Geometria", "Характеристики", "MAE", "RMSE", "R²", "Ruolo app"],
       classificationHeaders: [
         "Modello",
         "Geometria",
-        "Accuracy",
-        "Precision",
-        "Recall",
+        "Точност",
+        "Прецизност",
+        "Обхват",
         "F1",
         "AUC",
         "Ruolo app",
@@ -768,12 +768,12 @@ export const dictionaries = {
       comparisonBaseline: "Baseline di confronto",
       bestCurrentSignal: "Migliore evidenza segnale attuale",
       boundaryComparison: "Confronto dei confini",
-      featureFormulaEyebrow: "Feature Logic",
+      featureFormulaEyebrow: "Логика на характеристиките",
       featureFormulaTitle:
         "Gli input dell’utente vengono convertiti in segnali pronti per il modello.",
       featureFormulaDescription:
         "Questa tabella rende esplicita la logica dei dati. L’app non nasconde la trasformazione tra input dell’utente e feature vector del modello.",
-      featureHeaders: ["Feature", "Formula", "Scopo"],
+      featureHeaders: ["Характеристика", "Formula", "Scopo"],
       derivedAppFeature: "feature derivata",
     },
     evidence: {
@@ -800,7 +800,7 @@ export const dictionaries = {
         uploadEyebrow: "Foto utente",
         uploadTitle: "Carica una foto per la preview di prontezza",
         uploadDescription:
-          "Questa prima versione mostra la foto e gli stati di prontezza al confronto. Prepara il livello UI per un futuro ML photo-quality gate.",
+          "Questa sezione mostra la foto e lo stato di prontezza, così l’utente capisce se l’immagine può essere usata per un confronto visuale affidabile.",
         dropTitle: "Carica foto del cane",
         dropDescription:
           "Usa prima una foto laterale chiara del corpo intero. Le versioni successive valideranno automaticamente l’immagine prima del confronto.",
@@ -809,7 +809,7 @@ export const dictionaries = {
           label: "In attesa",
           title: "Nessuna foto caricata.",
           description:
-            "Carica una foto per vedere come il futuro photo-quality gate guiderà il processo di confronto.",
+            "Carica una foto per vedere come il controllo qualità guida il processo di confronto.",
         },
         readiness: {
           accepted: {

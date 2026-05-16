@@ -110,3 +110,30 @@ textarea {
   background: rgba(246, 216, 120, 0.075);
   color: rgba(255, 247, 214, 0.92);
 }
+
+/* Step 33.4: language and card readability lock */
+.usg-lab-surface,
+.usg-lab-surface *,
+article,
+section {
+  min-width: 0;
+}
+
+.usg-lab-surface p,
+.usg-lab-surface h1,
+.usg-lab-surface h2,
+.usg-lab-surface h3,
+.usg-lab-surface h4,
+article p,
+article h2,
+article h3,
+article h4,
+table td,
+table th {
+  overflow-wrap: anywhere;
+}
+
+.usg-readable-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}

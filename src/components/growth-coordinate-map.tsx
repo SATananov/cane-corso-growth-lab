@@ -1,4 +1,35 @@
+"use client";
+
 import type { GrowthPrediction } from "@/lib/growth-model";
+import { useLanguage } from "@/lib/i18n/language-context";
+import type { LanguageCode } from "@/lib/i18n/languages";
+
+const copy: Record<LanguageCode, { eyebrow: string; title: string; description: string; progress: string; age: string; weight: string }> = {
+  en: {
+    eyebrow: "Coordinate Growth Map",
+    title: "Dog as a point. Growth as a curve.",
+    description: "X-axis is age. Y-axis is weight. The highlighted point is the current dog profile compared to an educational reference curve.",
+    progress: "growth progress",
+    age: "Age months",
+    weight: "Weight kg",
+  },
+  bg: {
+    eyebrow: "Координатна карта",
+    title: "Кучето е точка, растежът е крива.",
+    description: "Хоризонталната ос е възрастта, вертикалната ос е теглото. Осветената точка е текущият профил спрямо образователната референтна крива.",
+    progress: "прогрес на растежа",
+    age: "Възраст в месеци",
+    weight: "Тегло kg",
+  },
+  it: {
+    eyebrow: "Mappa coordinata",
+    title: "Il cane è un punto, la crescita è una curva.",
+    description: "L’asse orizzontale è l’età, quello verticale è il peso. Il punto evidenziato è il profilo attuale rispetto alla curva educativa di riferimento.",
+    progress: "progresso crescita",
+    age: "Età mesi",
+    weight: "Peso kg",
+  },
+};
 
 type GrowthCoordinateMapProps = {
   prediction: GrowthPrediction;
@@ -10,6 +41,8 @@ function scale(value: number, min: number, max: number, outputMin: number, outpu
 }
 
 export function GrowthCoordinateMap({ prediction }: GrowthCoordinateMapProps) {
+  const { language } = useLanguage();
+  const t = copy[language];
   const width = 620;
   const height = 360;
   const chart = {
@@ -48,19 +81,18 @@ export function GrowthCoordinateMap({ prediction }: GrowthCoordinateMapProps) {
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="text-xs uppercase tracking-[0.25em] text-amber-300/70">
-            Coordinate Growth Map
+            {t.eyebrow}
           </p>
           <h3 className="mt-2 text-2xl font-semibold text-white">
-            Dog as a point. Growth as a curve.
+            {t.title}
           </h3>
           <p className="mt-2 text-sm leading-6 text-stone-400">
-            X-axis is age. Y-axis is weight. The highlighted point is the current
-            dog profile compared to an educational reference curve.
+            {t.description}
           </p>
         </div>
 
         <div className="hidden rounded-full border border-amber-200/15 px-4 py-2 text-sm text-amber-100/80 sm:block">
-          {prediction.growthProgressPercent}% growth progress
+          {prediction.growthProgressPercent}% {t.progress}
         </div>
       </div>
 
@@ -191,7 +223,7 @@ export function GrowthCoordinateMap({ prediction }: GrowthCoordinateMapProps) {
           />
 
           <text x={chart.left} y={height - 8} fill="rgb(168 162 158)" fontSize="13">
-            Age in months
+            {t.age}
           </text>
           <text
             x="18"
@@ -200,7 +232,7 @@ export function GrowthCoordinateMap({ prediction }: GrowthCoordinateMapProps) {
             fontSize="13"
             transform={`rotate(-90 18 ${chart.top + 10})`}
           >
-            Weight kg
+            {t.weight}
           </text>
         </svg>
       </div>

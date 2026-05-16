@@ -1,69 +1,97 @@
-import type { GrowthPrediction } from "@/lib/growth-model";
+"use client";
 
-export type ModelBridgePanelProps = {
-  prediction: GrowthPrediction;
+import type { GrowthPrediction } from "@/lib/growth-model";
+import { useLanguage } from "@/lib/i18n/language-context";
+import type { LanguageCode } from "@/lib/i18n/languages";
+
+export type ModelBridgePanelProps = { prediction: GrowthPrediction };
+
+const copy: Record<LanguageCode, {
+  eyebrow: string;
+  title: string;
+  description: string;
+  regression: string;
+  classification: string;
+  featureVector: string;
+  liveSignals: string;
+  safety: string;
+  safetyText: string;
+}> = {
+  en: {
+    eyebrow: "App Model Bridge",
+    title: "Notebook evidence connected to the calculator.",
+    description:
+      "The live app does not run a heavy Python model in the browser yet. It uses exported ML evidence, model metrics and a calibrated TypeScript bridge so the calculator remains fast, visible and safe.",
+    regression: "Regression evidence",
+    classification: "Classification evidence",
+    featureVector: "Feature vector",
+    liveSignals: "Live signals",
+    safety: "Safety boundary",
+    safetyText: "The bridge provides orientation only and does not replace professional assessment.",
+  },
+  bg: {
+    eyebrow: "Връзка между модел и приложение",
+    title: "Доказателствата от notebook-ите са свързани с проверката.",
+    description:
+      "Живото приложение още не изпълнява тежък Python модел в браузъра. То използва експортирани ML резултати, метрики и калибриран TypeScript слой, за да остане бързо, видимо и безопасно.",
+    regression: "Regression доказателство",
+    classification: "Classification доказателство",
+    featureVector: "Вектор от характеристики",
+    liveSignals: "Живи сигнали",
+    safety: "Граница за безопасност",
+    safetyText: "Този слой дава само ориентация и не замества професионална оценка.",
+  },
+  it: {
+    eyebrow: "Ponte modello-app",
+    title: "Le evidenze dei notebook sono collegate al controllo.",
+    description:
+      "L’app live non esegue ancora un modello Python pesante nel browser. Usa evidenze ML esportate, metriche e un ponte TypeScript calibrato per restare veloce, visibile e sicura.",
+    regression: "Evidenza Regression",
+    classification: "Evidenza Classification",
+    featureVector: "Vettore caratteristiche",
+    liveSignals: "Segnali live",
+    safety: "Limite di sicurezza",
+    safetyText: "Questo livello offre solo orientamento e non sostituisce una valutazione professionale.",
+  },
 };
 
 export function ModelBridgePanel({ prediction }: ModelBridgePanelProps) {
+  const { language } = useLanguage();
+  const t = copy[language];
   const bridge = prediction.modelBridge;
 
   return (
     <section className="rounded-[2rem] border border-amber-200/10 bg-black/25 p-5">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.25em] text-amber-300/70">
-            App Model Bridge
-          </p>
-          <h3 className="mt-2 text-2xl font-semibold text-white">
-            Notebook evidence connected to the calculator.
-          </h3>
-          <p className="mt-2 max-w-3xl text-sm leading-6 text-stone-400">
-            The live app does not run a heavy Python model in the browser yet. It
-            uses exported ML evidence, model metrics and a calibrated TypeScript
-            bridge so the calculator remains fast, visible and safe.
-          </p>
+          <p className="text-xs uppercase tracking-[0.25em] text-amber-300/70">{t.eyebrow}</p>
+          <h3 className="mt-2 text-2xl font-semibold text-white">{t.title}</h3>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-stone-400">{t.description}</p>
         </div>
-
-        <div className="w-fit rounded-full border border-amber-200/15 bg-amber-300/10 px-4 py-2 text-sm font-semibold text-amber-100">
-          {bridge.version}
-        </div>
+        <div className="w-fit rounded-full border border-amber-200/15 bg-amber-300/10 px-4 py-2 text-sm font-semibold text-amber-100">{bridge.version}</div>
       </div>
 
       <div className="mt-5 grid gap-4 lg:grid-cols-2">
-        <EvidenceCard
-          title={bridge.regression.modelName}
-          label="Regression evidence"
-          metric={bridge.regression.evidenceMetric}
-          detail={bridge.regression.appUsage}
-        />
-        <EvidenceCard
-          title={bridge.classification.modelName}
-          label="Classification evidence"
-          metric={bridge.classification.evidenceMetric}
-          detail={bridge.classification.appUsage}
-        />
+        <EvidenceCard title={bridge.regression.modelName} label={t.regression} metric={bridge.regression.evidenceMetric} detail={bridge.regression.appUsage} />
+        <EvidenceCard title={bridge.classification.modelName} label={t.classification} metric={bridge.classification.evidenceMetric} detail={bridge.classification.appUsage} />
       </div>
 
       <div className="mt-5 grid gap-5 xl:grid-cols-[0.95fr_1.05fr]">
-        <BridgeList title="Feature vector" items={bridge.featureVector} />
-        <BridgeList title="Live signals" items={bridge.appSignals} />
+        <BridgeList title={t.featureVector} items={bridge.featureVector} />
+        <BridgeList title={t.liveSignals} items={bridge.appSignals} />
       </div>
 
       <div className="mt-5 rounded-2xl border border-amber-200/10 bg-amber-300/[0.05] p-4">
-        <p className="text-sm font-semibold text-amber-100">Safety boundary</p>
-        <p className="mt-2 text-sm leading-6 text-stone-400">{bridge.safetyNote}</p>
+        <p className="text-sm font-semibold text-amber-100">{t.safety}</p>
+        <p className="mt-2 text-sm leading-6 text-stone-400">
+          {language === "en" ? bridge.safetyNote : t.safetyText}
+        </p>
       </div>
     </section>
   );
 }
 
-type EvidenceCardProps = {
-  title: string;
-  label: string;
-  metric: string;
-  detail: string;
-};
-
+type EvidenceCardProps = { title: string; label: string; metric: string; detail: string };
 function EvidenceCard({ title, label, metric, detail }: EvidenceCardProps) {
   return (
     <article className="rounded-2xl border border-stone-700 bg-white/[0.03] p-5">
@@ -75,25 +103,14 @@ function EvidenceCard({ title, label, metric, detail }: EvidenceCardProps) {
   );
 }
 
-type BridgeListProps = {
-  title: string;
-  items: {
-    label: string;
-    value: string;
-    detail: string;
-  }[];
-};
-
+type BridgeListProps = { title: string; items: { label: string; value: string; detail: string }[] };
 function BridgeList({ title, items }: BridgeListProps) {
   return (
     <div className="rounded-2xl border border-stone-700 bg-white/[0.03] p-5">
       <h4 className="text-lg font-semibold text-white">{title}</h4>
       <div className="mt-4 grid gap-3">
         {items.map((item) => (
-          <div
-            key={`${item.label}-${item.value}`}
-            className="rounded-2xl border border-stone-800 bg-black/20 p-4"
-          >
+          <div key={`${item.label}-${item.value}`} className="rounded-2xl border border-stone-800 bg-black/20 p-4">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-sm font-semibold text-white">{item.label}</p>
               <p className="font-mono text-sm text-amber-100/80">{item.value}</p>
