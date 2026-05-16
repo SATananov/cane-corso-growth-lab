@@ -3,6 +3,7 @@ import { ImageDatasetStructurePanel } from "@/components/image-dataset-structure
 import { ImageSourceAcquisitionPanel } from "@/components/image-source-acquisition-panel";
 import { PageHero } from "@/components/page-hero";
 import { PageShell } from "@/components/page-shell";
+import { PhotoReadinessModelPanel } from "@/components/photo-readiness-model-panel";
 import { VisionDatasetReadinessPanel } from "@/components/vision-dataset-readiness-panel";
 import { VisualReviewWorkspace } from "@/components/visual-review-workspace";
 
@@ -21,6 +22,7 @@ export default function VisualReviewPage() {
         <ImageSourceAcquisitionPanel />
         <BreedClassifierTrainingPanel />
         <VisionDatasetReadinessPanel />
+        <PhotoReadinessModelPanel />
       </div>
     </PageShell>
   );
