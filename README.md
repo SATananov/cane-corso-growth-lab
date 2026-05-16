@@ -23,6 +23,7 @@ The current version includes:
 - prediction summary panel
 - coordinate-based growth map concept
 - ML experiments page
+- dataset explorer page for ML transparency
 - imported notebook research foundation
 - model metrics summary inside the app
 - Research Gallery with ML visual evidence inside `/experiments`
@@ -43,6 +44,7 @@ The current version includes:
 ```txt
 /             Home / product concept
 /calculator   Growth calculator and prediction panel
+/data         Dataset explorer and ML data overview
 /experiments  ML experiment overview and imported research foundation
 /about        Scope, limitations and project direction
 ```
@@ -76,6 +78,20 @@ src/components/research-figure-gallery.tsx
 src/lib/ml/research-gallery.ts
 ```
 
+
+## Dataset Explorer
+
+The `/data` page explains the datasets that support the ML layer. It summarizes:
+
+- prototype Cane Corso growth sample
+- processed public growth sample
+- growth classification sample
+- row and column counts
+- key fields used by the experiments
+- safe preview rows
+- raw-data policy and educational-use limits
+
+The goal is transparency: the app should show what data it uses before it asks the user to trust a model result.
 
 ## Research Gallery
 

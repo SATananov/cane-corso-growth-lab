@@ -22,6 +22,11 @@ export const appNavigation = [
     description: "Interactive growth point",
   },
   {
+    label: "Data",
+    href: "/data",
+    description: "Dataset explorer",
+  },
+  {
     label: "Experiments",
     href: "/experiments",
     description: "ML foundation",
