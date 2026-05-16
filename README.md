@@ -221,6 +221,19 @@ Step 12 adds dimensionality reduction. The calculator now includes a PCA-style 2
 
 This strengthens the core idea: growth can be studied geometrically as points, distances, clusters and projections.
 
+## MLflow tracking concept
+
+Step 13 adds an MLflow-ready tracking layer. The `/experiments` page now shows run summaries for regression, classification and clustering candidates.
+
+The optional script can log experiment summaries when MLflow is installed:
+
+```bash
+pip install -r requirements-mlflow.txt
+python scripts/ml/run_mlflow_tracking_demo.py
+```
+
+If MLflow is not installed, the script prints the tracking payload instead of failing.
+
 ## Important limitation
 
 This project is an educational machine learning and visualization experiment.

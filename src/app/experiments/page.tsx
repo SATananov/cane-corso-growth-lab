@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { AppModelBridgeSummary } from "@/components/app-model-bridge-summary";
 import { GrowthClusterOverview } from "@/components/growth-cluster-overview";
 import { MlExperimentGrid } from "@/components/ml-experiment-grid";
+import { MlflowTrackingPanel } from "@/components/mlflow-tracking-panel";
 import { MlResearchSummary } from "@/components/ml-research-summary";
 import { PageHero } from "@/components/page-hero";
 import { PcaExperimentPanel } from "@/components/pca-experiment-panel";
@@ -45,6 +46,8 @@ export default function ExperimentsPage() {
         <GrowthClusterOverview />
 
         <PcaExperimentPanel />
+
+        <MlflowTrackingPanel />
 
         <section className="rounded-[2rem] border border-amber-200/10 bg-white/[0.035] p-6">
           <p className="text-sm uppercase tracking-[0.25em] text-amber-300/70">
