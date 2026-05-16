@@ -97,6 +97,29 @@ src/lib/ml/image-dataset-labeling.ts
 
 This step does not train a neural network yet. It prepares the structure needed to train the future photo readiness classifier, breed/type classifier and visual similarity model.
 
+
+
+## Photo Quality Gate
+
+Step 23 adds a comparison-readiness gate inside `/visual-review`.
+
+Before a future visual Cane Corso match score is allowed, the uploaded photo must be evaluated as:
+
+- **Accepted** — suitable for visual geometry comparison;
+- **Limited** — usable only with a visible reliability warning;
+- **Rejected** — not suitable; the app should block the visual match score and ask for a new photo.
+
+The current implementation is checklist-based. This defines the labels and warning behavior for the future neural photo-readiness model.
+
+The gate logic lives in:
+
+```txt
+src/lib/ml/photo-quality-gate.ts
+src/components/photo-quality-gate-panel.tsx
+data/reference/photo-quality-gate-rules.json
+docs/ml/photo-quality-gate-warning-system.md
+```
+
 ## Machine learning foundation
 
 The repository now includes the ML research base:

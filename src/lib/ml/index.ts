@@ -14,3 +14,4 @@ export * from "./final-evidence";
 export * from "./breed-reference-geometry";
 export * from "./photo-comparison-criteria";
 export * from "@/lib/ml/image-dataset-labeling";
+export * from "./photo-quality-gate";

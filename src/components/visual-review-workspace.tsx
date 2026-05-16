@@ -3,6 +3,7 @@
 import { ChangeEvent, useMemo, useState } from "react";
 import { CaneCorsoReferenceSilhouette } from "@/components/cane-corso-reference-silhouette";
 import { PhotoGuidePanel } from "@/components/photo-guide-panel";
+import { PhotoQualityGatePanel } from "@/components/photo-quality-gate-panel";
 import { photoReadinessRules, visualComparisonWorkflow } from "@/lib/ml/photo-comparison-criteria";
 import { useLanguage } from "@/lib/i18n/language-context";
 
@@ -129,6 +130,11 @@ export function VisualReviewWorkspace() {
               </div>
             ) : null}
           </div>
+
+          <PhotoQualityGatePanel
+            hasPhoto={Boolean(previewUrl)}
+            onReadinessChange={setReadiness}
+          />
         </div>
       </section>
 
