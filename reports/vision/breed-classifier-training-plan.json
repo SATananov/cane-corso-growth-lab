@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "title": "Breed Classifier Training Notebook Plan",
+  "pipeline": [
+    {
+      "stage": "photo_readiness",
+      "goal": "Reject unsuitable photos before visual comparison."
+    },
+    {
+      "stage": "photo_type",
+      "goal": "Detect side body, front body, head profile, head front or unsuitable images."
+    },
+    {
+      "stage": "breed_classifier",
+      "goal": "Classify Cane Corso vs similar and negative dog classes."
+    },
+    {
+      "stage": "visual_similarity",
+      "goal": "Compare the image embedding to a curated Cane Corso reference set."
+    },
+    {
+      "stage": "geometry_fusion",
+      "goal": "Combine photo quality, breed classifier, similarity and geometry signals into an explainable visual match score."
+    }
+  ],
+  "recommended_backbones": [
+    "MobileNetV3",
+    "EfficientNet-B0",
+    "ResNet50"
+  ],
+  "first_prototype_approach": "Use transfer learning and keep the model as an experiment until a reviewed image dataset exists.",
+  "safe_output_label": "Visual Cane Corso Match",
+  "unsafe_output_label": "Breed purity percentage"
+}

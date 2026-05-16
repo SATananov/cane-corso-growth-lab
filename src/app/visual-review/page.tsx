@@ -1,24 +1,24 @@
-import type { Metadata } from "next";
-import { PageHero } from "@/components/page-hero";
-import { PageShell } from "@/components/page-shell";
+import { BreedClassifierTrainingPanel } from "@/components/breed-classifier-training-panel";
 import { ImageDatasetStructurePanel } from "@/components/image-dataset-structure-panel";
 import { ImageSourceAcquisitionPanel } from "@/components/image-source-acquisition-panel";
+import { PageHero } from "@/components/page-hero";
+import { PageShell } from "@/components/page-shell";
 import { VisualReviewWorkspace } from "@/components/visual-review-workspace";
-
-export const metadata: Metadata = {
-  title: "Visual Review | Cane Corso Growth Geometry Lab",
-  description:
-    "Photo guide and visual comparison workspace for future Cane Corso image-based geometry review.",
-};
 
 export default function VisualReviewPage() {
   return (
     <PageShell>
-      <div className="grid gap-8">
-        <PageHero copyKey="visualReview" />
+      <PageHero
+        eyebrow="Visual ML"
+        title="Photo guide, quality gate and breed classifier training plan."
+        description="This workspace prepares the visual side of the app: first the photo must be suitable, then the image can be compared with Cane Corso reference geometry and future neural vision models."
+      />
+
+      <div className="space-y-8">
         <VisualReviewWorkspace />
         <ImageDatasetStructurePanel />
         <ImageSourceAcquisitionPanel />
+        <BreedClassifierTrainingPanel />
       </div>
     </PageShell>
   );
