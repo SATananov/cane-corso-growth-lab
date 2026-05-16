@@ -8,6 +8,7 @@ import { PageShell } from "@/components/page-shell";
 import { PhotoReadinessModelPanel } from "@/components/photo-readiness-model-panel";
 import { VisionDatasetReadinessPanel } from "@/components/vision-dataset-readiness-panel";
 import { VisualBreedClassifierPanel } from "@/components/visual-breed-classifier-panel";
+import { VisualMatchResultContractPanel } from "@/components/visual-match-result-contract-panel";
 import { VisualReviewWorkspace } from "@/components/visual-review-workspace";
 import { VisualSimilarityPanel } from "@/components/visual-similarity-panel";
 
@@ -31,6 +32,7 @@ export default function VisualReviewPage() {
         <PhotoReadinessModelPanel />
         <VisualBreedClassifierPanel />
         <VisualSimilarityPanel />
+        <VisualMatchResultContractPanel />
       </div>
     </PageShell>
   );

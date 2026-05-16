@@ -547,3 +547,36 @@ python scripts/ml/validate_demo_image_set_plan.py
 ```
 
 This keeps the future visual model honest: the app can demonstrate photo readiness, breed classifier planning, visual similarity and geometry overlay while clearly stating that visual output is similarity-based and not proof of breed purity, pedigree, genetics or official registration.
+
+## Step 33 — Visual Match Result Contract
+
+The visual ML direction now defines the final result contract for a future visual Cane Corso similarity score. The score is shown only after the photo quality gate allows comparison.
+
+Contract formula:
+
+```txt
+match = gate(readiness) × (
+  0.35 × classifier_signal
+  + 0.30 × embedding_similarity
+  + 0.25 × geometry_closeness
+  + 0.10 × confidence_adjustment
+)
+```
+
+Behavior:
+
+- accepted photo: score can be shown with the normal visual-similarity caveat;
+- limited photo: score can be shown with reliability warning and confidence penalty;
+- rejected photo: score is blocked and the user must upload a better image.
+
+Key files:
+
+```txt
+src/lib/ml/visual-match-result-contract.ts
+src/components/visual-match-result-contract-panel.tsx
+reports/vision/visual-match-result-contract.json
+scripts/ml/run_visual_match_result_contract.py
+notebooks/11_visual_match_result_contract.ipynb
+```
+
+The result remains a visual similarity signal only. It does not prove breed purity, pedigree, genetic origin, health or official registration.

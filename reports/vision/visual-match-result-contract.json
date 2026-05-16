@@ -1,0 +1,48 @@
+{
+  "name": "Visual Match Result Contract",
+  "version": "0.1",
+  "status": "prototype_contract",
+  "purpose": "Define the final visual result behavior before a real trained neural vision model is available.",
+  "formula": "match = gate(readiness) * (0.35 * classifier_signal + 0.30 * embedding_similarity + 0.25 * geometry_closeness + 0.10 * confidence_adjustment)",
+  "weights": {
+    "classifier_signal": 0.35,
+    "embedding_similarity": 0.3,
+    "geometry_closeness": 0.25,
+    "confidence_adjustment": 0.1
+  },
+  "gate_rules": {
+    "accepted": "Score can be shown with normal caveat.",
+    "limited": "Score can be shown with reliability warning and confidence penalty.",
+    "rejected": "Score must be blocked. Ask for a new photo."
+  },
+  "demo_scenarios": [
+    {
+      "id": "accepted_high_match",
+      "readiness": "accepted",
+      "classifier_signal": 0.86,
+      "embedding_similarity": 0.82,
+      "geometry_closeness": 0.78,
+      "confidence_adjustment": 0.9,
+      "expected_score_percent": 83.2
+    },
+    {
+      "id": "limited_medium_match",
+      "readiness": "limited",
+      "classifier_signal": 0.74,
+      "embedding_similarity": 0.69,
+      "geometry_closeness": 0.62,
+      "confidence_adjustment": 0.58,
+      "expected_score_percent": 59.8
+    },
+    {
+      "id": "rejected_photo_blocked",
+      "readiness": "rejected",
+      "classifier_signal": 0.8,
+      "embedding_similarity": 0.75,
+      "geometry_closeness": 0.66,
+      "confidence_adjustment": 0.2,
+      "expected_score_percent": null
+    }
+  ],
+  "safety_boundary": "The result is a visual similarity signal only. It does not prove breed purity, pedigree, genetic origin, health or official registration."
+}
