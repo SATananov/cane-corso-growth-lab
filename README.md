@@ -248,6 +248,30 @@ Step 14 adds `/course`, a final mapping between the app and the ML course topics
 
 This page makes it easier to present the project as a course-aligned app rather than only a collection of notebooks.
 
+
+## Final evidence polish
+
+Step 15 adds the final visual-and-logical evidence layer. The app now includes:
+
+- formula tables in the calculator;
+- regression and classification evaluation tables in `/experiments`;
+- feature formula table in `/data`;
+- final evidence matrix in `/course`;
+- clearer links between raw inputs, engineered features, model metrics, visual maps and safe owner-facing explanations.
+
+Core formulas made visible in the UI:
+
+```txt
+growth_progress = f(age_months)
+expected_weight_now = adult_reference_weight × growth_progress
+curve_delta_% = ((current_weight - expected_weight_now) / expected_weight_now) × 100
+estimated_adult_weight = current_weight / growth_progress
+weight_height_ratio = weight_kg / height_cm
+bcs_deviation = |body_condition_score - 5| / 4
+```
+
+The goal is to make the project easier to understand during review: the user can see the data, the formulas, the tables, the visual maps and the final safety boundary in the app itself.
+
 ## Important limitation
 
 This project is an educational machine learning and visualization experiment.

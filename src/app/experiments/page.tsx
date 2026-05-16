@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { AppModelBridgeSummary } from "@/components/app-model-bridge-summary";
 import { GrowthClusterOverview } from "@/components/growth-cluster-overview";
 import { MlExperimentGrid } from "@/components/ml-experiment-grid";
+import { ModelEvaluationTables } from "@/components/model-evaluation-tables";
 import { MlflowTrackingPanel } from "@/components/mlflow-tracking-panel";
 import { MlResearchSummary } from "@/components/ml-research-summary";
 import { PageHero } from "@/components/page-hero";
@@ -40,6 +41,8 @@ export default function ExperimentsPage() {
         <MlResearchSummary />
 
         <AppModelBridgeSummary />
+
+        <ModelEvaluationTables />
 
         <ResearchFigureGallery />
 

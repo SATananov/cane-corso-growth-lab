@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DatasetExplorerSummary } from "@/components/dataset-explorer-summary";
 import { FeatureEngineeringSummary } from "@/components/feature-engineering-summary";
+import { FeatureFormulaTable } from "@/components/feature-formula-table";
 import { DatasetOverviewCard } from "@/components/dataset-overview-card";
 import { PageHero } from "@/components/page-hero";
 import { PageShell } from "@/components/page-shell";
@@ -26,6 +27,8 @@ export default function DataOverviewPage() {
         <DatasetExplorerSummary />
 
         <FeatureEngineeringSummary />
+
+        <FeatureFormulaTable />
 
         <section className="grid gap-6">
           {datasetOverview.map((dataset) => (
