@@ -152,32 +152,6 @@ To validate the source catalog:
 python scripts/ml/validate_image_source_catalog.py
 ```
 
-
-
-## Dataset Acquisition Checklist
-
-Step 31 adds a starter acquisition manifest before real image training begins.
-
-The visual model must not learn from random downloads. Every candidate image should first be recorded with source, license/permission status, breed label, view type, quality label, comparison readiness and split status.
-
-Key files:
-
-```txt
-data/images/labels/dataset-acquisition-starter-manifest.csv
-data/images/labels/dataset-acquisition-checklist.json
-scripts/ml/validate_dataset_acquisition_manifest.py
-src/lib/ml/dataset-acquisition-checklist.ts
-src/components/dataset-acquisition-checklist-panel.tsx
-```
-
-Validation:
-
-```bash
-python scripts/ml/validate_dataset_acquisition_manifest.py
-```
-
-The expected status is `training_ready: False` until a real licensed and labeled image dataset exists.
-
 ## Machine learning foundation
 
 The repository now includes the ML research base:
@@ -555,3 +529,21 @@ notebooks/08_visual_breed_classifier.ipynb
 scripts/ml/train_visual_breed_classifier.py
 reports/vision/visual-breed-classifier-plan.json
 ```
+
+## Step 32 — Small Curated Demo Image Set Plan
+
+The visual ML direction now includes a starter plan for a small curated image set. The repository stores the manifest, labels and validation logic, but does not include raw images unless licensing and permission checks allow inclusion.
+
+The first planned demo milestone is:
+
+- 12 licensed Cane Corso reference examples;
+- 12 licensed similar molosser hard-negative examples;
+- 12 unsuitable-photo examples for the photo quality gate.
+
+Validation:
+
+```bash
+python scripts/ml/validate_demo_image_set_plan.py
+```
+
+This keeps the future visual model honest: the app can demonstrate photo readiness, breed classifier planning, visual similarity and geometry overlay while clearly stating that visual output is similarity-based and not proof of breed purity, pedigree, genetics or official registration.
