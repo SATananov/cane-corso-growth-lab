@@ -1,4 +1,5 @@
 import { BreedClassifierTrainingPanel } from "@/components/breed-classifier-training-panel";
+import { DatasetAcquisitionChecklistPanel } from "@/components/dataset-acquisition-checklist-panel";
 import { ImageDatasetStructurePanel } from "@/components/image-dataset-structure-panel";
 import { ImageSourceAcquisitionPanel } from "@/components/image-source-acquisition-panel";
 import { PageHero } from "@/components/page-hero";
@@ -22,6 +23,7 @@ export default function VisualReviewPage() {
         <VisualReviewWorkspace />
         <ImageDatasetStructurePanel />
         <ImageSourceAcquisitionPanel />
+        <DatasetAcquisitionChecklistPanel />
         <BreedClassifierTrainingPanel />
         <VisionDatasetReadinessPanel />
         <PhotoReadinessModelPanel />

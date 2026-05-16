@@ -152,6 +152,32 @@ To validate the source catalog:
 python scripts/ml/validate_image_source_catalog.py
 ```
 
+
+
+## Dataset Acquisition Checklist
+
+Step 31 adds a starter acquisition manifest before real image training begins.
+
+The visual model must not learn from random downloads. Every candidate image should first be recorded with source, license/permission status, breed label, view type, quality label, comparison readiness and split status.
+
+Key files:
+
+```txt
+data/images/labels/dataset-acquisition-starter-manifest.csv
+data/images/labels/dataset-acquisition-checklist.json
+scripts/ml/validate_dataset_acquisition_manifest.py
+src/lib/ml/dataset-acquisition-checklist.ts
+src/components/dataset-acquisition-checklist-panel.tsx
+```
+
+Validation:
+
+```bash
+python scripts/ml/validate_dataset_acquisition_manifest.py
+```
+
+The expected status is `training_ready: False` until a real licensed and labeled image dataset exists.
+
 ## Machine learning foundation
 
 The repository now includes the ML research base:

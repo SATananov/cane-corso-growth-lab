@@ -22,3 +22,4 @@ export * from "./photo-readiness-model";
 export * from "./visual-breed-classifier";
 export * from "./visual-similarity";
 export * from "./geometry-overlay-comparison";
+export * from "./dataset-acquisition-checklist";
