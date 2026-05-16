@@ -1,7 +1,6 @@
 export const appCopy = {
   name: "Cane Corso Growth Geometry Lab",
   shortName: "Growth Lab",
-  version: "v0.1 Lab",
   eyebrow: "Experimental ML Growth App",
   headline:
     "Visualize Cane Corso growth through coordinates, curves and machine learning.",
@@ -9,35 +8,27 @@ export const appCopy = {
     "A separate experimental app for exploring Cane Corso growth patterns with regression, classification and geometry-based visual thinking.",
   disclaimer:
     "This project is an educational machine learning experiment. It is not a veterinary diagnostic system and does not replace professional veterinary advice.",
-  primaryAction: "Explore Growth Map",
-  secondaryAction: "View ML Foundation",
 };
 
-export const mlFoundationCards = [
+export const appNavigation = [
   {
-    title: "Linear Regression",
-    description:
-      "Uses simple relationships such as age and weight to explain a first growth prediction line.",
+    label: "Home",
+    href: "/",
+    description: "Project overview",
   },
   {
-    title: "Polynomial Regression",
-    description:
-      "Adds a curved growth trajectory for a more natural visual interpretation of development.",
+    label: "Calculator",
+    href: "/calculator",
+    description: "Interactive growth point",
   },
   {
-    title: "Classification Zones",
-    description:
-      "Frames growth status as educational review zones instead of medical diagnosis.",
+    label: "Experiments",
+    href: "/experiments",
+    description: "ML foundation",
   },
   {
-    title: "Future Clustering",
-    description:
-      "Prepares the project for grouping similar growth profiles inside a coordinate space.",
+    label: "About",
+    href: "/about",
+    description: "Scope and limits",
   },
-];
-
-export const growthStats = [
-  { label: "Model", value: "Regression" },
-  { label: "Signal", value: "Growth Zone" },
-  { label: "Status", value: "Educational" },
 ];
