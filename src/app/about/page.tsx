@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/page-hero";
 import { PageShell } from "@/components/page-shell";
+import { UsgLabVisualSystemPanel } from "@/components/usg-lab-visual-system-panel";
 import { appCopy } from "@/lib/app-copy";
 
 export const metadata: Metadata = {
@@ -37,8 +38,10 @@ export default function AboutPage() {
           badge="Separate repo"
         />
 
+        <UsgLabVisualSystemPanel />
+
         <div className="grid gap-5 lg:grid-cols-2">
-          <section className="rounded-[2rem] border border-amber-200/10 bg-white/[0.035] p-6">
+          <section className="usg-lab-surface rounded-[2rem] p-6">
             <p className="text-sm uppercase tracking-[0.25em] text-amber-300/70">
               Technology Direction
             </p>
@@ -54,7 +57,7 @@ export default function AboutPage() {
             </div>
           </section>
 
-          <section className="rounded-[2rem] border border-amber-200/10 bg-white/[0.035] p-6">
+          <section className="usg-lab-surface rounded-[2rem] p-6">
             <p className="text-sm uppercase tracking-[0.25em] text-amber-300/70">
               Product Boundaries
             </p>
@@ -71,7 +74,7 @@ export default function AboutPage() {
           </section>
         </div>
 
-        <section className="rounded-[2rem] border border-amber-200/10 bg-amber-300/[0.06] p-6">
+        <section className="usg-lab-surface rounded-[2rem] p-6">
           <p className="text-sm font-semibold text-amber-100">Important note</p>
           <p className="mt-3 max-w-4xl text-sm leading-7 text-stone-300">
             {appCopy.disclaimer}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { DogGrowthCalculator } from "@/components/dog-growth-calculator";
 import { MlExperimentGrid } from "@/components/ml-experiment-grid";
+import { UsgLabSeal } from "@/components/usg-lab-seal";
 import { PageShell } from "@/components/page-shell";
 import { appCopy } from "@/lib/app-copy";
 
@@ -9,17 +10,40 @@ export function AppShell() {
     <PageShell>
       <div className="grid flex-1 items-center gap-10 py-10 lg:grid-cols-[1.05fr_0.95fr]">
         <section>
-          <div className="mb-6 inline-flex rounded-full border border-amber-300/20 bg-amber-300/10 px-4 py-2 text-sm text-amber-100">
-            Coordinate-based growth intelligence
+          <div className="mb-6 flex flex-wrap items-center gap-3">
+            <div className="inline-flex rounded-full border border-amber-300/20 bg-amber-300/10 px-4 py-2 text-sm text-amber-100">
+              Coordinate-based growth intelligence
+            </div>
+            <div className="inline-flex rounded-full border border-amber-200/15 bg-black/30 px-4 py-2 text-sm text-stone-300">
+              USG-inspired lab interface
+            </div>
           </div>
 
-          <h2 className="max-w-4xl text-5xl font-semibold leading-tight tracking-tight text-white md:text-7xl">
-            {appCopy.headline}
-          </h2>
+          <div className="flex items-start gap-5">
+            <UsgLabSeal variant="large" className="hidden md:grid" />
+            <div>
+              <h2 className="max-w-4xl text-5xl font-semibold leading-tight tracking-tight text-white md:text-7xl">
+                {appCopy.headline}
+              </h2>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-300">
-            {appCopy.description}
-          </p>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-300">
+                {appCopy.description}
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 grid gap-3 sm:grid-cols-3">
+            {[
+              ["01", "Input"],
+              ["02", "Model"],
+              ["03", "Explain"],
+            ].map(([number, label]) => (
+              <div key={label} className="rounded-2xl border border-amber-200/10 bg-black/25 p-4">
+                <p className="text-xs uppercase tracking-[0.24em] text-amber-300/60">{number}</p>
+                <p className="mt-2 text-sm font-semibold text-white">{label}</p>
+              </div>
+            ))}
+          </div>
 
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
@@ -38,8 +62,8 @@ export function AppShell() {
           </div>
         </section>
 
-        <section className="rounded-[2rem] border border-amber-200/10 bg-white/[0.04] p-6 shadow-2xl shadow-black/30">
-          <div className="rounded-[1.5rem] border border-amber-200/10 bg-black/30 p-5">
+        <section className="usg-lab-surface rounded-[2rem] p-6">
+          <div className="relative z-10 rounded-[1.5rem] border border-amber-200/10 bg-black/30 p-5">
             <div className="mb-5 flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm uppercase tracking-[0.25em] text-amber-300/70">
@@ -137,7 +161,11 @@ export function AppShell() {
             future growth clusters.
           </p>
         </div>
-        <MlExperimentGrid />
+        <div className="usg-lab-surface rounded-[2rem] p-5">
+          <div className="relative z-10">
+            <MlExperimentGrid />
+          </div>
+        </div>
       </section>
     </PageShell>
   );

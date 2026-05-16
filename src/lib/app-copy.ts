@@ -1,11 +1,12 @@
 export const appCopy = {
   name: "Cane Corso Growth Geometry Lab",
   shortName: "Growth Lab",
-  eyebrow: "Experimental ML Growth App",
+  eyebrow: "USG-Inspired ML Growth Lab",
+  labSeal: "USG Lab",
   headline:
     "Visualize Cane Corso growth through coordinates, curves and machine learning.",
   description:
-    "A separate experimental app for exploring Cane Corso growth patterns with regression, classification and geometry-based visual thinking.",
+    "A separate experimental app for exploring Cane Corso growth patterns with regression, classification, clustering and geometry-based visual thinking.",
   disclaimer:
     "This project is an educational machine learning experiment. It is not a veterinary diagnostic system and does not replace professional veterinary advice.",
 };
@@ -14,7 +15,7 @@ export const appNavigation = [
   {
     label: "Home",
     href: "/",
-    description: "Project overview",
+    description: "Premium app overview",
   },
   {
     label: "Calculator",
@@ -29,16 +30,16 @@ export const appNavigation = [
   {
     label: "Experiments",
     href: "/experiments",
-    description: "ML foundation",
+    description: "ML evidence and figures",
   },
   {
     label: "Course",
     href: "/course",
-    description: "Course coverage",
+    description: "Course coverage roadmap",
   },
   {
     label: "About",
     href: "/about",
-    description: "Scope and limits",
+    description: "Scope, limits and visual system",
   },
 ];

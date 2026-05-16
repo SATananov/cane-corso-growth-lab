@@ -347,3 +347,10 @@ The main goals are:
 - to keep it separate from the main Cane Corso Platform;
 - to use the previous notebook project as a research foundation;
 - to create a future-ready concept that may later inspire a production module.
+
+
+## Step 16 — USG Lab Visual Lock
+
+The app now has a locked USG-inspired visual direction: dark graphite foundation, gold signal accents, ivory readability, premium glass-like cards and a clear lab identity. The design keeps the project connected to the USG aesthetic while preserving the educational boundary: this is an experimental ML growth lab, not a veterinary diagnostic product or official registry authority.
+
+The visual lock adds a reusable USG Lab seal, refined global background treatment, improved navigation, stronger hero panels, a premium footer disclaimer and an About-page visual system explanation.

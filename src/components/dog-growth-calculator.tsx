@@ -26,7 +26,7 @@ const initialInput: DogGrowthInput = {
 };
 
 const inputClass =
-  "mt-2 w-full rounded-2xl border border-stone-700 bg-black/30 px-4 py-3 text-sm text-white outline-none transition placeholder:text-stone-600 focus:border-amber-300/50 focus:ring-2 focus:ring-amber-300/10";
+  "mt-2 w-full rounded-2xl border border-amber-200/15 bg-black/35 px-4 py-3 text-sm text-white outline-none transition placeholder:text-stone-600 focus:border-amber-300/55 focus:ring-2 focus:ring-amber-300/10";
 
 export function DogGrowthCalculator() {
   const [input, setInput] = useState<DogGrowthInput>(initialInput);
@@ -67,8 +67,8 @@ export function DogGrowthCalculator() {
       </div>
 
       <div className="grid gap-5 xl:grid-cols-[0.85fr_1.15fr]">
-        <form className="rounded-[2rem] border border-amber-200/10 bg-white/[0.04] p-5 shadow-2xl shadow-black/20">
-          <div className="rounded-[1.5rem] border border-amber-200/10 bg-black/25 p-5">
+        <form className="usg-lab-surface rounded-[2rem] p-5">
+          <div className="relative z-10 rounded-[1.5rem] border border-amber-200/10 bg-black/25 p-5">
             <div className="mb-5 flex items-start justify-between gap-4">
               <div>
                 <p className="text-xs uppercase tracking-[0.25em] text-amber-300/70">
@@ -78,7 +78,7 @@ export function DogGrowthCalculator() {
                   Build the current growth point
                 </h3>
               </div>
-              <div className="rounded-full border border-amber-200/15 px-3 py-1 text-xs text-amber-100/75">
+              <div className="usg-lab-chip rounded-full px-3 py-1 text-xs font-semibold">
                 Live preview
               </div>
             </div>
