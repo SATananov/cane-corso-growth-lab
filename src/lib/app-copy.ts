@@ -16,6 +16,10 @@ export const appNavigation = [
     href: "/data",
   },
   {
+    key: "visualReview" as const,
+    href: "/visual-review",
+  },
+  {
     key: "experiments" as const,
     href: "/experiments",
   },

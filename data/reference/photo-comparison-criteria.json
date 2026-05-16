@@ -1,0 +1,41 @@
+{
+  "version": "0.1",
+  "purpose": "Photo guide and comparison-readiness criteria for future Cane Corso visual review modules.",
+  "photoTypes": [
+    {
+      "id": "side_body",
+      "label": "Side body",
+      "requiredFor": ["body_length_height_ratio", "chest_depth_height_ratio", "stance", "silhouette"]
+    },
+    {
+      "id": "front_body",
+      "label": "Front body",
+      "requiredFor": ["front_stance", "chest_width_impression", "symmetry"]
+    },
+    {
+      "id": "head_profile",
+      "label": "Head profile",
+      "requiredFor": ["muzzle_skull_ratio", "head_profile", "stop_impression"]
+    },
+    {
+      "id": "head_front",
+      "label": "Head front",
+      "requiredFor": ["head_width_impression", "muzzle_width_impression", "expression"]
+    }
+  ],
+  "readinessLevels": [
+    {
+      "level": "accepted",
+      "meaning": "Photo is suitable for visual comparison."
+    },
+    {
+      "level": "limited",
+      "meaning": "Photo can support only partial comparison with reliability warning."
+    },
+    {
+      "level": "rejected",
+      "meaning": "Photo should not be used for visual match scoring."
+    }
+  ],
+  "safetyBoundary": "The visual review can provide only visual similarity and proportion orientation. It cannot prove pedigree, breed purity, official status or health status."
+}

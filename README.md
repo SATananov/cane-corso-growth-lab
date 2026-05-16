@@ -39,6 +39,7 @@ The current version includes:
 - Research Gallery with ML visual evidence inside `/experiments`
 - scope and limitations page
 - educational safety disclaimer
+- visual photo guide and comparison-readiness workspace
 
 ## Tech stack
 
@@ -55,10 +56,24 @@ The current version includes:
 /             Home / product concept
 /calculator   Growth calculator and prediction panel
 /data         Dataset explorer and ML data overview
+/visual-review Photo guide and visual comparison workspace
 /experiments  ML experiment overview and imported research foundation
 /course       ML course coverage and final roadmap
 /about        Scope, limitations and project direction
 ```
+
+
+## Visual Review direction
+
+The `/visual-review` page prepares the future Computer Vision layer. It explains which Cane Corso photos are suitable for comparison, previews uploaded images and defines readiness states before any visual match score is allowed.
+
+The intended future workflow is:
+
+```txt
+photo guide → upload → photo quality gate → accepted/limited/rejected → geometry extraction → reference comparison → visual Cane Corso similarity
+```
+
+The result must remain a visual similarity signal. It cannot prove pedigree, breed purity, official registration or health status from a photo.
 
 ## Machine learning foundation
 

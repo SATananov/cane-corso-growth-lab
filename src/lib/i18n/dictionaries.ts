@@ -19,6 +19,7 @@ export const dictionaries = {
       home: "Home",
       calculator: "Growth Check",
       data: "Data & References",
+      visualReview: "Visual Review",
       experiments: "ML Methodology",
       course: "Project Evidence",
       about: "About",
@@ -26,6 +27,7 @@ export const dictionaries = {
         home: "App overview",
         calculator: "Run a growth orientation check",
         data: "Data sources and feature logic",
+        visualReview: "Photo guide and visual geometry workspace",
         experiments: "Models, metrics and visual evidence",
         course: "ML project evidence",
         about: "Scope, safety and technology",
@@ -78,6 +80,13 @@ export const dictionaries = {
         description:
           "This page explains the reference samples, processed data and engineered features used by the methodology layer. It keeps the app transparent: what is included, how each dataset is used and where the limits are.",
         badge: "Transparent data",
+      },
+      visualReview: {
+        eyebrow: "Visual Review",
+        title: "Prepare photos for fair Cane Corso geometry comparison.",
+        description:
+          "The visual workspace explains which photos are suitable, checks comparison readiness and prepares the future overlay between the Cane Corso reference geometry and the user's uploaded image.",
+        badge: "Photo criteria",
       },
       experiments: {
         eyebrow: "ML Methodology",
@@ -203,6 +212,70 @@ export const dictionaries = {
       },
       headers: ["Area", "App surface", "Evidence", "Why it matters"],
     },
+    visualReview: {
+      guide: {
+        eyebrow: "Photo guide",
+        title: "The model should only compare photos that match the criteria.",
+        description:
+          "Before a future neural model or visual match score is allowed, the app must know whether the photo is suitable. The guide defines what the user should upload and what the model should reject or mark as limited.",
+      },
+      criteria: {
+        title: "Comparison criteria",
+      },
+      workspace: {
+        uploadEyebrow: "User photo",
+        uploadTitle: "Upload a photo for readiness preview",
+        uploadDescription:
+          "This first version previews the photo and shows the comparison-readiness states. It prepares the UI for a future ML photo-quality gate.",
+        dropTitle: "Upload dog photo",
+        dropDescription:
+          "Use a clear side-body photo first. Later versions will validate the image automatically before comparison.",
+        readinessTitle: "Photo readiness",
+        emptyState: {
+          label: "Waiting",
+          title: "No photo uploaded yet.",
+          description:
+            "Upload a photo to preview how the future photo-quality gate will guide the comparison workflow.",
+        },
+        readiness: {
+          accepted: {
+            label: "Accepted",
+            title: "The photo is suitable for comparison.",
+            description:
+              "The image follows the criteria closely enough for a visual geometry comparison workspace.",
+          },
+          limited: {
+            label: "Limited",
+            title: "The photo may support only partial comparison.",
+            description:
+              "The image can be previewed, but a future model should warn that the result may be less reliable.",
+          },
+          rejected: {
+            label: "Rejected",
+            title: "The photo does not meet the comparison criteria.",
+            description:
+              "Upload a new image: full dog, correct angle, natural stance, clear light and minimal perspective distortion.",
+          },
+        },
+      },
+      overlay: {
+        eyebrow: "Overlay concept",
+        title: "Reference geometry plus user-photo geometry.",
+        description:
+          "The future comparison should not simply place one photo over another. It should compare the user's extracted geometry with the Cane Corso reference geometry, then explain the visible differences.",
+      },
+      workflow: {
+        eyebrow: "Visual ML workflow",
+        title: "The photo gate comes before the match score.",
+        safety:
+          "The future score must be shown as visual similarity only. It cannot prove pedigree, breed purity, official status or health status from an image.",
+      },
+      readinessTable: {
+        eyebrow: "Readiness levels",
+        title: "Warnings keep the visual model honest.",
+        headers: ["Level", "Score range", "Meaning", "App action"],
+      },
+    },
     about: {
       technology: "Technology Direction",
       boundaries: "Product Boundaries",
@@ -244,6 +317,7 @@ export const dictionaries = {
       home: "Начало",
       calculator: "Проверка на растежа",
       data: "Данни и еталони",
+      visualReview: "Визуален преглед",
       experiments: "ML методология",
       course: "Проектни доказателства",
       about: "За приложението",
@@ -251,6 +325,7 @@ export const dictionaries = {
         home: "Преглед на приложението",
         calculator: "Ориентировъчна проверка на растежа",
         data: "Данни, еталони и feature логика",
+        visualReview: "Фото указания и геометрично сравнение",
         experiments: "Модели, метрики и визуални доказателства",
         course: "Доказателства за ML проекта",
         about: "Обхват, безопасност и технология",
@@ -300,6 +375,13 @@ export const dictionaries = {
         description:
           "Тази страница обяснява референтните извадки, обработените данни и създадените features, използвани от методологичния слой. Целта е прозрачност: какво е включено, за какво се използва и къде са ограниченията.",
         badge: "Прозрачни данни",
+      },
+      visualReview: {
+        eyebrow: "Визуален преглед",
+        title: "Подготви снимки за коректно геометрично сравнение.",
+        description:
+          "Визуалният модул обяснява какви снимки са подходящи, проверява готовността за сравнение и подготвя бъдещ overlay между Cane Corso еталонната геометрия и качената снимка.",
+        badge: "Фото критерии",
       },
       experiments: {
         eyebrow: "ML методология",
@@ -417,6 +499,70 @@ export const dictionaries = {
       },
       headers: ["Област", "App повърхност", "Evidence", "Защо е важно"],
     },
+    visualReview: {
+      guide: {
+        eyebrow: "Фото указания",
+        title: "Моделът трябва да сравнява само снимки, които покриват критериите.",
+        description:
+          "Преди бъдещ невронен модел или visual match score да бъде разрешен, приложението трябва да знае дали снимката е подходяща. Указанията определят какво трябва да качи потребителят и какво моделът трябва да отхвърли или маркира като ограничено.",
+      },
+      criteria: {
+        title: "Критерии за сравнение",
+      },
+      workspace: {
+        uploadEyebrow: "Снимка на потребителя",
+        uploadTitle: "Качи снимка за preview на готовността",
+        uploadDescription:
+          "Тази първа версия показва снимката и състоянията за готовност за сравнение. Така подготвяме UI слоя за бъдещ ML photo-quality gate.",
+        dropTitle: "Качи снимка на Cane-то",
+        dropDescription:
+          "Първо използвай ясна странична снимка на цялото тяло. Следващите версии ще валидират изображението автоматично преди сравнение.",
+        readinessTitle: "Готовност на снимката",
+        emptyState: {
+          label: "Изчакване",
+          title: "Още няма качена снимка.",
+          description:
+            "Качи снимка, за да видиш как бъдещият photo-quality gate ще води процеса на сравнение.",
+        },
+        readiness: {
+          accepted: {
+            label: "Подходяща",
+            title: "Снимката е подходяща за сравнение.",
+            description:
+              "Изображението покрива критериите достатъчно добре за визуално геометрично сравнение.",
+          },
+          limited: {
+            label: "Ограничена",
+            title: "Снимката позволява само частично сравнение.",
+            description:
+              "Снимката може да се прегледа, но бъдещият модел трябва да предупреди, че резултатът може да е по-малко надежден.",
+          },
+          rejected: {
+            label: "Неподходяща",
+            title: "Снимката не отговаря на критериите за сравнение.",
+            description:
+              "Качи нова снимка: цяло куче, правилен ъгъл, естествена стойка, добра светлина и минимално перспективно изкривяване.",
+          },
+        },
+      },
+      overlay: {
+        eyebrow: "Overlay концепция",
+        title: "Еталонна геометрия плюс геометрия от снимката.",
+        description:
+          "Бъдещото сравнение не трябва просто да налага снимка върху снимка. То трябва да сравнява извлечената геометрия от потребителската снимка с Cane Corso еталонната геометрия и да обяснява видимите разлики.",
+      },
+      workflow: {
+        eyebrow: "Visual ML процес",
+        title: "Photo gate идва преди match score.",
+        safety:
+          "Бъдещият резултат трябва да се показва само като визуално сходство. Той не може да доказва родословие, породна чистота, официален статус или здравословно състояние по снимка.",
+      },
+      readinessTable: {
+        eyebrow: "Нива на готовност",
+        title: "Предупрежденията пазят визуалния модел честен.",
+        headers: ["Ниво", "Диапазон", "Значение", "Действие в app-а"],
+      },
+    },
     about: {
       technology: "Технологична посока",
       boundaries: "Продуктови граници",
@@ -458,6 +604,7 @@ export const dictionaries = {
       home: "Home",
       calculator: "Controllo crescita",
       data: "Dati e riferimenti",
+      visualReview: "Revisione visuale",
       experiments: "Metodologia ML",
       course: "Evidenze progetto",
       about: "Informazioni",
@@ -465,6 +612,7 @@ export const dictionaries = {
         home: "Panoramica dell’app",
         calculator: "Controllo orientativo della crescita",
         data: "Fonti dati e logica delle feature",
+        visualReview: "Guida foto e spazio di confronto geometrico",
         experiments: "Modelli, metriche ed evidenze visuali",
         course: "Evidenze del progetto ML",
         about: "Ambito, sicurezza e tecnologia",
@@ -514,6 +662,13 @@ export const dictionaries = {
         description:
           "Questa pagina spiega i campioni di riferimento, i dati elaborati e le feature create dal livello metodologico. Mantiene l’app trasparente: cosa è incluso, come viene usato e dove sono i limiti.",
         badge: "Dati trasparenti",
+      },
+      visualReview: {
+        eyebrow: "Revisione visuale",
+        title: "Prepara foto adatte per un confronto geometrico corretto.",
+        description:
+          "Lo spazio visuale spiega quali foto sono adatte, controlla la prontezza al confronto e prepara il futuro overlay tra la geometria Cane Corso di riferimento e l’immagine caricata dall’utente.",
+        badge: "Criteri foto",
       },
       experiments: {
         eyebrow: "Metodologia ML",
@@ -630,6 +785,70 @@ export const dictionaries = {
         topics: "Temi",
       },
       headers: ["Area", "Superficie app", "Evidenza", "Perché conta"],
+    },
+    visualReview: {
+      guide: {
+        eyebrow: "Guida foto",
+        title: "Il modello deve confrontare solo foto che rispettano i criteri.",
+        description:
+          "Prima di autorizzare un futuro modello neurale o un visual match score, l’app deve sapere se la foto è adatta. La guida definisce cosa caricare e cosa il modello deve rifiutare o marcare come limitato.",
+      },
+      criteria: {
+        title: "Criteri di confronto",
+      },
+      workspace: {
+        uploadEyebrow: "Foto utente",
+        uploadTitle: "Carica una foto per la preview di prontezza",
+        uploadDescription:
+          "Questa prima versione mostra la foto e gli stati di prontezza al confronto. Prepara il livello UI per un futuro ML photo-quality gate.",
+        dropTitle: "Carica foto del cane",
+        dropDescription:
+          "Usa prima una foto laterale chiara del corpo intero. Le versioni successive valideranno automaticamente l’immagine prima del confronto.",
+        readinessTitle: "Prontezza foto",
+        emptyState: {
+          label: "In attesa",
+          title: "Nessuna foto caricata.",
+          description:
+            "Carica una foto per vedere come il futuro photo-quality gate guiderà il processo di confronto.",
+        },
+        readiness: {
+          accepted: {
+            label: "Accettata",
+            title: "La foto è adatta al confronto.",
+            description:
+              "L’immagine segue i criteri abbastanza bene per uno spazio di confronto geometrico visuale.",
+          },
+          limited: {
+            label: "Limitata",
+            title: "La foto può supportare solo un confronto parziale.",
+            description:
+              "L’immagine può essere visualizzata, ma un futuro modello dovrebbe avvisare che il risultato può essere meno affidabile.",
+          },
+          rejected: {
+            label: "Non adatta",
+            title: "La foto non soddisfa i criteri di confronto.",
+            description:
+              "Carica una nuova immagine: cane intero, angolo corretto, postura naturale, buona luce e minima distorsione prospettica.",
+          },
+        },
+      },
+      overlay: {
+        eyebrow: "Concetto overlay",
+        title: "Geometria di riferimento più geometria della foto utente.",
+        description:
+          "Il confronto futuro non deve semplicemente sovrapporre una foto all’altra. Deve confrontare la geometria estratta dalla foto utente con la geometria Cane Corso di riferimento e spiegare le differenze visibili.",
+      },
+      workflow: {
+        eyebrow: "Workflow visual ML",
+        title: "Il photo gate viene prima del match score.",
+        safety:
+          "Il risultato futuro deve essere mostrato solo come somiglianza visuale. Non può provare pedigree, purezza di razza, status ufficiale o stato di salute da un’immagine.",
+      },
+      readinessTable: {
+        eyebrow: "Livelli di prontezza",
+        title: "Gli avvisi mantengono onesto il modello visuale.",
+        headers: ["Livello", "Intervallo", "Significato", "Azione app"],
+      },
     },
     about: {
       technology: "Direzione tecnologica",
