@@ -3,8 +3,9 @@
 import { ChangeEvent, useMemo, useState } from "react";
 import { CaneCorsoReferenceSilhouette } from "@/components/cane-corso-reference-silhouette";
 import { PhotoGuidePanel } from "@/components/photo-guide-panel";
+import { GeometryOverlayComparisonPanel } from "@/components/geometry-overlay-comparison-panel";
 import { PhotoQualityGatePanel } from "@/components/photo-quality-gate-panel";
-import { photoReadinessRules, visualComparisonWorkflow } from "@/lib/ml/photo-comparison-criteria";
+import { photoReadinessRules } from "@/lib/ml/photo-comparison-criteria";
 import { useLanguage } from "@/lib/i18n/language-context";
 
 type ReadinessState = "empty" | "accepted" | "limited" | "rejected";
@@ -138,68 +139,7 @@ export function VisualReviewWorkspace() {
         </div>
       </section>
 
-      <section className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
-        <div className="rounded-[2rem] border border-amber-200/10 bg-white/[0.035] p-6">
-          <p className="text-sm uppercase tracking-[0.25em] text-amber-300/70">
-            {dictionary.visualReview.overlay.eyebrow}
-          </p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white md:text-5xl">
-            {dictionary.visualReview.overlay.title}
-          </h2>
-          <p className="mt-4 max-w-3xl text-base leading-7 text-stone-400">
-            {dictionary.visualReview.overlay.description}
-          </p>
-
-          <div className="mt-6 overflow-hidden rounded-[1.75rem] border border-stone-700 bg-[#0f0d09] p-5">
-            <svg viewBox="0 0 820 320" className="h-auto w-full" role="img" aria-label="Future overlay comparison map">
-              <rect x="70" y="55" width="520" height="190" rx="36" fill="#f2d27a" opacity="0.08" />
-              <path d="M90 230 C150 96 277 67 430 90 C526 104 600 156 640 236" fill="none" stroke="#d4af37" strokeWidth="4" strokeLinecap="round" />
-              <path d="M94 238 C162 121 300 92 441 112 C538 126 610 171 654 244" fill="none" stroke="#f8eed1" strokeOpacity="0.55" strokeWidth="3" strokeDasharray="10 10" strokeLinecap="round" />
-              <line x1="90" y1="250" x2="650" y2="250" stroke="#f8eed1" strokeOpacity="0.25" strokeDasharray="8 8" />
-              <line x1="90" y1="90" x2="90" y2="250" stroke="#f8eed1" strokeOpacity="0.25" strokeDasharray="8 8" />
-              {[
-                [90, 230],
-                [210, 120],
-                [410, 92],
-                [640, 236],
-                [94, 238],
-                [232, 139],
-                [441, 112],
-                [654, 244],
-              ].map(([x, y], index) => (
-                <circle key={`${x}-${y}`} cx={x} cy={y} r={index < 4 ? 7 : 5} fill={index < 4 ? "#d4af37" : "#f8eed1"} opacity={index < 4 ? 1 : 0.7} />
-              ))}
-              <text x="690" y="108" fill="#f8eed1" fontSize="18" fontWeight="700">Reference</text>
-              <line x1="670" y1="102" x2="684" y2="102" stroke="#d4af37" strokeWidth="4" />
-              <text x="690" y="143" fill="#f8eed1" fontSize="18" fontWeight="700">User photo geometry</text>
-              <line x1="670" y1="137" x2="684" y2="137" stroke="#f8eed1" strokeWidth="3" strokeDasharray="6 5" />
-            </svg>
-          </div>
-        </div>
-
-        <div className="rounded-[2rem] border border-amber-200/10 bg-black/25 p-6">
-          <p className="text-sm uppercase tracking-[0.25em] text-amber-300/70">
-            {dictionary.visualReview.workflow.eyebrow}
-          </p>
-          <h3 className="mt-3 text-2xl font-semibold text-white">
-            {dictionary.visualReview.workflow.title}
-          </h3>
-          <div className="mt-5 grid gap-3">
-            {visualComparisonWorkflow.map((step, index) => (
-              <div key={step} className="flex gap-3 rounded-2xl border border-stone-700 bg-white/[0.025] p-4">
-                <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-amber-300 text-sm font-bold text-stone-950">
-                  {index + 1}
-                </div>
-                <p className="text-sm leading-6 text-stone-300">{step}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-5 rounded-2xl border border-red-200/15 bg-red-300/10 p-4 text-sm leading-6 text-red-100">
-            {dictionary.visualReview.workflow.safety}
-          </div>
-        </div>
-      </section>
+      <GeometryOverlayComparisonPanel previewUrl={previewUrl} readiness={readiness} />
 
       <section className="rounded-[2rem] border border-amber-200/10 bg-white/[0.035] p-6">
         <p className="text-sm uppercase tracking-[0.25em] text-amber-300/70">
