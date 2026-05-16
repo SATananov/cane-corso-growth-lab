@@ -8,6 +8,10 @@ import {
   buildGrowthIntelligenceReport,
   type GrowthIntelligenceReport,
 } from "@/lib/ml/growth-explainability";
+import {
+  buildGrowthClusterAnalysis,
+  type GrowthClusterAnalysis,
+} from "@/lib/ml/growth-clustering";
 
 export type DogSex = "male" | "female";
 
@@ -52,6 +56,7 @@ export type GrowthPrediction = {
   curve: GrowthCurvePoint[];
   modelBridge: AppModelBridgeOutput;
   intelligenceReport: GrowthIntelligenceReport;
+  clusterAnalysis: GrowthClusterAnalysis;
 };
 
 function clamp(value: number, min: number, max: number) {
@@ -190,5 +195,6 @@ export function calculateGrowthPrediction(input: DogGrowthInput): GrowthPredicti
     curve: buildExpectedGrowthCurve(adultReferenceWeightKg),
     modelBridge: buildAppModelBridgeOutput(normalizedInput, reportContext),
     intelligenceReport: buildGrowthIntelligenceReport(normalizedInput, reportContext),
+    clusterAnalysis: buildGrowthClusterAnalysis(normalizedInput, reportContext),
   };
 }

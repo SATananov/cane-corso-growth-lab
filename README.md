@@ -198,6 +198,17 @@ src/components/growth-intelligence-report.tsx
 src/lib/growth-model.ts
 ```
 
+## Clustering growth profiles
+
+Step 10 adds an unsupervised-learning layer. The calculator now assigns the current dog point to an educational growth-profile group:
+
+- Balanced growth arc
+- Compact / later growth profile
+- Power growth profile
+- Condition review profile
+
+The `/experiments` page explains these groups as clustering centroids. This is a visualization and learning layer, not a diagnostic category.
+
 ## Important limitation
 
 This project is an educational machine learning and visualization experiment.
