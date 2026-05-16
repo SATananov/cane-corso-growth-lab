@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DatasetExplorerSummary } from "@/components/dataset-explorer-summary";
+import { BreedReferenceGeometryTable } from "@/components/breed-reference-geometry-table";
 import { FeatureEngineeringSummary } from "@/components/feature-engineering-summary";
 import { FeatureFormulaTable } from "@/components/feature-formula-table";
 import { DatasetOverviewCard } from "@/components/dataset-overview-card";
@@ -22,6 +23,8 @@ export default function DataOverviewPage() {
         <DatasetExplorerSummary />
 
         <FeatureEngineeringSummary />
+
+        <BreedReferenceGeometryTable />
 
         <FeatureFormulaTable />
 

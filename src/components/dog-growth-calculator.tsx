@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { GrowthCoordinateMap } from "@/components/growth-coordinate-map";
+import { BreedReferenceGeometryPanel } from "@/components/breed-reference-geometry-panel";
 import { DemoDogSelector } from "@/components/demo-dog-selector";
 import { FeatureVectorPanel } from "@/components/feature-vector-panel";
 import { GrowthClusterPanel } from "@/components/growth-cluster-panel";
@@ -187,6 +188,7 @@ export function DogGrowthCalculator() {
         <div className="grid gap-5">
           <PredictionSummary prediction={prediction} />
           <GrowthFormulaPanel prediction={prediction} />
+          <BreedReferenceGeometryPanel input={input} />
           <GrowthIntelligenceReport prediction={prediction} />
           <GrowthClusterPanel prediction={prediction} />
           <FeatureVectorPanel prediction={prediction} />

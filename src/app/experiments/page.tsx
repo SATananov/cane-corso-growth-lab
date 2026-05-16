@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { AppModelBridgeSummary } from "@/components/app-model-bridge-summary";
+import { BreedReferenceMethodologyPanel } from "@/components/breed-reference-methodology-panel";
 import { GrowthClusterOverview } from "@/components/growth-cluster-overview";
 import { MlExperimentGrid } from "@/components/ml-experiment-grid";
 import { ModelEvaluationTables } from "@/components/model-evaluation-tables";
@@ -36,6 +37,8 @@ export default function ExperimentsPage() {
         <MlResearchSummary />
 
         <AppModelBridgeSummary />
+
+        <BreedReferenceMethodologyPanel />
 
         <ModelEvaluationTables />
 

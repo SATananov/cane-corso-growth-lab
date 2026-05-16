@@ -1,0 +1,54 @@
+{
+  "name": "Cane Corso Breed Reference Geometry",
+  "source": "FCI Standard No. 343 — Cane Corso Italiano",
+  "source_url": "https://www.fci.be/nomenclature/Standards/343g02-en.pdf",
+  "publication_date": "13.10.2023 / EN",
+  "status": "reference-only orientation layer",
+  "adult_ranges": {
+    "male": {
+      "height_at_withers_cm": { "min": 64, "max": 68, "tolerance_min": 62, "tolerance_max": 70 },
+      "weight_kg": { "min": 45, "max": 50 },
+      "weight_height_ratio_kg_per_cm": 0.71
+    },
+    "female": {
+      "height_at_withers_cm": { "min": 60, "max": 64, "tolerance_min": 58, "tolerance_max": 66 },
+      "weight_kg": { "min": 40, "max": 45 },
+      "weight_height_ratio_kg_per_cm": 0.68
+    }
+  },
+  "proportions": [
+    {
+      "id": "bodyLengthToHeight",
+      "label": "Body length / height at withers",
+      "formula": "body_length_cm / height_at_withers_cm",
+      "target": 1.11,
+      "orientation_band": [1.08, 1.14],
+      "app_use": "Side-body photo geometry and future landmark comparison"
+    },
+    {
+      "id": "headLengthToHeight",
+      "label": "Head length / height at withers",
+      "formula": "head_length_cm / height_at_withers_cm",
+      "target": 0.36,
+      "orientation_band": [0.33, 0.39],
+      "app_use": "Head/body proportion reference for photo review"
+    },
+    {
+      "id": "muzzleToSkull",
+      "label": "Muzzle length / skull length",
+      "formula": "muzzle_length_cm / skull_length_cm",
+      "target": 0.52,
+      "orientation_band": [0.45, 0.58],
+      "app_use": "Head-profile review; the muzzle is shorter than the skull"
+    },
+    {
+      "id": "chestDepthToHeight",
+      "label": "Chest depth / height at withers",
+      "formula": "chest_depth_cm / height_at_withers_cm",
+      "target": 0.5,
+      "orientation_band": [0.46, 0.54],
+      "app_use": "Side-body photo geometry and visual substance orientation"
+    }
+  ],
+  "safety_boundary": "This layer compares visible measurements with reference geometry only. It does not prove pedigree, breed purity, official registry status or health status."
+}

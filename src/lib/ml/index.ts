@@ -11,3 +11,4 @@ export * from "./dimensionality-reduction";
 export * from "./mlflow-tracking";
 export * from "./course-coverage";
 export * from "./final-evidence";
+export * from "./breed-reference-geometry";

@@ -407,3 +407,16 @@ data/prototype/demo-dog-profiles.json
 ```
 
 All demo profiles are simulated educational examples. They are not veterinary records and are not used as clinical references.
+
+
+## Step 20 — Breed Reference Geometry
+
+The app now includes a Cane Corso reference geometry layer based on standard dimensions and proportions. It adds transparent adult height/weight context, proportion formulas and a methodology bridge for future photo geometry.
+
+Current app surfaces:
+
+- `/calculator` shows a live reference overlay for the current dog profile.
+- `/data` shows the breed reference geometry table and formulas.
+- `/experiments` explains how standard geometry becomes measurable app evidence.
+
+The layer is reference-only. It does not prove pedigree, breed purity, official registry status or health status. Future visual comparison will first require photo readiness checks before any image-based similarity score is shown.
