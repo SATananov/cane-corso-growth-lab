@@ -23,6 +23,8 @@ The current version includes:
 - prediction summary panel
 - coordinate-based growth map concept
 - ML experiments page
+- imported notebook research foundation
+- model metrics summary inside the app
 - scope and limitations page
 - educational safety disclaimer
 
@@ -32,17 +34,66 @@ The current version includes:
 - **React**
 - **TypeScript**
 - **Tailwind CSS**
-- **Python / Jupyter notebooks** planned for the ML foundation
-- **pandas, numpy, scikit-learn** planned for model experiments
+- **Python / Jupyter notebooks** for the ML foundation
+- **pandas, numpy, scikit-learn, matplotlib** for model experiments
 
 ## App routes
 
 ```txt
 /             Home / product concept
 /calculator   Growth calculator and prediction panel
-/experiments  ML experiment overview
+/experiments  ML experiment overview and imported research foundation
 /about        Scope, limitations and project direction
 ```
+
+## Machine learning foundation
+
+The repository now includes the ML research base:
+
+```txt
+notebooks/
+├── 01_growth_regression_geometry.ipynb
+├── 02_real_data_preparation.ipynb
+├── 03_growth_classification_zones.ipynb
+└── 04_growth_clustering_experiment.ipynb
+
+data/
+├── prototype/
+├── processed/
+└── raw/
+
+reports/figures/
+```
+
+The app connects to summarized model results through:
+
+```txt
+src/lib/ml/model-results.ts
+src/lib/ml/research-assets.ts
+src/components/ml-research-summary.tsx
+```
+
+## Current imported model results
+
+### Regression
+
+| Model | MAE | RMSE | R² Score |
+|---|---:|---:|---:|
+| Simple Linear Regression | 4.480 | 4.789 | 0.856 |
+| Polynomial Regression | 2.554 | 3.309 | 0.931 |
+| Multi-Dimensional Linear Regression | 1.390 | 1.821 | 0.979 |
+| Ridge Regression | 1.137 | 1.405 | 0.988 |
+| Lasso Regression | 1.258 | 1.679 | 0.982 |
+
+### Classification
+
+| Model | Accuracy | Precision | Recall | F1 | AUC |
+|---|---:|---:|---:|---:|---:|
+| Logistic Regression | 0.812 | 0.764 | 0.901 | 0.827 | 0.889 |
+| Decision Tree | 0.823 | 0.778 | 0.904 | 0.836 | 0.889 |
+| Random Forest | 0.832 | 0.787 | 0.912 | 0.845 | 0.912 |
+| AdaBoost | 0.771 | 0.686 | 1.000 | 0.814 | 0.875 |
+| Support Vector Machine | 0.831 | 0.788 | 0.906 | 0.843 | 0.899 |
 
 ## Machine learning direction
 
@@ -90,6 +141,23 @@ Open the app locally:
 http://localhost:3000
 ```
 
+## Python notebook setup
+
+Optional Python environment for the research notebooks:
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+jupyter notebook
+```
+
+On macOS/Linux, activate the environment with:
+
+```bash
+source .venv/bin/activate
+```
+
 ## Git workflow
 
 The project is developed step by step. After every stable patch:
@@ -111,18 +179,5 @@ The main goals are:
 
 - to build a clean ML-based app prototype;
 - to keep it separate from the main Cane Corso Platform;
-- to use the previous notebook project only as a research foundation;
+- to use the previous notebook project as a research foundation;
 - to create a future-ready concept that may later inspire a production module.
-
-## Planned next steps
-
-- Add project datasets and notebook foundation.
-- Add real experiment summaries from regression and classification notebooks.
-- Improve the calculator with structured model coefficients.
-- Add visual comparison between expected and entered growth data.
-- Add clustering / growth profile zones as a future experiment.
-- Prepare a clean project report for educational submission.
-
-## License and responsibility
-
-This repository is currently an experimental learning project. Any future public or production use must include proper data review, veterinary safety boundaries and responsible communication.
