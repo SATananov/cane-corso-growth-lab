@@ -47,6 +47,7 @@ The current version includes:
 /calculator   Growth calculator and prediction panel
 /data         Dataset explorer and ML data overview
 /experiments  ML experiment overview and imported research foundation
+/course       ML course coverage and final roadmap
 /about        Scope, limitations and project direction
 ```
 
@@ -233,6 +234,19 @@ python scripts/ml/run_mlflow_tracking_demo.py
 ```
 
 If MLflow is not installed, the script prints the tracking payload instead of failing.
+
+## Course coverage page
+
+Step 14 adds `/course`, a final mapping between the app and the ML course topics:
+
+- Linear Regression, Regularization and Testing
+- Classification
+- Unsupervised Learning / Clustering
+- Feature Engineering and Time Series
+- Dimensionality Reduction
+- MLflow
+
+This page makes it easier to present the project as a course-aligned app rather than only a collection of notebooks.
 
 ## Important limitation
 

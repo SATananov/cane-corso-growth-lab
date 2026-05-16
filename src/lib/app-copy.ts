@@ -32,6 +32,11 @@ export const appNavigation = [
     description: "ML foundation",
   },
   {
+    label: "Course",
+    href: "/course",
+    description: "Course coverage",
+  },
+  {
     label: "About",
     href: "/about",
     description: "Scope and limits",
