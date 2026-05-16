@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cane Corso Growth Geometry Lab
 
-## Getting Started
+**Cane Corso Growth Geometry Lab** is an experimental web app for exploring Cane Corso growth patterns through coordinates, curves and machine learning concepts.
 
-First, run the development server:
+The project is built as a separate research-and-application lab. It is not part of the main USG / Cane Corso Platform codebase, but it can later become a foundation for a future growth intelligence module.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Project idea
+
+I use this project to experiment with a simple but visual idea:
+
+> A Cane Corso can be represented as a point in a coordinate system. Growth can be represented as a trajectory. Regression models can estimate curves, classification models can mark review zones, and clustering can later group similar growth profiles.
+
+The app is designed to be understandable for a beginner-friendly machine learning project while still feeling like a real product prototype.
+
+## Current app status
+
+The current version includes:
+
+- premium landing page
+- dedicated navigation
+- growth calculator page
+- interactive Cane Corso profile input
+- prediction summary panel
+- coordinate-based growth map concept
+- ML experiments page
+- scope and limitations page
+- educational safety disclaimer
+
+## Tech stack
+
+- **Next.js** with App Router
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **Python / Jupyter notebooks** planned for the ML foundation
+- **pandas, numpy, scikit-learn** planned for model experiments
+
+## App routes
+
+```txt
+/             Home / product concept
+/calculator   Growth calculator and prediction panel
+/experiments  ML experiment overview
+/about        Scope, limitations and project direction
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Machine learning direction
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The app is planned around these ML ideas:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Linear Regression** — simple weight prediction based on age.
+2. **Polynomial Regression** — curved growth trajectory.
+3. **Multi-dimensional Regression** — age, weight, height, sex and body condition score.
+4. **Classification** — educational growth status signal, such as normal growth or needs review.
+5. **Clustering** — future experiment for grouping similar growth profiles.
+6. **Coordinate interpretation** — visualizing the dog as a point and the growth process as a curve or zone.
 
-## Learn More
+## Important limitation
 
-To learn more about Next.js, take a look at the following resources:
+This project is an educational machine learning and visualization experiment.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+It is **not** a veterinary diagnostic system. It does not replace professional veterinary advice, physical examination, laboratory tests, breeder expertise or long-term health monitoring.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The app should only be interpreted as an orientation and learning tool.
 
-## Deploy on Vercel
+## Local development
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Install dependencies:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+pnpm install
+```
+
+Run the development server:
+
+```bash
+pnpm dev
+```
+
+Run code checks:
+
+```bash
+pnpm lint
+pnpm build
+```
+
+Open the app locally:
+
+```txt
+http://localhost:3000
+```
+
+## Git workflow
+
+The project is developed step by step. After every stable patch:
+
+```bash
+pnpm lint
+pnpm build
+git status
+git add .
+git commit -m "Describe the step"
+git push
+```
+
+## Repository purpose
+
+This repository is a separate experimental app.
+
+The main goals are:
+
+- to build a clean ML-based app prototype;
+- to keep it separate from the main Cane Corso Platform;
+- to use the previous notebook project only as a research foundation;
+- to create a future-ready concept that may later inspire a production module.
+
+## Planned next steps
+
+- Add project datasets and notebook foundation.
+- Add real experiment summaries from regression and classification notebooks.
+- Improve the calculator with structured model coefficients.
+- Add visual comparison between expected and entered growth data.
+- Add clustering / growth profile zones as a future experiment.
+- Prepare a clean project report for educational submission.
+
+## License and responsibility
+
+This repository is currently an experimental learning project. Any future public or production use must include proper data review, veterinary safety boundaries and responsible communication.
