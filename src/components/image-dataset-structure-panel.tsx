@@ -71,16 +71,16 @@ const copy: Record<"en" | "bg" | "it", Copy> = {
       "This step does not train the neural network yet. It defines the data contract that lets us train photo readiness, breed/type classification and future visual similarity models correctly.",
   },
   bg: {
-    eyebrow: "Основа за визуален dataset",
+    eyebrow: "Основа за визуален набор от данни",
     title: "Как моделът ще се научи да разпознава правилна снимка и Cane Corso визуален тип.",
     description:
-      "Преди обучение на невронна мрежа ни трябват снимки с ясни labels. Така моделът първо ще учи дали снимката става за сравнение, а след това дали кучето визуално се доближава до Cane Corso референтния тип.",
+      "Преди обучение на невронна мрежа ни трябват снимки с ясни етикети. Така моделът първо ще учи дали снимката става за сравнение, а след това дали кучето визуално се доближава до Cane Corso референтния тип.",
     classTitle: "Класове за обучение",
-    splitTitle: "Разделяне на dataset-а",
-    schemaTitle: "Задължителни label полета",
+    splitTitle: "Разделяне на набора от данни",
+    schemaTitle: "Задължителни полета за етикети",
     issuesTitle: "Кодове за проблеми в снимката",
-    workflowTitle: "Процес на label-ване",
-    sampleTitle: "Примерни labels",
+    workflowTitle: "Процес на етикетиране",
+    sampleTitle: "Примерни етикети",
     headers: {
       class: "Клас",
       purpose: "Цел",
@@ -98,7 +98,7 @@ const copy: Record<"en" | "bg" | "it", Copy> = {
       issues: "Проблеми",
     },
     note:
-      "Тази стъпка още не тренира невронна мрежа. Тя дефинира структурата на данните, за да можем по-късно да обучим photo readiness модел, breed/type classifier и visual similarity модел правилно.",
+      "Тази стъпка още не тренира невронна мрежа. Тя дефинира структурата на данните, за да можем по-късно да обучим модел за готовност на снимка, класификатор за порода/тип и модел за визуално сходство правилно.",
   },
   it: {
     eyebrow: "Base del dataset visivo",

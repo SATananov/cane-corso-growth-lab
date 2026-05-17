@@ -2,6 +2,7 @@
 
 import { appModelBridgeSummary, appModelFeatures, exportedRegressionCoefficients } from "@/lib/ml";
 import { useLanguage } from "@/lib/i18n/language-context";
+import { localizeMlPhrase } from "@/lib/i18n/ml-phrase-copy";
 import type { LanguageCode } from "@/lib/i18n/languages";
 
 const copy: Record<LanguageCode, {
@@ -20,11 +21,11 @@ const copy: Record<LanguageCode, {
   },
   bg: {
     eyebrow: "Връзка между модел и приложение",
-    title: "Доказателствата от модела стават логика в app-а.",
-    description: "Този слой свързва резултатите от notebook-ите с живата проверка на растежа. Показва кои доказателства се използват, кои коефициенти са внесени и как browser логиката остава бърза, видима и безопасна.",
-    regression: "Regression доказателство", classification: "Classification доказателство", liveCurve: "Жива крива в app-а", exportFile: "Export файл",
-    regressionDetail: "Най-добрият внесен regression резултат по R².", classificationDetail: "Най-добрият внесен classification резултат по F1/AUC.", liveCurveDetail: "Бърз TypeScript bridge, използван от проверката на растежа.",
-    baseline: "Базово уравнение", baselineDescription: "Този набор от коефициенти се пази като обяснимо доказателство от модела. Живото приложение използва калибрирана крива, за да остане разбираемо за потребителя и проверимо като проект.", featureContract: "Договор за features",
+    title: "Доказателствата от модела стават логика в приложението.",
+    description: "Този слой свързва резултатите от Jupyter тетрадките с живата проверка на растежа. Показва кои доказателства се използват, кои коефициенти са внесени и как браузърната логика остава бърза, видима и безопасна.",
+    regression: "Регресионно доказателство", classification: "Класификационно доказателство", liveCurve: "Жива крива в приложението", exportFile: "Експортен файл",
+    regressionDetail: "Най-добрият внесен регресионен резултат по R².", classificationDetail: "Най-добрият внесен класификационен резултат по F1/AUC.", liveCurveDetail: "Бърза TypeScript връзка, използвана от проверката на растежа.",
+    baseline: "Базово уравнение", baselineDescription: "Този набор от коефициенти се пази като обяснимо доказателство от модела. Живото приложение използва калибрирана крива, за да остане разбираемо за потребителя и проверимо като проект.", featureContract: "Договор за характеристики",
   },
   it: {
     eyebrow: "Collegamento modello-app",
@@ -52,9 +53,9 @@ export function AppModelBridgeSummary() {
       </div>
 
       <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-        <BridgeMetric label={t.regression} value={appModelBridgeSummary.regressionEvidenceModel} detail={t.regressionDetail} />
-        <BridgeMetric label={t.classification} value={appModelBridgeSummary.classificationEvidenceModel} detail={t.classificationDetail} />
-        <BridgeMetric label={t.liveCurve} value={appModelBridgeSummary.liveAppCurve} detail={t.liveCurveDetail} />
+        <BridgeMetric label={t.regression} value={localizeMlPhrase(appModelBridgeSummary.regressionEvidenceModel, language)} detail={t.regressionDetail} />
+        <BridgeMetric label={t.classification} value={localizeMlPhrase(appModelBridgeSummary.classificationEvidenceModel, language)} detail={t.classificationDetail} />
+        <BridgeMetric label={t.liveCurve} value={localizeMlPhrase(appModelBridgeSummary.liveAppCurve, language)} detail={t.liveCurveDetail} />
         <BridgeMetric label={t.exportFile} value="JSON + TS" detail={appModelBridgeSummary.exportFile} />
       </div>
 
@@ -70,9 +71,9 @@ export function AppModelBridgeSummary() {
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             {appModelFeatures.map((feature) => (
               <div key={feature.key} className="rounded-2xl border border-stone-800 bg-white/[0.03] p-4">
-                <p className="text-sm font-semibold text-white">{feature.label}</p>
-                <p className="mt-1 text-xs uppercase tracking-[0.18em] text-amber-100/60">{feature.source}</p>
-                <p className="mt-2 text-sm leading-6 text-stone-500">{feature.appUsage}</p>
+                <p className="text-sm font-semibold text-white">{localizeMlPhrase(feature.label, language)}</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.18em] text-amber-100/60">{localizeMlPhrase(feature.source, language)}</p>
+                <p className="mt-2 text-sm leading-6 text-stone-500">{localizeMlPhrase(feature.appUsage, language)}</p>
               </div>
             ))}
           </div>

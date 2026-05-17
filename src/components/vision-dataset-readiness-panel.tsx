@@ -38,20 +38,20 @@ const copy: Record<LanguageCode, {
       "Professional rule: no neural breed classifier should be presented as trained until enough licensed images, balanced labels and holdout evaluation results exist.",
   },
   bg: {
-    eyebrow: "Готовност на dataset-а",
-    title: "Невронният модел учи само след готов image set.",
+    eyebrow: "Готовност на набора от данни",
+    title: "Невронният модел учи само след готов набор от снимки.",
     description:
-      "Този панел пази проекта честен: visual ML pipeline е проектиран, но реално обучение започва само след подготвени източници, labels и validation split.",
+      "Този панел пази проекта честен: визуалният ML процес е проектиран, но реално обучение започва само след подготвени източници, етикети и валидационно разделяне.",
     status: "Статус",
-    labels: "Примерни labels",
-    goal: "Цел за prototype",
+    labels: "Примерни етикети",
+    goal: "Цел за прототип",
     now: "Сега",
     next: "Следващо",
-    headers: ["Training gate", "Изискване", "Защо е важно"],
+    headers: ["Проверка преди обучение", "Изискване", "Защо е важно"],
     before: "Преди обучение",
     optional: "По избор",
     boundary:
-      "Професионално правило: не трябва да представяме neural breed classifier като обучен, докато няма достатъчно лицензирани снимки, балансирани labels и holdout evaluation резултати.",
+      "Професионално правило: не трябва да представяме невронния породен класификатор като обучен, докато няма достатъчно лицензирани снимки, балансирани етикети и резултати от отделна оценка.",
   },
   it: {
     eyebrow: "Prontezza dataset",

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import {
   classificationResults,
@@ -12,6 +12,7 @@ import {
   type ResearchAsset,
 } from "@/lib/ml";
 import { useLanguage } from "@/lib/i18n/language-context";
+import { localizeMlPhrase } from "@/lib/i18n/ml-phrase-copy";
 import type { LanguageCode } from "@/lib/i18n/languages";
 
 const copy: Record<LanguageCode, {
@@ -51,26 +52,26 @@ const copy: Record<LanguageCode, {
     assets: { notebooks: "Notebooks", data: "Data", figures: "Figures", appUse: "App use", referenceFile: "Reference file" },
   },
   bg: {
-    methodologyStatus: "РЎС‚Р°С‚СѓСЃ РЅР° РјРµС‚РѕРґРѕР»РѕРіРёСЏС‚Р°",
-    notebookConnected: "Notebook РѕСЃРЅРѕРІР°С‚Р° Рµ СЃРІСЉСЂР·Р°РЅР° СЃ РїСЂРёР»РѕР¶РµРЅРёРµС‚Рѕ",
-    bestRegression: "РќР°Р№-РґРѕР±СЉСЂ regression РјРѕРґРµР»",
-    bestClassifier: "РќР°Р№-РґРѕР±СЉСЂ classification РјРѕРґРµР»",
-    methodologyAssets: "РњРµС‚РѕРґРѕР»РѕРіРёС‡РЅРё С„Р°Р№Р»РѕРІРµ",
-    notebooks: "notebook-Рё",
-    dataFiles: "С„Р°Р№Р»Р° СЃ РґР°РЅРЅРё",
-    figures: "С„РёРіСѓСЂРё",
-    regressionEvidence: "Regression РґРѕРєР°Р·Р°С‚РµР»СЃС‚РІР°",
-    growthCurveModels: "РњРѕРґРµР»Рё Р·Р° РєСЂРёРІР° РЅР° СЂР°СЃС‚РµР¶",
-    classificationEvidence: "Classification РґРѕРєР°Р·Р°С‚РµР»СЃС‚РІР°",
-    reviewZoneModels: "РњРѕРґРµР»Рё Р·Р° Р·РѕРЅРё Р·Р° РїСЂРµРіР»РµРґ",
-    bestCurrentResult: "РќР°Р№-РґРѕР±СЉСЂ С‚РµРєСѓС‰ СЂРµР·СѓР»С‚Р°С‚",
-    safetyBoundary: "Р“СЂР°РЅРёС†Р° Р·Р° Р±РµР·РѕРїР°СЃРЅРѕСЃС‚",
-    safetyFallback: "РњРµС‚РѕРґРѕР»РѕРіРёСЏС‚Р° РїРѕРєР°Р·РІР° РѕСЂРёРµРЅС‚РёСЂРѕРІСЉС‡РЅРё СЃРёРіРЅР°Р»Рё Рё РЅРµ РґРѕРєР°Р·РІР° РґРёР°РіРЅРѕР·Р°, РїРѕСЂРѕРґРЅР° С‡РёСЃС‚РѕС‚Р°, СЂРѕРґРѕСЃР»РѕРІРёРµ, РіРµРЅРµС‚РёС‡РµРЅ РїСЂРѕРёР·С…РѕРґ РёР»Рё РѕС„РёС†РёР°Р»РµРЅ СЃС‚Р°С‚СѓСЃ.",
-    assets: { notebooks: "Notebook-Рё", data: "Р”Р°РЅРЅРё", figures: "Р¤РёРіСѓСЂРё", appUse: "РЈРїРѕС‚СЂРµР±Р° РІ РїСЂРёР»РѕР¶РµРЅРёРµС‚Рѕ", referenceFile: "Р РµС„РµСЂРµРЅС‚РµРЅ С„Р°Р№Р»" },
+    methodologyStatus: "Статус на методологията",
+    notebookConnected: "Jupyter тетрадките са свързани с приложението",
+    bestRegression: "Най-добър регресионен модел",
+    bestClassifier: "Най-добър класификационен модел",
+    methodologyAssets: "Методологични файлове",
+    notebooks: "Jupyter тетрадки",
+    dataFiles: "файла с данни",
+    figures: "фигури",
+    regressionEvidence: "Регресионни доказателства",
+    growthCurveModels: "Модели за крива на растеж",
+    classificationEvidence: "Класификационни доказателства",
+    reviewZoneModels: "Модели за зони за преглед",
+    bestCurrentResult: "Най-добър текущ резултат",
+    safetyBoundary: "Граница за безопасност",
+    safetyFallback: "Методологията показва ориентировъчни сигнали и не доказва диагноза, породна чистота, родословие, генетичен произход или официален статус.",
+    assets: { notebooks: "Jupyter тетрадки", data: "Данни", figures: "Фигури", appUse: "Употреба в приложението", referenceFile: "Референтен файл" },
   },
   it: {
     methodologyStatus: "Stato metodologia",
-    notebookConnected: "La base notebook ГЁ collegata allвЂ™app",
+    notebookConnected: "La base dei notebook è collegata all’app",
     bestRegression: "Migliore modello regression",
     bestClassifier: "Migliore modello classification",
     methodologyAssets: "Asset metodologici",
@@ -84,7 +85,7 @@ const copy: Record<LanguageCode, {
     bestCurrentResult: "Miglior risultato attuale",
     safetyBoundary: "Limite di sicurezza",
     safetyFallback: "La metodologia mostra segnali orientativi e non prova diagnosi, purezza di razza, pedigree, origine genetica o status ufficiale.",
-    assets: { notebooks: "Notebook", data: "Dati", figures: "Figure", appUse: "Uso nellвЂ™app", referenceFile: "File di riferimento" },
+    assets: { notebooks: "Notebook", data: "Dati", figures: "Figure", appUse: "Uso nell’app", referenceFile: "File di riferimento" },
   },
 };
 
@@ -97,15 +98,15 @@ export function MlResearchSummary() {
   return (
     <div className="grid gap-6">
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-        <SummaryCard label={t.methodologyStatus} value={mlFoundationSummary.status} hint={t.notebookConnected} />
-        <SummaryCard label={t.bestRegression} value={mlFoundationSummary.regressionBestModel} hint={`RВІ ${formatMetric(mlFoundationSummary.regressionBestR2)}`} />
-        <SummaryCard label={t.bestClassifier} value={mlFoundationSummary.classificationBestModel} hint={`F1 ${formatMetric(mlFoundationSummary.classificationBestF1)}`} />
+        <SummaryCard label={t.methodologyStatus} value={localizeMlPhrase(mlFoundationSummary.status, language)} hint={t.notebookConnected} />
+        <SummaryCard label={t.bestRegression} value={localizeMlPhrase(mlFoundationSummary.regressionBestModel, language)} hint={`R² ${formatMetric(mlFoundationSummary.regressionBestR2)}`} />
+        <SummaryCard label={t.bestClassifier} value={localizeMlPhrase(mlFoundationSummary.classificationBestModel, language)} hint={`F1 ${formatMetric(mlFoundationSummary.classificationBestF1)}`} />
         <SummaryCard label={t.methodologyAssets} value={`${mlFoundationSummary.notebookCount} ${t.notebooks}`} hint={`${mlFoundationSummary.dataFiles} ${t.dataFiles} / ${mlFoundationSummary.figures} ${t.figures}`} />
       </section>
 
       <section className="grid gap-5 lg:grid-cols-2">
-        <ModelTable eyebrow={t.regressionEvidence} title={t.growthCurveModels} bestLabel={t.bestCurrentResult} rows={regressionResults.map((result) => ({ name: result.model, type: result.geometry, metricOne: `MAE ${formatMetric(result.mae)}`, metricTwo: `RВІ ${formatMetric(result.r2Score)}`, isBest: result.model === bestRegression?.model }))} />
-        <ModelTable eyebrow={t.classificationEvidence} title={t.reviewZoneModels} bestLabel={t.bestCurrentResult} rows={classificationResults.map((result) => ({ name: result.model, type: result.geometry, metricOne: `Recall ${formatPercent(result.recall)}`, metricTwo: `F1 ${formatMetric(result.f1Score)}`, isBest: result.model === bestClassification?.model }))} />
+        <ModelTable eyebrow={t.regressionEvidence} title={t.growthCurveModels} bestLabel={t.bestCurrentResult} rows={regressionResults.map((result) => ({ name: localizeMlPhrase(result.model, language), type: localizeMlPhrase(result.geometry, language), metricOne: `MAE ${formatMetric(result.mae)}`, metricTwo: `R² ${formatMetric(result.r2Score)}`, isBest: result.model === bestRegression?.model }))} />
+        <ModelTable eyebrow={t.classificationEvidence} title={t.reviewZoneModels} bestLabel={t.bestCurrentResult} rows={classificationResults.map((result) => ({ name: localizeMlPhrase(result.model, language), type: localizeMlPhrase(result.geometry, language), metricOne: `Recall ${formatPercent(result.recall)}`, metricTwo: `F1 ${formatMetric(result.f1Score)}`, isBest: result.model === bestClassification?.model }))} />
       </section>
 
       <section className="rounded-[2rem] border border-amber-200/10 bg-amber-300/[0.06] p-6">
@@ -114,9 +115,9 @@ export function MlResearchSummary() {
       </section>
 
       <section className="grid gap-5 xl:grid-cols-3">
-        <AssetPanel title={t.assets.notebooks} assets={notebookAssets} />
-        <AssetPanel title={t.assets.data} assets={dataAssets} />
-        <AssetPanel title={t.assets.figures} assets={figureAssets} />
+        <AssetPanel title={t.assets.notebooks} assets={notebookAssets} language={language} />
+        <AssetPanel title={t.assets.data} assets={dataAssets} language={language} />
+        <AssetPanel title={t.assets.figures} assets={figureAssets} language={language} />
       </section>
     </div>
   );
@@ -157,8 +158,8 @@ function ModelTable({ eyebrow, title, bestLabel, rows }: ModelTableProps) {
   );
 }
 
-type AssetPanelProps = { title: string; assets: ResearchAsset[] };
-function AssetPanel({ title, assets }: AssetPanelProps) {
+type AssetPanelProps = { title: string; assets: ResearchAsset[]; language: LanguageCode };
+function AssetPanel({ title, assets, language }: AssetPanelProps) {
   return (
     <section className="rounded-[2rem] border border-amber-200/10 bg-white/[0.035] p-6">
       <h3 className="text-2xl font-semibold text-white">{title}</h3>
@@ -166,11 +167,11 @@ function AssetPanel({ title, assets }: AssetPanelProps) {
         {assets.map((asset) => (
           <article key={asset.path} className="rounded-2xl border border-stone-700 bg-black/25 p-4">
             <div className="flex items-start justify-between gap-3">
-              <p className="font-semibold text-white">{asset.title}</p>
-              <span className="rounded-full border border-amber-200/15 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-amber-100/80">{asset.type}</span>
+              <p className="font-semibold text-white">{localizeMlPhrase(asset.title, language)}</p>
+              <span className="rounded-full border border-amber-200/15 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-amber-100/80">{localizeMlPhrase(asset.type, language)}</span>
             </div>
             <p className="mt-2 font-mono text-xs text-amber-100/60">{asset.path}</p>
-            <p className="mt-3 text-sm leading-6 text-stone-400">{asset.description}</p>
+            <p className="mt-3 text-sm leading-6 text-stone-400">{localizeMlPhrase(asset.description, language)}</p>
           </article>
         ))}
       </div>

@@ -2,6 +2,7 @@
 
 import type { GrowthPrediction } from "@/lib/growth-model";
 import { useLanguage } from "@/lib/i18n/language-context";
+import { localizeMlPhrase } from "@/lib/i18n/ml-phrase-copy";
 import type { LanguageCode } from "@/lib/i18n/languages";
 
 export type ModelBridgePanelProps = { prediction: GrowthPrediction };
@@ -31,11 +32,11 @@ const copy: Record<LanguageCode, {
   },
   bg: {
     eyebrow: "Връзка между модел и приложение",
-    title: "Доказателствата от notebook-ите са свързани с проверката.",
+    title: "Доказателствата от Jupyter тетрадките са свързани с проверката.",
     description:
       "Живото приложение още не изпълнява тежък Python модел в браузъра. То използва експортирани ML резултати, метрики и калибриран TypeScript слой, за да остане бързо, видимо и безопасно.",
-    regression: "Regression доказателство",
-    classification: "Classification доказателство",
+    regression: "Регресионно доказателство",
+    classification: "Класификационно доказателство",
     featureVector: "Вектор от характеристики",
     liveSignals: "Живи сигнали",
     safety: "Граница за безопасност",
@@ -72,13 +73,13 @@ export function ModelBridgePanel({ prediction }: ModelBridgePanelProps) {
       </div>
 
       <div className="mt-5 grid gap-4 lg:grid-cols-2">
-        <EvidenceCard title={bridge.regression.modelName} label={t.regression} metric={bridge.regression.evidenceMetric} detail={bridge.regression.appUsage} />
-        <EvidenceCard title={bridge.classification.modelName} label={t.classification} metric={bridge.classification.evidenceMetric} detail={bridge.classification.appUsage} />
+        <EvidenceCard title={localizeMlPhrase(bridge.regression.modelName, language)} label={t.regression} metric={bridge.regression.evidenceMetric} detail={localizeMlPhrase(bridge.regression.appUsage, language)} />
+        <EvidenceCard title={localizeMlPhrase(bridge.classification.modelName, language)} label={t.classification} metric={bridge.classification.evidenceMetric} detail={localizeMlPhrase(bridge.classification.appUsage, language)} />
       </div>
 
       <div className="mt-5 grid gap-5 xl:grid-cols-[0.95fr_1.05fr]">
-        <BridgeList title={t.featureVector} items={bridge.featureVector} />
-        <BridgeList title={t.liveSignals} items={bridge.appSignals} />
+        <BridgeList title={t.featureVector} items={bridge.featureVector} language={language} />
+        <BridgeList title={t.liveSignals} items={bridge.appSignals} language={language} />
       </div>
 
       <div className="mt-5 rounded-2xl border border-amber-200/10 bg-amber-300/[0.05] p-4">
@@ -103,8 +104,8 @@ function EvidenceCard({ title, label, metric, detail }: EvidenceCardProps) {
   );
 }
 
-type BridgeListProps = { title: string; items: { label: string; value: string; detail: string }[] };
-function BridgeList({ title, items }: BridgeListProps) {
+type BridgeListProps = { title: string; items: { label: string; value: string; detail: string }[]; language: LanguageCode };
+function BridgeList({ title, items, language }: BridgeListProps) {
   return (
     <div className="rounded-2xl border border-stone-700 bg-white/[0.03] p-5">
       <h4 className="text-lg font-semibold text-white">{title}</h4>
@@ -112,10 +113,10 @@ function BridgeList({ title, items }: BridgeListProps) {
         {items.map((item) => (
           <div key={`${item.label}-${item.value}`} className="rounded-2xl border border-stone-800 bg-black/20 p-4">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-sm font-semibold text-white">{item.label}</p>
+              <p className="text-sm font-semibold text-white">{localizeMlPhrase(item.label, language)}</p>
               <p className="font-mono text-sm text-amber-100/80">{item.value}</p>
             </div>
-            <p className="mt-2 text-sm leading-6 text-stone-500">{item.detail}</p>
+            <p className="mt-2 text-sm leading-6 text-stone-500">{localizeMlPhrase(item.detail, language)}</p>
           </div>
         ))}
       </div>

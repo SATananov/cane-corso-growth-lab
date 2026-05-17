@@ -745,6 +745,17 @@ pnpm build
 The Step 38 wording keeps the same safety boundary: the project is not a veterinary diagnostic system, not official Cane Corso certification, not pedigree proof and not an image-based breed classifier.
 
 
+
+## Step 40 — Final Language Consistency Fix
+
+Step 40 fixes the final browser-visible language-mixing issue found during manual review. It repairs corrupted Bulgarian/Italian copy in the methodology summary and polishes the Bulgarian wording in the neural-network, methodology, visual dataset, and evidence panels without changing app logic, neural-network training, datasets, metrics, or routes.
+
+Verification command:
+
+```bash
+pnpm step40:language-consistency:qa
+```
+
 ## Step 39 — Final Submission Readiness Lock
 
 Step 39 adds the final readiness lock for submission. It does not change the application behavior, neural-network training logic, UI behavior or ML data pipeline. It documents how to verify that GitHub, the final source ZIP, the defense material and the neural-network evidence are aligned.

@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/lib/i18n/language-context";
+import { localizeMlPhrase } from "@/lib/i18n/ml-phrase-copy";
 import {
   classificationResults,
   formatMetric,
@@ -9,7 +10,7 @@ import {
 } from "@/lib/ml/model-results";
 
 export function ModelEvaluationTables() {
-  const { dictionary } = useLanguage();
+  const { dictionary, language } = useLanguage();
 
   return (
     <section className="rounded-[2rem] border border-amber-200/10 bg-white/[0.035] p-6">
@@ -29,9 +30,9 @@ export function ModelEvaluationTables() {
           description={dictionary.tables.regressionDescription}
           headers={[...dictionary.tables.regressionHeaders]}
           rows={regressionResults.map((result) => [
-            result.model,
-            result.geometry,
-            result.features,
+            localizeMlPhrase(result.model, language),
+            localizeMlPhrase(result.geometry, language),
+            localizeMlPhrase(result.features, language),
             formatMetric(result.mae),
             formatMetric(result.rmse),
             formatMetric(result.r2Score),
@@ -46,8 +47,8 @@ export function ModelEvaluationTables() {
           description={dictionary.tables.classificationDescription}
           headers={[...dictionary.tables.classificationHeaders]}
           rows={classificationResults.map((result) => [
-            result.model,
-            result.geometry,
+            localizeMlPhrase(result.model, language),
+            localizeMlPhrase(result.geometry, language),
             formatPercent(result.accuracy),
             formatPercent(result.precision),
             formatPercent(result.recall),

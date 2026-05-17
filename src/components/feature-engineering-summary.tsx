@@ -2,6 +2,7 @@
 
 import { featureDefinitions } from "@/lib/ml/feature-engineering";
 import { useLanguage } from "@/lib/i18n/language-context";
+import { localizeMlPhrase } from "@/lib/i18n/ml-phrase-copy";
 import type { LanguageCode } from "@/lib/i18n/languages";
 
 const copy: Record<LanguageCode, { eyebrow: string; title: string; description: string }> = {
@@ -35,8 +36,8 @@ export function FeatureEngineeringSummary() {
       <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {featureDefinitions.map((feature) => (
           <article key={feature.id} className="rounded-3xl border border-stone-700 bg-black/25 p-5">
-            <h3 className="text-lg font-semibold text-white">{feature.label}</h3>
-            <p className="mt-3 text-sm leading-6 text-stone-400">{feature.explanation}</p>
+            <h3 className="text-lg font-semibold text-white">{localizeMlPhrase(feature.label, language)}</h3>
+            <p className="mt-3 text-sm leading-6 text-stone-400">{localizeMlPhrase(feature.explanation, language)}</p>
           </article>
         ))}
       </div>

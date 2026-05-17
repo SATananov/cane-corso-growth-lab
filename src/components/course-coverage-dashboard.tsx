@@ -2,6 +2,7 @@
 
 import { courseCoverageItems, finalRoadmap } from "@/lib/ml/course-coverage";
 import { useLanguage } from "@/lib/i18n/language-context";
+import { localizeMlPhrase } from "@/lib/i18n/ml-phrase-copy";
 import type { LanguageCode } from "@/lib/i18n/languages";
 
 const toneByStatus = {
@@ -33,17 +34,17 @@ const copy: Record<LanguageCode, {
   bg: {
     eyebrow: "Методология на проекта",
     title: "Темите по машинно обучение са свързани с реални функции в приложението.",
-    description: "Тази страница разделя потребителския слой от проектния слой. Потребителят може да използва проверката, а проверяващият вижда как regression, classification, clustering, feature engineering, PCA и experiment tracking са демонстрирани в проекта.",
+    description: "Тази страница разделя потребителския слой от проектния слой. Потребителят може да използва проверката, а проверяващият вижда как регресия, класификация, групиране, създаване на характеристики, PCA и проследяване на експерименти са демонстрирани в проекта.",
     files: "Файлове за реализация",
     next: "Следващо подобрение",
     roadmap: "Финална пътна карта",
     status: { implemented: "Реализирано", partial: "Частично", planned: "Планирано" },
     roadmapFallback: [
-      "Финален езиков преглед на видимия UI",
-      "Първи малък лицензиран demo image set",
-      "Обучение на photo readiness модел",
-      "Обучение на визуален classifier за Cane Corso и сходни породи",
-      "Финален отчет и deployment линк",
+      "Финален езиков преглед на видимия интерфейс",
+      "Първи малък лицензиран демо набор от снимки",
+      "Обучение на модел за готовност на снимка",
+      "Обучение на визуален класификатор за Cane Corso и сходни породи",
+      "Финален отчет и линк към deployment",
     ],
   },
   it: {
@@ -81,10 +82,10 @@ export function CourseCoverageDashboard() {
           <article key={item.module} className="rounded-[2rem] border border-stone-700 bg-black/25 p-5">
             <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
               <div>
-                <h3 className="text-2xl font-semibold text-white">{item.module}</h3>
+                <h3 className="text-2xl font-semibold text-white">{localizeMlPhrase(item.module, language)}</h3>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {item.appEvidence.map((evidence) => (
-                    <span key={evidence} className="rounded-full border border-amber-200/15 bg-white/[0.04] px-3 py-1 text-xs text-amber-100/80">{evidence}</span>
+                    <span key={evidence} className="rounded-full border border-amber-200/15 bg-white/[0.04] px-3 py-1 text-xs text-amber-100/80">{localizeMlPhrase(evidence, language)}</span>
                   ))}
                 </div>
               </div>
@@ -100,7 +101,7 @@ export function CourseCoverageDashboard() {
               </div>
               <div className="rounded-2xl border border-stone-700 bg-white/[0.03] p-4">
                 <p className="text-xs uppercase tracking-[0.18em] text-stone-500">{t.next}</p>
-                <p className="mt-3 text-sm leading-6 text-stone-300">{item.nextImprovement}</p>
+                <p className="mt-3 text-sm leading-6 text-stone-300">{localizeMlPhrase(item.nextImprovement, language)}</p>
               </div>
             </div>
           </article>

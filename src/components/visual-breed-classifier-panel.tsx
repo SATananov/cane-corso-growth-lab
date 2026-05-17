@@ -81,7 +81,7 @@ const readinessLabel: Record<LanguageCode, Record<string, string>> = {
   },
   bg: {
     notebook_ready: "Готово за notebook",
-    waiting_for_dataset: "Нужен е image dataset",
+    waiting_for_dataset: "Нужен е набор от снимки",
     planned: "Планирано",
   },
   it: {

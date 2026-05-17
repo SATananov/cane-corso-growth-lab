@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/lib/i18n/language-context";
+import { localizeMlPhrase } from "@/lib/i18n/ml-phrase-copy";
 import { featureDefinitions } from "@/lib/ml/feature-engineering";
 import { growthFormulaEvidence } from "@/lib/ml/final-evidence";
 
@@ -14,7 +15,7 @@ const formulaByFeature: Record<string, string> = {
 };
 
 export function FeatureFormulaTable() {
-  const { dictionary } = useLanguage();
+  const { dictionary, language } = useLanguage();
 
   return (
     <section className="rounded-[2rem] border border-amber-200/10 bg-white/[0.035] p-6">
@@ -41,11 +42,11 @@ export function FeatureFormulaTable() {
             <tbody className="divide-y divide-stone-800">
               {featureDefinitions.map((feature) => (
                 <tr key={feature.id}>
-                  <td className="px-5 py-4 font-semibold text-white">{feature.label}</td>
+                  <td className="px-5 py-4 font-semibold text-white">{localizeMlPhrase(feature.label, language)}</td>
                   <td className="px-5 py-4 font-mono text-xs text-amber-100/80">
                     {formulaByFeature[feature.id] ?? dictionary.tables.derivedAppFeature}
                   </td>
-                  <td className="px-5 py-4 text-stone-300">{feature.explanation}</td>
+                  <td className="px-5 py-4 text-stone-300">{localizeMlPhrase(feature.explanation, language)}</td>
                 </tr>
               ))}
             </tbody>
@@ -56,9 +57,9 @@ export function FeatureFormulaTable() {
       <div className="mt-5 grid gap-3 lg:grid-cols-3">
         {growthFormulaEvidence.slice(0, 3).map((row) => (
           <article key={row.id} className="rounded-2xl border border-stone-700 bg-black/20 p-4">
-            <p className="text-sm font-semibold text-white">{row.label}</p>
+            <p className="text-sm font-semibold text-white">{localizeMlPhrase(row.label, language)}</p>
             <p className="mt-2 font-mono text-xs text-amber-100/80">{row.formula}</p>
-            <p className="mt-3 text-sm leading-6 text-stone-400">{row.appUse}</p>
+            <p className="mt-3 text-sm leading-6 text-stone-400">{localizeMlPhrase(row.appUse, language)}</p>
           </article>
         ))}
       </div>

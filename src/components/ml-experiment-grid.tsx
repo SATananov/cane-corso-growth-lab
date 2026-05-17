@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/lib/i18n/language-context";
+import { localizeMlPhrase } from "@/lib/i18n/ml-phrase-copy";
 import type { LanguageCode } from "@/lib/i18n/languages";
 import {
   classificationResults,
@@ -93,12 +94,12 @@ const copy: Record<LanguageCode, ExperimentCopy> = {
         geometry: "Регулирана повърхност",
         features: "възраст, височина, пол и активност",
         interpretation:
-          "Най-силният текущ Regression резултат в сравнението, с regularization за по-стабилно обучение.",
+          "Най-силният текущ регресионен резултат в сравнението, с регуляризация за по-стабилно обучение.",
       },
       "Logistic Regression": {
         geometry: "Граница",
         interpretation:
-          "Ясен базов Classification модел за разделяне на спокоен растеж от зона за преглед.",
+          "Ясен базов класификационен модел за разделяне на спокоен растеж от зона за преглед.",
       },
       "Decision Tree": {
         geometry: "Правила",
@@ -117,7 +118,7 @@ const copy: Record<LanguageCode, ExperimentCopy> = {
         title: "Групиране на профили",
         tag: "Групи",
         description:
-          "Unsupervised Learning групира сходни профили на растеж без предварително зададени етикети.",
+          "Обучението без предварителни етикети групира сходни профили на растеж без предварително зададени класове.",
       },
     ],
     metrics: { accuracy: "Точност", recall: "Обхват", f1: "F1" },
@@ -146,12 +147,12 @@ const copy: Record<LanguageCode, ExperimentCopy> = {
         geometry: "Superficie regolarizzata",
         features: "età, altezza, sesso e attività",
         interpretation:
-          "Miglior risultato Regression nel confronto attuale, con regularization per apprendimento più stabile.",
+          "Miglior risultato di regressione nel confronto attuale, con regularization per apprendimento più stabile.",
       },
       "Logistic Regression": {
         geometry: "Confine",
         interpretation:
-          "Base Classification semplice per separare crescita calma da zone di revisione.",
+          "Base di classificazione semplice per separare crescita calma da zone di revisione.",
       },
       "Decision Tree": {
         geometry: "Regole",
@@ -198,7 +199,7 @@ export function MlExperimentGrid() {
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="min-w-0">
-                  <h3 className="text-xl font-semibold text-white">{experiment.model}</h3>
+                  <h3 className="text-xl font-semibold text-white">{localizeMlPhrase(experiment.model, language)}</h3>
                   <p className="mt-2 text-xs uppercase tracking-[0.16em] text-stone-500">
                     {localized.features}
                   </p>

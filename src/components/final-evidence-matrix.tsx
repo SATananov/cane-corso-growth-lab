@@ -1,13 +1,14 @@
 "use client";
 
 import { useLanguage } from "@/lib/i18n/language-context";
+import { localizeMlPhrase } from "@/lib/i18n/ml-phrase-copy";
 import {
   finalEvidenceSummary,
   projectEvidenceChecklist,
 } from "@/lib/ml/final-evidence";
 
 export function FinalEvidenceMatrix() {
-  const { dictionary } = useLanguage();
+  const { dictionary, language } = useLanguage();
 
   return (
     <section className="rounded-[2rem] border border-amber-200/10 bg-white/[0.035] p-6">
@@ -20,7 +21,7 @@ export function FinalEvidenceMatrix() {
             {dictionary.evidence.title}
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-stone-400">
-            {finalEvidenceSummary.subtitle}
+            {localizeMlPhrase(finalEvidenceSummary.subtitle, language)}
           </p>
         </div>
         <div className="grid min-w-64 grid-cols-3 gap-3 rounded-3xl border border-stone-700 bg-black/25 p-4 text-center">
@@ -43,10 +44,10 @@ export function FinalEvidenceMatrix() {
             <tbody className="divide-y divide-stone-800">
               {projectEvidenceChecklist.map((row) => (
                 <tr key={row.area}>
-                  <td className="px-5 py-4 font-semibold text-white">{row.area}</td>
-                  <td className="px-5 py-4 text-amber-100/80">{row.appSurface}</td>
-                  <td className="px-5 py-4 text-stone-300">{row.evidence}</td>
-                  <td className="px-5 py-4 text-stone-400">{row.whyItMatters}</td>
+                  <td className="px-5 py-4 font-semibold text-white">{localizeMlPhrase(row.area, language)}</td>
+                  <td className="px-5 py-4 text-amber-100/80">{localizeMlPhrase(row.appSurface, language)}</td>
+                  <td className="px-5 py-4 text-stone-300">{localizeMlPhrase(row.evidence, language)}</td>
+                  <td className="px-5 py-4 text-stone-400">{localizeMlPhrase(row.whyItMatters, language)}</td>
                 </tr>
               ))}
             </tbody>
@@ -55,7 +56,7 @@ export function FinalEvidenceMatrix() {
       </div>
 
       <p className="mt-5 rounded-2xl border border-amber-200/15 bg-amber-300/10 p-4 text-sm leading-6 text-amber-100/85">
-        {finalEvidenceSummary.safetyStatement}
+        {localizeMlPhrase(finalEvidenceSummary.safetyStatement, language)}
       </p>
     </section>
   );
