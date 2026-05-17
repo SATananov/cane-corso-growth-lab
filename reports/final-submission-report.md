@@ -1,0 +1,143 @@
+# Cane Corso Growth Lab — Final Submission Report
+
+## 1. Project overview
+
+Cane Corso Growth Lab is an educational machine learning project focused on the question: how can Cane Corso growth be explained with data, coordinates and visual model evidence?
+
+The project combines:
+
+- a Next.js web application;
+- Jupyter notebooks;
+- sample datasets;
+- model-result summaries;
+- feature-engineering explanations;
+- a safe Computer Vision roadmap.
+
+The main idea is to represent a dog profile as a point in a coordinate system. Growth can then be interpreted as a movement over time, while model outputs can be explained with curves, zones, distances and confidence boundaries.
+
+## 2. Motivation
+
+The project was designed as a beginner-friendly but meaningful ML application. Instead of showing only isolated notebook output, it translates ML concepts into an interactive app that a user can understand.
+
+The goal is to demonstrate not only that a model can produce a result, but also how the result can be explained safely.
+
+## 3. Main app modules
+
+### Home
+
+Introduces the project concept and the USG-inspired lab identity.
+
+### Growth calculator
+
+Allows the user to enter or load a demo Cane Corso profile. The page shows prediction output, formula explanations, feature vectors, clustering-style interpretation, PCA-style visualization and a growth intelligence report.
+
+### Data page
+
+Explains sample datasets, feature columns, data policy and why the app is transparent about its inputs.
+
+### Experiments page
+
+Summarizes regression, classification, clustering, dimensionality-reduction and visual ML experiments.
+
+### Course page
+
+Maps the project to course topics such as regression, classification, clustering, feature engineering, dimensionality reduction and MLflow-ready tracking.
+
+### Visual Review page
+
+Prepares a future Computer Vision workflow. It explains suitable photo types, photo-quality gates, readiness states, geometry overlay concepts and visual match result boundaries.
+
+### About page
+
+Explains the scope, limitations and future direction of the project.
+
+## 4. Machine learning components
+
+The project demonstrates the following ML ideas:
+
+| Area | Project usage |
+|---|---|
+| Regression | Growth curve and estimated adult-weight orientation |
+| Classification | Educational review zones and status signals |
+| Feature engineering | Maturity ratio, adult-weight ratio, weight-height ratio, BCS deviation and curve delta |
+| Clustering | Future grouping of similar growth profiles |
+| Dimensionality reduction | PCA-style growth map as a visual projection |
+| Computer Vision roadmap | Photo readiness, visual type classification, similarity and geometry overlay concepts |
+| MLflow-ready tracking | Optional experiment tracking plan and summary structure |
+
+## 5. Data and prototype boundaries
+
+The project uses educational sample data and prototype-ready structures. Some parts simulate realistic workflows so the app can be demonstrated without requiring private dog records or a large production dataset.
+
+The visual dataset area defines source-catalog, labeling and readiness structures, but it does not include a large copyrighted image dataset in the repository. This is intentional: future training images should be collected with proper licensing, permission and source tracking.
+
+## 6. Notebooks and app relationship
+
+The notebooks document the research path. The app translates that research into browser panels and user-facing explanations.
+
+Important notebook themes:
+
+- regression and growth geometry;
+- data preparation;
+- classification zones;
+- clustering experiments;
+- visual dataset readiness;
+- photo readiness;
+- visual breed classifier plan;
+- visual similarity and geometry overlay prototypes;
+- visual match result contract.
+
+## 7. Safety and ethics
+
+The app is intentionally conservative. It does not present model output as medical truth or official breed authority.
+
+The project does not replace:
+
+- veterinary advice;
+- physical examination;
+- laboratory tests;
+- breeder expertise;
+- official registry or pedigree review;
+- responsible human decision-making.
+
+Visual review is treated only as a readiness and similarity workflow. A photo cannot prove pedigree, health, breed purity or official registration status.
+
+## 8. How to verify the project
+
+Recommended final commands:
+
+```bash
+pnpm step35:submission-docs:qa
+pnpm step34:visual-review-polish:qa
+pnpm step33-4:language-layout:qa
+pnpm ml:python:syntax
+pnpm lint
+pnpm build
+```
+
+The expected final state is:
+
+- documentation QA passes;
+- visual review localization QA passes;
+- language/layout lock QA passes;
+- Python ML scripts compile;
+- lint has no warnings;
+- production build succeeds.
+
+## 9. Future work
+
+Possible future improvements:
+
+- collect real longitudinal Cane Corso growth records with consent;
+- improve regression and classification using a larger dataset;
+- train a real photo-readiness model;
+- train visual similarity embeddings only after dataset licensing is solved;
+- add time-series tracking for repeated measurements;
+- connect the lab to a future owner-facing growth module;
+- keep all results explainable and safely worded.
+
+## 10. Final conclusion
+
+Cane Corso Growth Lab is a complete educational ML prototype with a working web interface, notebooks, sample data, model explanations, visual evidence and safety boundaries.
+
+The strongest part of the project is the connection between machine learning concepts and a clear product experience: the user can see how raw dog-profile data becomes features, model evidence, visual coordinates, safe explanations and future research directions.

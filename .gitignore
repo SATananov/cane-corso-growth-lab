@@ -1,0 +1,17 @@
+﻿node_modules
+.next
+.turbo
+.vercel
+.netlify
+dist
+build
+coverage
+*.log
+*.tsbuildinfo
+*.zip
+.env
+.env.*
+!.env.example
+__pycache__
+.pytest_cache
+.DS_Store

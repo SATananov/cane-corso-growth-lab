@@ -1,0 +1,45 @@
+{
+  "status": "dataset_required_before_training",
+  "model_name": "visual_breed_classifier_v0_1_plan",
+  "purpose": "Train a future visual classifier for Cane Corso vs similar breeds after photo readiness gating.",
+  "labels_file": "data\\images\\labels\\sample-image-labels.csv",
+  "class_map": "data\\images\\labels\\breed-classifier-class-map.json",
+  "rows": 4,
+  "class_counts": {
+    "cane_corso": 2,
+    "presa_canario": 1,
+    "not_suitable_photo": 1
+  },
+  "split_counts": {
+    "train": 4
+  },
+  "readiness_counts": {
+    "accepted": 3,
+    "rejected": 1
+  },
+  "view_counts": {
+    "side_body": 2,
+    "head_profile": 1,
+    "unsuitable": 1
+  },
+  "unknown_classes": [],
+  "missing_target_classes_in_sample": [
+    "american_bully",
+    "boerboel",
+    "mixed_large_dog",
+    "rottweiler"
+  ],
+  "image_files_found": 0,
+  "image_files_missing": 4,
+  "minimum_labelled_images_goal": 710,
+  "recommended_labelled_images_goal": 3600,
+  "training_ready": false,
+  "blocking_reason": "The repository currently contains label templates and placeholder paths, not a real licensed image dataset.",
+  "safe_user_facing_language": "Visual Cane Corso Match, not breed purity or pedigree proof.",
+  "next_steps": [
+    "Collect licensed or owner-permitted images outside Git.",
+    "Label breed class, view type, photo quality and comparison readiness.",
+    "Balance Cane Corso positives with similar-breed hard negatives.",
+    "Train a transfer-learning baseline only after the dataset audit passes."
+  ]
+}

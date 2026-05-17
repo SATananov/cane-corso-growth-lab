@@ -1,0 +1,30 @@
+{
+  "name": "cane-corso-growth-lab",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "step33-4:language-layout:qa": "node scripts/qa-step33-4-language-layout-lock.mjs",
+    "ml:python:syntax": "python -c \"import pathlib, py_compile; [py_compile.compile(str(p), doraise=True) for p in pathlib.Path('scripts/ml').glob('*.py')]; print('Python ML syntax PASS')\"",
+    "step34:visual-review-polish:qa": "node scripts/qa-step34-visual-review-polish.mjs",
+    "step35:submission-docs:qa": "node scripts/qa-step35-submission-docs.mjs"
+  },
+  "dependencies": {
+    "next": "16.2.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

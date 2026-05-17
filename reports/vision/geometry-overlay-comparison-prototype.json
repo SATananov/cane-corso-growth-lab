@@ -1,0 +1,25 @@
+{
+  "step": 30,
+  "name": "Geometry Overlay Comparison Prototype",
+  "status": "prototype_ready",
+  "purpose": "Show the user why the photo can or cannot be compared, then explain reference geometry vs user-photo geometry through an overlay map.",
+  "inputs": [
+    "photo_readiness_state",
+    "uploaded_photo_preview",
+    "reference_geometry_ratios",
+    "future_landmark_coordinates"
+  ],
+  "outputs": [
+    "overlay_permission",
+    "reference_vs_user_geometry_map",
+    "ratio_evidence_table",
+    "blocked_comparison_warning"
+  ],
+  "safety_boundary": "The overlay produces a visual similarity orientation only. It does not prove pedigree, breed purity, health or official Cane Corso status.",
+  "future_model_dependencies": [
+    "photo_readiness_model",
+    "landmark_detection_model",
+    "visual_similarity_embedding_model",
+    "breed_reference_geometry_layer"
+  ]
+}

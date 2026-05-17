@@ -1,0 +1,70 @@
+{
+  "name": "Photo Quality Gate Rules",
+  "purpose": "Defines the comparison-readiness warning system for the future Cane Corso visual match model.",
+  "version": "0.1",
+  "decision_bands": [
+    {
+      "level": "accepted",
+      "score_range": "80-100",
+      "comparison_allowed": true,
+      "meaning": "The photo is suitable for visual geometry comparison."
+    },
+    {
+      "level": "limited",
+      "score_range": "55-79",
+      "comparison_allowed": true,
+      "meaning": "The photo can be reviewed, but the result must be shown as lower-confidence."
+    },
+    {
+      "level": "rejected",
+      "score_range": "0-54",
+      "comparison_allowed": false,
+      "meaning": "The photo should not receive a visual Cane Corso match score."
+    }
+  ],
+  "issues": [
+    {
+      "id": "full_body_not_visible",
+      "weight": 34,
+      "blocks_reliable_comparison": true,
+      "training_label": "body_not_fully_visible"
+    },
+    {
+      "id": "wrong_view_angle",
+      "weight": 30,
+      "blocks_reliable_comparison": true,
+      "training_label": "wrong_view_type"
+    },
+    {
+      "id": "dog_not_standing",
+      "weight": 26,
+      "blocks_reliable_comparison": true,
+      "training_label": "bad_pose"
+    },
+    {
+      "id": "camera_too_high_or_low",
+      "weight": 18,
+      "blocks_reliable_comparison": false,
+      "training_label": "bad_camera_height"
+    },
+    {
+      "id": "poor_light_or_blur",
+      "weight": 20,
+      "blocks_reliable_comparison": false,
+      "training_label": "poor_image_quality"
+    },
+    {
+      "id": "body_part_hidden",
+      "weight": 24,
+      "blocks_reliable_comparison": true,
+      "training_label": "occluded_landmarks"
+    },
+    {
+      "id": "strong_perspective_distortion",
+      "weight": 22,
+      "blocks_reliable_comparison": false,
+      "training_label": "perspective_distortion"
+    }
+  ],
+  "ml_training_note": "These rules create the first target structure for a future photo-readiness classifier. The current app uses a checklist gate; later, the model should learn these readiness labels from annotated images."
+}

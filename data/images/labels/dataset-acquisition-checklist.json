@@ -1,0 +1,28 @@
+{
+  "name": "Dataset Acquisition Checklist & Starter Manifest",
+  "version": "0.1",
+  "status": "starter_manifest_ready",
+  "trainingReady": false,
+  "purpose": "Prepare a controlled and auditable image acquisition workflow before neural model training.",
+  "requiredReviewGates": [
+    "source_license_or_permission_review",
+    "breed_label_review",
+    "photo_view_type_label",
+    "photo_quality_label",
+    "comparison_readiness_label",
+    "train_validation_test_split_review",
+    "duplicate_or_same_dog_leakage_check"
+  ],
+  "minimumPrototypeTargets": {
+    "cane_corso": 80,
+    "similar_molosser_total": 200,
+    "not_suitable_photo": 100
+  },
+  "recommendedTargets": {
+    "cane_corso": 500,
+    "similar_molosser_total": 1500,
+    "not_suitable_photo": 500
+  },
+  "manifest": "data/images/labels/dataset-acquisition-starter-manifest.csv",
+  "rawImagePolicy": "Raw images are not committed to Git by default; only manifests, labels, docs and scripts are tracked."
+}

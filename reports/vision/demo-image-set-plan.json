@@ -1,0 +1,12 @@
+{
+  "plan": "Small Curated Demo Image Set",
+  "status": "manifest_ready_images_pending",
+  "minimum_images_before_demo": 36,
+  "target_images_for_demo": 90,
+  "training_status": "not_ready_for_training",
+  "notes": [
+    "The manifest is ready, but real images are still pending license and label review.",
+    "The demo set is for UI and prototype validation, not production evidence.",
+    "Visual match language must remain similarity-based and non-diagnostic."
+  ]
+}

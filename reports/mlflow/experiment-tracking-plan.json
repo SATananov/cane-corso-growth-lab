@@ -1,0 +1,33 @@
+{
+  "project": "Cane Corso Growth Geometry Lab",
+  "tracking_mode": "lightweight_mlflow_ready",
+  "runs": [
+    {
+      "run_id": "ccgl-regression-ridge-v0-1",
+      "stage": "app_bridge",
+      "metrics": {
+        "mae": 1.137,
+        "rmse": 1.405,
+        "r2": 0.988
+      }
+    },
+    {
+      "run_id": "ccgl-classification-rf-v0-1",
+      "stage": "research",
+      "metrics": {
+        "accuracy": 0.832,
+        "f1": 0.845,
+        "auc": 0.912
+      }
+    },
+    {
+      "run_id": "ccgl-clustering-centroids-v0-1",
+      "stage": "candidate",
+      "metrics": {
+        "profiles": 4,
+        "features": 4
+      }
+    }
+  ],
+  "safety_boundary": "educational_non_diagnostic"
+}

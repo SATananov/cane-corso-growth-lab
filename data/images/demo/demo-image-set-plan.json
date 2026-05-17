@@ -1,0 +1,36 @@
+{
+  "name": "Small Curated Demo Image Set",
+  "version": "0.1",
+  "status": "planned_manifest_only",
+  "raw_images_committed": false,
+  "purpose": "Prepare a small licensed and manually labeled image set for demo visual comparison without committing unverified raw photos.",
+  "groups": [
+    {
+      "key": "reference_cane_corso",
+      "minimum_count": 12,
+      "target_count": 30,
+      "purpose": "Cane Corso reference examples for visual similarity explanation and UI testing."
+    },
+    {
+      "key": "similar_molosser_breeds",
+      "minimum_count": 12,
+      "target_count": 30,
+      "purpose": "Hard-negative examples from similar breeds for future classifier validation."
+    },
+    {
+      "key": "unsuitable_photos",
+      "minimum_count": 12,
+      "target_count": 30,
+      "purpose": "Rejected/limited examples for the photo readiness gate."
+    }
+  ],
+  "first_milestone_total_minimum": 36,
+  "target_demo_total": 90,
+  "gates": [
+    "license_recorded",
+    "permission_checked",
+    "manual_labels_complete",
+    "no_breed_purity_claim",
+    "raw_images_not_committed_without_explicit_rights"
+  ]
+}

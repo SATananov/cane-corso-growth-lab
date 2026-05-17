@@ -1,0 +1,5 @@
+image_id,file_path,split,breed_label,view_type,photo_quality,comparison_readiness,issues,source_type,notes
+cc_side_001,train/cane_corso/cc_side_001.jpg,train,cane_corso,side_body,good,accepted,,licensed_reference,"Full body visible; natural standing pose; camera near shoulder height."
+cc_head_001,train/cane_corso/cc_head_001.jpg,train,cane_corso,head_profile,good,accepted,,licensed_reference,"Head profile suitable for muzzle/skull proportion review."
+presa_side_001,train/presa_canario/presa_side_001.jpg,train,presa_canario,side_body,good,accepted,,licensed_reference,"Similar molosser negative class."
+bad_001,train/not_suitable_photo/bad_001.jpg,train,not_suitable_photo,unsuitable,low,rejected,"dog_not_fully_visible;camera_too_high",rejected_example,"Used to teach the photo gate what must be rejected."

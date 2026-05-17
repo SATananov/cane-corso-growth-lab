@@ -1,0 +1,63 @@
+{
+  "version": "0.1",
+  "purpose": "Class map for the future Cane Corso visual breed classifier experiment.",
+  "important_boundary": "Classes support visual similarity learning. They do not prove pedigree, breed purity or official registration.",
+  "classes": [
+    {
+      "id": "cane_corso",
+      "label": "Cane Corso",
+      "group": "target",
+      "minimum_images": 150,
+      "recommended_images": 800
+    },
+    {
+      "id": "presa_canario",
+      "label": "Presa Canario",
+      "group": "similar_breed",
+      "minimum_images": 80,
+      "recommended_images": 400
+    },
+    {
+      "id": "boerboel",
+      "label": "Boerboel",
+      "group": "similar_breed",
+      "minimum_images": 80,
+      "recommended_images": 400
+    },
+    {
+      "id": "rottweiler",
+      "label": "Rottweiler",
+      "group": "similar_breed",
+      "minimum_images": 80,
+      "recommended_images": 400
+    },
+    {
+      "id": "american_bully",
+      "label": "American Bully",
+      "group": "similar_breed",
+      "minimum_images": 80,
+      "recommended_images": 400
+    },
+    {
+      "id": "mixed_large_dog",
+      "label": "Mixed / large dog",
+      "group": "negative",
+      "minimum_images": 120,
+      "recommended_images": 600
+    },
+    {
+      "id": "not_suitable_photo",
+      "label": "Not suitable photo",
+      "group": "quality_gate",
+      "minimum_images": 120,
+      "recommended_images": 600
+    }
+  ],
+  "pipeline_outputs": [
+    "photo_readiness",
+    "photo_type",
+    "breed_class_probability",
+    "visual_similarity_score",
+    "geometry_fusion_score"
+  ]
+}

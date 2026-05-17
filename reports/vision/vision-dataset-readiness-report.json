@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "status": "collection_needed",
+  "training_allowed_now": false,
+  "reason": "Folder structure and sample labels are present, but a real curated image dataset is not available yet. Training should start only after licensed images, balanced classes and validation/test splits are prepared.",
+  "current_label_rows": 4,
+  "minimum_goal": 710,
+  "recommended_goal": 3600,
+  "class_counts": {
+    "cane_corso": 2,
+    "presa_canario": 1,
+    "not_suitable_photo": 1
+  },
+  "split_counts": {
+    "train": 4
+  },
+  "readiness_counts": {
+    "accepted": 3,
+    "rejected": 1
+  },
+  "warnings": [
+    "Image file not present yet for cc_side_001: train/cane_corso/cc_side_001.jpg",
+    "Image file not present yet for cc_head_001: train/cane_corso/cc_head_001.jpg",
+    "Image file not present yet for presa_side_001: train/presa_canario/presa_side_001.jpg",
+    "Image file not present yet for bad_001: train/not_suitable_photo/bad_001.jpg"
+  ],
+  "errors": []
+}
