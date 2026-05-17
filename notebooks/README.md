@@ -18,6 +18,7 @@ The notebooks explain the machine learning thinking behind the product prototype
 09_visual_similarity_embedding_prototype.ipynb
 10_geometry_overlay_comparison_prototype.ipynb
 11_visual_match_result_contract.ipynb
+12_tabular_neural_network_growth_prediction.ipynb
 ```
 
 ## How to review them
@@ -29,6 +30,7 @@ For final submission, the most important notebooks are:
 3. `03_growth_classification_zones.ipynb` — demonstrates classification-style review zones.
 4. `04_growth_clustering_experiment.ipynb` — demonstrates unsupervised grouping as a future research direction.
 5. `07_photo_readiness_model.ipynb` to `11_visual_match_result_contract.ipynb` — document the safe Computer Vision roadmap, where image-based results are treated only as readiness/similarity signals.
+6. `12_tabular_neural_network_growth_prediction.ipynb` — documents the real Step 36 tabular neural-network prototype for growth review classification.
 
 The web app is the main presentation surface. The notebooks remain the research evidence and should be read together with:
 
@@ -40,4 +42,4 @@ docs/submission/final-submission-guide.md
 
 ## Safety boundary
 
-The notebooks are educational. They do not produce veterinary diagnosis, medical conclusions, pedigree proof, official registry decisions or certified breed validation.
+The notebooks are educational. They do not produce veterinary diagnosis, medical conclusions, pedigree proof, official registry decisions or certified breed validation. The Step 36 neural network is a tabular growth-review prototype; image neural networks remain future work until a licensed labeled image dataset exists.

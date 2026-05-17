@@ -64,6 +64,21 @@ The project demonstrates the following ML ideas:
 | Dimensionality reduction | PCA-style growth map as a visual projection |
 | Computer Vision roadmap | Photo readiness, visual type classification, similarity and geometry overlay concepts |
 | MLflow-ready tracking | Optional experiment tracking plan and summary structure |
+| Tabular neural network | Step 36 MLPClassifier prototype for growth review signal classification |
+
+### Step 36 tabular neural network
+
+Step 36 adds a real tabular neural network using `scikit-learn`'s `MLPClassifier`. The model trains on structured growth fields and predicts `normal_growth` vs `needs_attention`. It uses age, weight, average adult breed weight and gender, while avoiding high-leakage input fields that would make the metric unrealistically perfect.
+
+The current Step 36 training output is documented in:
+
+```txt
+reports/neural-network-growth-prototype.md
+reports/neural-network-growth-prototype-results.json
+notebooks/12_tabular_neural_network_growth_prediction.ipynb
+```
+
+This neural network is a growth-review prototype only. It is not a veterinary diagnostic system, not an official Cane Corso certification system and not an image-based breed classifier.
 
 ## 5. Data and prototype boundaries
 
@@ -107,6 +122,7 @@ Visual review is treated only as a readiness and similarity workflow. A photo ca
 Recommended final commands:
 
 ```bash
+pnpm step36:neural-growth:qa
 pnpm step35:submission-docs:qa
 pnpm step34:visual-review-polish:qa
 pnpm step33-4:language-layout:qa
@@ -117,6 +133,7 @@ pnpm build
 
 The expected final state is:
 
+- Step 36 neural-network QA passes;
 - documentation QA passes;
 - visual review localization QA passes;
 - language/layout lock QA passes;
@@ -130,6 +147,7 @@ Possible future improvements:
 
 - collect real longitudinal Cane Corso growth records with consent;
 - improve regression and classification using a larger dataset;
+- extend the Step 36 tabular neural network with more real longitudinal Cane Corso records;
 - train a real photo-readiness model;
 - train visual similarity embeddings only after dataset licensing is solved;
 - add time-series tracking for repeated measurements;

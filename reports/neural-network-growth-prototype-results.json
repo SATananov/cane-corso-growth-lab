@@ -1,0 +1,73 @@
+{
+  "step": "Step 36 — Tabular Neural Network Growth Prediction Prototype",
+  "model_type": "scikit-learn MLPClassifier feed-forward neural network",
+  "task": "binary growth review signal classification",
+  "target": {
+    "column": "growth_status_binary",
+    "labels": {
+      "0": "normal_growth",
+      "1": "needs_attention"
+    },
+    "meaning": "0 = normal_growth, 1 = needs_attention"
+  },
+  "features": {
+    "numeric": [
+      "visit_age_months",
+      "weight_kg",
+      "average_adult_breed_weight_kg"
+    ],
+    "categorical": [
+      "gender"
+    ]
+  },
+  "dataset": {
+    "path": "data/processed/dog_growth_classification_sample.csv",
+    "rows_total_after_dropna": 10000,
+    "train_rows": 8000,
+    "test_rows": 2000,
+    "class_balance": {
+      "0": 5000,
+      "1": 5000
+    }
+  },
+  "model_config": {
+    "hidden_layer_sizes": [
+      16,
+      8
+    ],
+    "activation": "relu",
+    "solver": "adam",
+    "alpha": 0.0005,
+    "early_stopping": true,
+    "random_state": 36
+  },
+  "metrics": {
+    "accuracy": 0.807,
+    "precision_needs_attention": 0.7924,
+    "recall_needs_attention": 0.832,
+    "f1_needs_attention": 0.8117,
+    "confusion_matrix_labels": [
+      "normal_growth",
+      "needs_attention"
+    ],
+    "confusion_matrix": [
+      [
+        782,
+        218
+      ],
+      [
+        168,
+        832
+      ]
+    ],
+    "training_iterations": 43,
+    "final_training_loss": 0.364478
+  },
+  "safety_boundary": [
+    "Educational neural-network prototype only.",
+    "Not a veterinary diagnostic system.",
+    "Not an official Cane Corso growth certification.",
+    "Not a replacement for breeder, owner, or veterinarian review.",
+    "Image-based neural networks remain future work until a licensed labeled image dataset exists."
+  ]
+}

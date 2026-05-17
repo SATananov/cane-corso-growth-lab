@@ -9,7 +9,7 @@ The project is built as a separate research-and-application lab. It is not part 
 
 This repository is ready to be reviewed as a machine learning course project and as a small interactive product prototype.
 
-**Step 35 status:** README and final submission documentation are added on top of the verified Step 34 build. The app code and ML logic are not changed by Step 35; this step only clarifies how to understand, run and present the project.
+**Step 36 status:** the repository now includes a real tabular neural network growth prototype on top of the verified Step 35 submission package. The neural network is trained on structured growth data and remains a safe educational review signal, not a veterinary diagnostic system or image-based breed-certification model.
 
 Submission-oriented files:
 
@@ -24,12 +24,19 @@ notebooks/README.md
 Recommended final checks before handing in the project:
 
 ```bash
+pnpm step36:neural-growth:qa
 pnpm step35:submission-docs:qa
 pnpm step34:visual-review-polish:qa
 pnpm step33-4:language-layout:qa
 pnpm ml:python:syntax
 pnpm lint
 pnpm build
+```
+
+Optional real neural-network training command:
+
+```bash
+python scripts/ml/train_growth_neural_network.py
 ```
 
 ## Product & project language lock
@@ -68,6 +75,7 @@ The current version includes:
 - scope and limitations page
 - educational safety disclaimer
 - visual photo guide and comparison-readiness workspace
+- real tabular neural network prototype for growth review signals
 
 ## Tech stack
 
@@ -423,6 +431,41 @@ reports/final-submission-report.md
 docs/qa/step35-final-submission-documentation.md
 scripts/qa-step35-submission-docs.mjs
 ```
+
+## Step 36 — Real Tabular Neural Network Growth Prototype
+
+Step 36 adds a real feed-forward neural-network prototype for structured growth data. It uses `scikit-learn`'s `MLPClassifier` to predict a conservative growth review signal:
+
+```txt
+normal_growth vs needs_attention
+```
+
+This is the honest neural-network layer for the current project because it trains on available tabular data. The image neural network remains future work until a licensed and carefully labeled Cane Corso photo dataset exists.
+
+Step 36 files:
+
+```txt
+scripts/ml/train_growth_neural_network.py
+notebooks/12_tabular_neural_network_growth_prediction.ipynb
+reports/neural-network-growth-prototype.md
+reports/neural-network-growth-prototype-results.json
+docs/qa/step36-tabular-neural-network-growth.md
+scripts/qa-step36-neural-network-prototype.mjs
+```
+
+Run the Step 36 QA guardrail:
+
+```bash
+pnpm step36:neural-growth:qa
+```
+
+Run the real neural-network training script:
+
+```bash
+python scripts/ml/train_growth_neural_network.py
+```
+
+The model uses age, weight, average adult breed weight and gender. It deliberately avoids high-leakage inputs that would make the score look unrealistically perfect. The output remains a learning-oriented growth review signal, not medical advice, not official Cane Corso certification and not a breeding decision.
 
 ## Important limitation
 
