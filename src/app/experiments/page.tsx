@@ -5,6 +5,7 @@ import { BreedReferenceMethodologyPanel } from "@/components/breed-reference-met
 import { GrowthClusterOverview } from "@/components/growth-cluster-overview";
 import { MlExperimentGrid } from "@/components/ml-experiment-grid";
 import { ModelEvaluationTables } from "@/components/model-evaluation-tables";
+import { NeuralNetworkResultsPanel } from "@/components/neural-network-results-panel";
 import { MlflowTrackingPanel } from "@/components/mlflow-tracking-panel";
 import { MlResearchSummary } from "@/components/ml-research-summary";
 import { PageHero } from "@/components/page-hero";
@@ -85,6 +86,8 @@ export default function ExperimentsPage() {
         <AppModelBridgeSummary />
 
         <BreedReferenceMethodologyPanel />
+
+        <NeuralNetworkResultsPanel />
 
         <ModelEvaluationTables />
 

@@ -47,6 +47,7 @@ http://localhost:3000
 Run these checks before final submission:
 
 ```bash
+pnpm step37:neural-results-ui:qa
 pnpm step36:neural-growth:qa
 pnpm step35:submission-docs:qa
 pnpm step34:visual-review-polish:qa
@@ -56,7 +57,7 @@ pnpm lint
 pnpm build
 ```
 
-Expected result: all QA commands pass, the Step 36 neural-network guardrail passes, lint has no warnings, and the Next.js build completes successfully. Optional training command: `python scripts/ml/train_growth_neural_network.py`.
+Expected result: all QA commands pass, the Step 37 neural-network UI guardrail passes, the Step 36 neural-network guardrail passes, lint has no warnings, and the Next.js build completes successfully. Optional training command: `python scripts/ml/train_growth_neural_network.py`.
 
 ## Presentation path
 
@@ -66,10 +67,11 @@ A simple presentation flow:
 2. Open `/calculator`, load a demo profile and explain how the prediction, formulas, feature vector, clustering and PCA-style map respond.
 3. Open `/data` to show that the model does not hide its input fields, sample data, formulas or limitations.
 4. Open `/experiments` to show regression, classification, clustering and visual research evidence.
-5. Mention Step 36: the project now includes a real tabular neural network for a growth review signal, documented in `notebooks/12_tabular_neural_network_growth_prediction.ipynb` and `reports/neural-network-growth-prototype.md`.
-6. Open `/visual-review` to explain the future Computer Vision direction and why the image neural network remains future work until a licensed labeled image dataset exists.
-7. Open `/course` to connect the app to the machine learning course topics.
-7. Finish on `/about` and explain limitations and future work.
+5. Use the Step 37 neural-network results panel on `/experiments` to show the real Step 36 `MLPClassifier`, accuracy, F1 score, confusion matrix and evidence files.
+6. Mention Step 36: the project now includes a real tabular neural network for a growth review signal, documented in `notebooks/12_tabular_neural_network_growth_prediction.ipynb` and `reports/neural-network-growth-prototype.md`.
+7. Open `/visual-review` to explain the future Computer Vision direction and why the image neural network remains future work until a licensed labeled image dataset exists.
+8. Open `/course` to connect the app to the machine learning course topics.
+9. Finish on `/about` and explain limitations and future work.
 
 ## What the project demonstrates
 
@@ -80,6 +82,7 @@ A simple presentation flow:
 - Dimensionality-reduction style visualization.
 - Dataset transparency and safe demo-data boundaries.
 - A real Step 36 tabular neural network prototype for growth-review classification.
+- A browser-visible Step 37 neural-network results panel.
 - A Computer Vision roadmap that starts with photo readiness before similarity scoring.
 - A product-like interface that explains ML results to a non-technical user.
 

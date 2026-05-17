@@ -25,3 +25,5 @@ export * from "./visual-breed-classifier";
 export * from "./visual-similarity";
 export * from "./geometry-overlay-comparison";
 export * from "./visual-match-result-contract";
+
+export * from "./neural-network-growth-results";

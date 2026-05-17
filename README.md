@@ -467,6 +467,31 @@ python scripts/ml/train_growth_neural_network.py
 
 The model uses age, weight, average adult breed weight and gender. It deliberately avoids high-leakage inputs that would make the score look unrealistically perfect. The output remains a learning-oriented growth review signal, not medical advice, not official Cane Corso certification and not a breeding decision.
 
+
+## Step 37 — Neural Network Results UI Panel
+
+Step 37 makes the Step 36 neural-network evidence visible inside the browser app. The `/experiments` page now includes a dedicated results panel for the tabular MLP prototype, including:
+
+- model type: `scikit-learn MLPClassifier`;
+- task: `normal_growth vs needs_attention`;
+- dataset split: `8,000` train rows and `2,000` test rows;
+- metrics: accuracy `0.807`, recall `0.8320`, F1 `0.8117`;
+- confusion matrix: `[[782, 218], [168, 832]]`;
+- evidence links to the training script, notebook, markdown report and metrics JSON;
+- a clear safety boundary that the neural network is not a veterinary diagnosis, not official Cane Corso certification and not an image-based breed classifier.
+
+Run the Step 37 UI guardrail:
+
+```bash
+pnpm step37:neural-results-ui:qa
+```
+
+The app-level panel is presentation evidence only. The actual model training remains in `scripts/ml/train_growth_neural_network.py` and can still be rerun with:
+
+```bash
+python scripts/ml/train_growth_neural_network.py
+```
+
 ## Important limitation
 
 This project is an educational machine learning and visualization experiment.

@@ -65,6 +65,7 @@ The project demonstrates the following ML ideas:
 | Computer Vision roadmap | Photo readiness, visual type classification, similarity and geometry overlay concepts |
 | MLflow-ready tracking | Optional experiment tracking plan and summary structure |
 | Tabular neural network | Step 36 MLPClassifier prototype for growth review signal classification |
+| Neural-network results UI | Step 37 browser panel showing Step 36 metrics, confusion matrix, evidence files and safety boundary |
 
 ### Step 36 tabular neural network
 
@@ -79,6 +80,12 @@ notebooks/12_tabular_neural_network_growth_prediction.ipynb
 ```
 
 This neural network is a growth-review prototype only. It is not a veterinary diagnostic system, not an official Cane Corso certification system and not an image-based breed classifier.
+
+### Step 37 neural-network results UI
+
+Step 37 adds a dedicated `/experiments` panel that makes the Step 36 neural-network result visible in the application. The panel shows the `MLPClassifier` model type, the `normal_growth vs needs_attention` task, the dataset split, accuracy, precision, recall, F1, training iterations, final loss and confusion matrix.
+
+The panel also links the reviewer to the evidence files and repeats the safety boundary: this is a tabular growth-review prototype, not a veterinary diagnostic system, not official Cane Corso certification and not an image-based breed classifier.
 
 ## 5. Data and prototype boundaries
 
@@ -133,6 +140,7 @@ pnpm build
 
 The expected final state is:
 
+- Step 37 neural-network UI QA passes;
 - Step 36 neural-network QA passes;
 - documentation QA passes;
 - visual review localization QA passes;
