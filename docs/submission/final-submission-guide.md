@@ -14,7 +14,11 @@ Recommended submission package:
 3. reports/final-submission-report.md
 4. reports/final-course-coverage.md
 5. notebooks/ folder
-6. Optional screenshots or screen recording of the running app
+6. docs/submission/defense-script.md
+7. docs/submission/demo-walkthrough.md
+8. docs/submission/screenshot-checklist.md
+9. reports/final-project-summary-for-defense.md
+10. Optional screenshots or screen recording of the running app
 ```
 
 The app routes that best demonstrate the project are:
@@ -47,6 +51,7 @@ http://localhost:3000
 Run these checks before final submission:
 
 ```bash
+pnpm step38:defense-pack:qa
 pnpm step37:neural-results-ui:qa
 pnpm step36:neural-growth:qa
 pnpm step35:submission-docs:qa
@@ -95,3 +100,19 @@ It is a learning and visualization prototype.
 ## Suggested final wording for submission
 
 This project is an educational machine learning prototype. It combines a web application with notebooks and documentation to explain how dog growth can be represented with coordinates, curves, zones and visual evidence. The focus is not only model output, but also transparency, safe interpretation and clear user-facing explanation.
+
+
+## Step 38 defense pack
+
+Step 38 adds final files for presentation and defense:
+
+```txt
+docs/submission/defense-script.md
+docs/submission/demo-walkthrough.md
+docs/submission/screenshot-checklist.md
+reports/final-project-summary-for-defense.md
+```
+
+Use `defense-script.md` when explaining the project verbally. Use `demo-walkthrough.md` as the browser route order. Use `screenshot-checklist.md` to prepare evidence images, especially the Step 37 neural-network results panel in `/experiments`.
+
+The defense pack keeps the same safe interpretation: Step 36 is a real tabular neural network for a growth-review signal; it is not a veterinary diagnostic system, not official Cane Corso certification and not an image-based breed classifier.

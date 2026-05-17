@@ -12,7 +12,8 @@
     "step34:visual-review-polish:qa": "node scripts/qa-step34-visual-review-polish.mjs",
     "step35:submission-docs:qa": "node scripts/qa-step35-submission-docs.mjs",
     "step36:neural-growth:qa": "node scripts/qa-step36-neural-network-prototype.mjs",
-    "step37:neural-results-ui:qa": "node scripts/qa-step37-neural-network-results-ui.mjs"
+    "step37:neural-results-ui:qa": "node scripts/qa-step37-neural-network-results-ui.mjs",
+    "step38:defense-pack:qa": "node scripts/qa-step38-final-defense-demo-pack.mjs"
   },
   "dependencies": {
     "next": "16.2.6",

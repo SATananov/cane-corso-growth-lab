@@ -9,14 +9,18 @@ The project is built as a separate research-and-application lab. It is not part 
 
 This repository is ready to be reviewed as a machine learning course project and as a small interactive product prototype.
 
-**Step 36 status:** the repository now includes a real tabular neural network growth prototype on top of the verified Step 35 submission package. The neural network is trained on structured growth data and remains a safe educational review signal, not a veterinary diagnostic system or image-based breed-certification model.
+**Step 38 status:** the repository now includes a real Step 36 tabular neural network, a Step 37 browser-visible neural-network results panel and a Step 38 defense/demo walkthrough pack. The neural network is trained on structured growth data and remains a safe educational review signal, not a veterinary diagnostic system or image-based breed-certification model.
 
 Submission-oriented files:
 
 ```txt
 README.md
 docs/submission/final-submission-guide.md
+docs/submission/defense-script.md
+docs/submission/demo-walkthrough.md
+docs/submission/screenshot-checklist.md
 reports/final-submission-report.md
+reports/final-project-summary-for-defense.md
 reports/final-course-coverage.md
 notebooks/README.md
 ```
@@ -24,6 +28,8 @@ notebooks/README.md
 Recommended final checks before handing in the project:
 
 ```bash
+pnpm step38:defense-pack:qa
+pnpm step37:neural-results-ui:qa
 pnpm step36:neural-growth:qa
 pnpm step35:submission-docs:qa
 pnpm step34:visual-review-polish:qa
@@ -427,7 +433,11 @@ Step 35 evidence lives in:
 
 ```txt
 docs/submission/final-submission-guide.md
+docs/submission/defense-script.md
+docs/submission/demo-walkthrough.md
+docs/submission/screenshot-checklist.md
 reports/final-submission-report.md
+reports/final-project-summary-for-defense.md
 docs/qa/step35-final-submission-documentation.md
 scripts/qa-step35-submission-docs.mjs
 ```
@@ -699,3 +709,37 @@ notebooks/11_visual_match_result_contract.ipynb
 ```
 
 The result remains a visual similarity signal only. It does not prove breed purity, pedigree, genetic origin, health or official registration.
+
+
+## Step 38 — Final Defense & Demo Walkthrough Pack
+
+Step 38 adds final defense material for presenting the project clearly. It does not change the app logic, neural-network training logic or data pipeline. It prepares a reviewer-friendly explanation path for the finished project.
+
+New defense files:
+
+```txt
+docs/submission/defense-script.md
+docs/submission/demo-walkthrough.md
+docs/submission/screenshot-checklist.md
+reports/final-project-summary-for-defense.md
+docs/qa/step38-final-defense-demo-pack.md
+scripts/qa-step38-final-defense-demo-pack.mjs
+```
+
+The pack explains how to show `/calculator`, `/data`, `/experiments`, the Step 37 neural-network results panel, `/visual-review`, `/course` and `/about`. It also documents how to answer the expected neural-network question: Step 36 is a real tabular `MLPClassifier`, while image neural networks remain future work until a licensed labeled image dataset exists.
+
+Verification:
+
+```bash
+pnpm step38:defense-pack:qa
+pnpm step37:neural-results-ui:qa
+pnpm step36:neural-growth:qa
+pnpm step35:submission-docs:qa
+pnpm step34:visual-review-polish:qa
+pnpm step33-4:language-layout:qa
+pnpm ml:python:syntax
+pnpm lint
+pnpm build
+```
+
+The Step 38 wording keeps the same safety boundary: the project is not a veterinary diagnostic system, not official Cane Corso certification, not pedigree proof and not an image-based breed classifier.

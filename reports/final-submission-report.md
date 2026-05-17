@@ -87,6 +87,23 @@ Step 37 adds a dedicated `/experiments` panel that makes the Step 36 neural-netw
 
 The panel also links the reviewer to the evidence files and repeats the safety boundary: this is a tabular growth-review prototype, not a veterinary diagnostic system, not official Cane Corso certification and not an image-based breed classifier.
 
+
+
+### Step 38 final defense pack
+
+Step 38 final defense pack adds the final explanation and demo material for reviewers. It includes a defense script, demo walkthrough, screenshot checklist and a compact final summary for the project defense.
+
+These files help explain the finished project without changing the app or training logic:
+
+```txt
+docs/submission/defense-script.md
+docs/submission/demo-walkthrough.md
+docs/submission/screenshot-checklist.md
+reports/final-project-summary-for-defense.md
+```
+
+The defense material highlights the real Step 36 tabular neural network, the Step 37 `/experiments` UI panel and the reason why image neural networks remain future work until a properly licensed labeled image dataset exists.
+
 ## 5. Data and prototype boundaries
 
 The project uses educational sample data and prototype-ready structures. Some parts simulate realistic workflows so the app can be demonstrated without requiring private dog records or a large production dataset.
@@ -129,6 +146,8 @@ Visual review is treated only as a readiness and similarity workflow. A photo ca
 Recommended final commands:
 
 ```bash
+pnpm step38:defense-pack:qa
+pnpm step37:neural-results-ui:qa
 pnpm step36:neural-growth:qa
 pnpm step35:submission-docs:qa
 pnpm step34:visual-review-polish:qa
