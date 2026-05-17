@@ -146,6 +146,7 @@ Visual review is treated only as a readiness and similarity workflow. A photo ca
 Recommended final commands:
 
 ```bash
+pnpm step39:final-submission-lock:qa
 pnpm step38:defense-pack:qa
 pnpm step37:neural-results-ui:qa
 pnpm step36:neural-growth:qa
@@ -186,3 +187,17 @@ Possible future improvements:
 Cane Corso Growth Lab is a complete educational ML prototype with a working web interface, notebooks, sample data, model explanations, visual evidence and safety boundaries.
 
 The strongest part of the project is the connection between machine learning concepts and a clear product experience: the user can see how raw dog-profile data becomes features, model evidence, visual coordinates, safe explanations and future research directions.
+
+
+## Step 39 final submission readiness lock
+
+Step 39 adds the final submission readiness lock. It confirms that the final project handoff is complete: GitHub is treated as the source of truth, the source archive should be created with `git archive`, the Step 36 neural-network training evidence is preserved, the Step 37 browser panel is visible, and the Step 38 defense/demo material is available.
+
+The lock is intentionally documentation and QA only. It does not change the application behavior, UI behavior, neural-network training code or ML data pipeline.
+
+Final readiness evidence:
+
+- `docs/submission/final-checklist.md`;
+- `docs/qa/step39-final-submission-readiness-lock.md`;
+- `scripts/qa-step39-final-submission-readiness-lock.mjs`;
+- `pnpm step39:final-submission-lock:qa`.

@@ -51,6 +51,7 @@ http://localhost:3000
 Run these checks before final submission:
 
 ```bash
+pnpm step39:final-submission-lock:qa
 pnpm step38:defense-pack:qa
 pnpm step37:neural-results-ui:qa
 pnpm step36:neural-growth:qa
@@ -116,3 +117,22 @@ reports/final-project-summary-for-defense.md
 Use `defense-script.md` when explaining the project verbally. Use `demo-walkthrough.md` as the browser route order. Use `screenshot-checklist.md` to prepare evidence images, especially the Step 37 neural-network results panel in `/experiments`.
 
 The defense pack keeps the same safe interpretation: Step 36 is a real tabular neural network for a growth-review signal; it is not a veterinary diagnostic system, not official Cane Corso certification and not an image-based breed classifier.
+
+
+## Step 39 final readiness lock
+
+Step 39 adds the final submission readiness lock. Use `docs/submission/final-checklist.md` as the last checklist before submitting the GitHub link, source ZIP or screenshots.
+
+Final lock verification command:
+
+```bash
+pnpm step39:final-submission-lock:qa
+```
+
+The final source ZIP should be created from Git, not from a manual working-folder compression:
+
+```bash
+git archive --format=zip --output=cane-corso-growth-lab_step39_github_exact_source.zip HEAD
+```
+
+Before creating the ZIP, verify that `HEAD` equals `origin/main` so the archive matches GitHub.

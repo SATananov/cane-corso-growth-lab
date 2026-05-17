@@ -743,3 +743,34 @@ pnpm build
 ```
 
 The Step 38 wording keeps the same safety boundary: the project is not a veterinary diagnostic system, not official Cane Corso certification, not pedigree proof and not an image-based breed classifier.
+
+
+## Step 39 — Final Submission Readiness Lock
+
+Step 39 adds the final readiness lock for submission. It does not change the application behavior, neural-network training logic, UI behavior or ML data pipeline. It documents how to verify that GitHub, the final source ZIP, the defense material and the neural-network evidence are aligned.
+
+New final lock files:
+
+```txt
+docs/submission/final-checklist.md
+docs/qa/step39-final-submission-readiness-lock.md
+scripts/qa-step39-final-submission-readiness-lock.mjs
+```
+
+Verification:
+
+```bash
+pnpm step39:final-submission-lock:qa
+pnpm step38:defense-pack:qa
+pnpm step37:neural-results-ui:qa
+pnpm step36:neural-growth:qa
+pnpm step35:submission-docs:qa
+pnpm step34:visual-review-polish:qa
+pnpm step33-4:language-layout:qa
+pnpm ml:python:syntax
+python scripts/ml/train_growth_neural_network.py
+pnpm lint
+pnpm build
+```
+
+The final source archive should be created from Git with `git archive --format=zip`, after confirming that local `HEAD` equals `origin/main`. Use `docs/submission/final-checklist.md` as the final handoff checklist before submission or presentation.
