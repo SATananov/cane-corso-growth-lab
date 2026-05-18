@@ -2,6 +2,7 @@
 
 import type { GrowthPrediction } from "@/lib/growth-model";
 import { useLanguage } from "@/lib/i18n/language-context";
+import { localizeMlPhrase } from "@/lib/i18n/ml-phrase-copy";
 import type { LanguageCode } from "@/lib/i18n/languages";
 
 type GrowthClusterPanelProps = { prediction: GrowthPrediction };
@@ -60,12 +61,12 @@ const copy: Record<LanguageCode, {
   },
 };
 
-function localClusterLabel(label: string, labels: Record<string, string>) {
+function localClusterLabel(label: string, labels: Record<string, string>, language: LanguageCode) {
   const normalized = label.toLowerCase();
   for (const [key, value] of Object.entries(labels)) {
     if (normalized.includes(key)) return value;
   }
-  return label;
+  return localizeMlPhrase(label, language);
 }
 
 export function GrowthClusterPanel({ prediction }: GrowthClusterPanelProps) {
@@ -87,7 +88,7 @@ export function GrowthClusterPanel({ prediction }: GrowthClusterPanelProps) {
           <div className="rounded-2xl border border-amber-200/15 bg-amber-300/10 px-4 py-3 text-right">
             <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">{t.assigned}</p>
             <p className="mt-1 text-lg font-semibold text-amber-100">
-              {localClusterLabel(cluster.assignedCluster.shortLabel, t.clusterLabels)}
+              {localClusterLabel(cluster.assignedCluster.shortLabel, t.clusterLabels, language)}
             </p>
           </div>
         </div>
@@ -109,7 +110,7 @@ export function GrowthClusterPanel({ prediction }: GrowthClusterPanelProps) {
         <div className="mt-5 grid gap-3 md:grid-cols-2">
           {cluster.nearestAlternatives.map((item) => (
             <div key={item.profile.id} className="rounded-2xl border border-stone-700 bg-black/20 p-4">
-              <p className="text-sm font-semibold text-white">{localClusterLabel(item.profile.label, t.clusterLabels)}</p>
+              <p className="text-sm font-semibold text-white">{localClusterLabel(item.profile.label, t.clusterLabels, language)}</p>
               <p className="mt-2 text-xs leading-5 text-stone-500">
                 {t.alternativeDistance}: {item.distance}
               </p>
@@ -118,7 +119,7 @@ export function GrowthClusterPanel({ prediction }: GrowthClusterPanelProps) {
         </div>
 
         <p className="mt-5 rounded-2xl border border-amber-200/10 bg-amber-300/10 p-4 text-sm leading-6 text-amber-100/85">
-          {language === "en" ? cluster.geometryNote : t.geometryFallback}
+          {localizeMlPhrase(cluster.geometryNote, language)}
         </p>
       </div>
     </section>

@@ -3,6 +3,7 @@
 import { useMemo } from "react";
 import type { DogGrowthInput } from "@/lib/growth-model";
 import { useLanguage } from "@/lib/i18n/language-context";
+import { localizeMlPhrase } from "@/lib/i18n/ml-phrase-copy";
 import type { LanguageCode } from "@/lib/i18n/languages";
 import {
   caneCorsoBreedReferenceGeometry,
@@ -28,7 +29,9 @@ const copy: Record<LanguageCode, {
   weightSignal: string;
   nextPhotoLayer: string;
   boundary: string;
+  tolerance: string;
   signals: Record<BreedReferenceSignal, string>;
+  ageStages: Record<string, string>;
 }> = {
   en: {
     eyebrow: "Reference Geometry",
@@ -46,12 +49,14 @@ const copy: Record<LanguageCode, {
     nextPhotoLayer: "Next visual layer",
     boundary:
       "This is not an official breed evaluation. It prepares the logic for later photo geometry and visual similarity review.",
+    tolerance: "tolerance",
     signals: {
       within_reference: "Inside reference",
       within_tolerance: "Inside tolerance",
       outside_reference: "Review carefully",
       puppy_growth: "Growing dog",
     },
+    ageStages: { puppy: "puppy", adolescent: "adolescent", adult: "adult" },
   },
   bg: {
     eyebrow: "Референтна геометрия",
@@ -69,12 +74,14 @@ const copy: Record<LanguageCode, {
     nextPhotoLayer: "Следващ визуален слой",
     boundary:
       "Това не е официална породна оценка. Слоят подготвя логиката за бъдеща фото геометрия и визуално сходство.",
+    tolerance: "толеранс",
     signals: {
       within_reference: "В референтната зона",
       within_tolerance: "В толеранса",
       outside_reference: "Нужен е внимателен преглед",
       puppy_growth: "Кучето още расте",
     },
+    ageStages: { puppy: "кученце", adolescent: "подрастващо", adult: "възрастно куче" },
   },
   it: {
     eyebrow: "Geometria di riferimento",
@@ -92,12 +99,14 @@ const copy: Record<LanguageCode, {
     nextPhotoLayer: "Prossimo livello visivo",
     boundary:
       "Non è una valutazione ufficiale di razza. Prepara la logica per futura geometria fotografica e revisione di somiglianza visiva.",
+    tolerance: "tolleranza",
     signals: {
       within_reference: "Dentro il riferimento",
       within_tolerance: "Dentro la tolleranza",
       outside_reference: "Da rivedere con attenzione",
       puppy_growth: "Cane in crescita",
     },
+    ageStages: { puppy: "cucciolo", adolescent: "adolescente", adult: "adulto" },
   },
 };
 
@@ -122,7 +131,7 @@ export function BreedReferenceGeometryPanel({ input }: BreedReferenceGeometryPan
   const stats = [
     {
       label: t.ageStage,
-      value: evaluation.ageStage,
+      value: t.ageStages[evaluation.ageStage] ?? localizeMlPhrase(evaluation.ageStage, language),
     },
     {
       label: t.currentHeight,
@@ -160,36 +169,36 @@ export function BreedReferenceGeometryPanel({ input }: BreedReferenceGeometryPan
           {stats.map((item) => (
             <div key={item.label} className="rounded-2xl border border-stone-700 bg-white/[0.03] p-3">
               <p className="text-xs text-stone-500">{item.label}</p>
-              <p className="mt-1 text-sm font-semibold capitalize text-white">{item.value}</p>
+              <p className="mt-1 text-sm font-semibold text-white">{item.value}</p>
             </div>
           ))}
         </div>
 
         <div className="mt-4 grid gap-3 md:grid-cols-2">
           <div className="rounded-2xl border border-stone-700 bg-white/[0.03] p-4">
-            <div className="flex items-center justify-between gap-3">
+            <div className="flex flex-wrap items-center justify-between gap-3">
               <p className="text-sm font-semibold text-white">{t.heightSignal}</p>
               <span className={`rounded-full border px-3 py-1 text-xs font-semibold ${statusClass(evaluation.heightSignal)}`}>
                 {t.signals[evaluation.heightSignal]}
               </span>
             </div>
             <p className="mt-3 text-sm leading-6 text-stone-400">
-              {evaluation.heightMessage}
+              {localizeMlPhrase(evaluation.heightMessage, language)}
             </p>
             <p className="mt-2 text-xs text-stone-500">
-              {reference.heightAtWithersCm.min}–{reference.heightAtWithersCm.max} cm · tolerance {reference.heightAtWithersCm.toleranceMin}–{reference.heightAtWithersCm.toleranceMax} cm
+              {reference.heightAtWithersCm.min}–{reference.heightAtWithersCm.max} cm · {t.tolerance} {reference.heightAtWithersCm.toleranceMin}–{reference.heightAtWithersCm.toleranceMax} cm
             </p>
           </div>
 
           <div className="rounded-2xl border border-stone-700 bg-white/[0.03] p-4">
-            <div className="flex items-center justify-between gap-3">
+            <div className="flex flex-wrap items-center justify-between gap-3">
               <p className="text-sm font-semibold text-white">{t.weightSignal}</p>
               <span className={`rounded-full border px-3 py-1 text-xs font-semibold ${statusClass(evaluation.weightSignal)}`}>
                 {t.signals[evaluation.weightSignal]}
               </span>
             </div>
             <p className="mt-3 text-sm leading-6 text-stone-400">
-              {evaluation.weightMessage}
+              {localizeMlPhrase(evaluation.weightMessage, language)}
             </p>
             <p className="mt-2 text-xs text-stone-500">
               {reference.weightKg.min}–{reference.weightKg.max} kg
@@ -203,7 +212,7 @@ export function BreedReferenceGeometryPanel({ input }: BreedReferenceGeometryPan
           {t.nextPhotoLayer}
         </p>
         <p className="mt-2 text-sm leading-6 text-amber-50/85">
-          {evaluation.readinessNote}
+          {localizeMlPhrase(evaluation.readinessNote, language)}
         </p>
         <p className="mt-3 text-xs leading-5 text-stone-400">{t.boundary}</p>
       </div>

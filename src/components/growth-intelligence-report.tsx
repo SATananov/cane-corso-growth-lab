@@ -158,12 +158,12 @@ export function GrowthIntelligenceReport({ prediction }: GrowthIntelligenceRepor
         </div>
       </div>
 
-      <div className="mt-6 grid gap-4 xl:grid-cols-4">
+      <div className="mt-6 grid gap-4 md:grid-cols-2 2xl:grid-cols-4">
         {report.keyFactors.map((factor, index) => (
-          <article key={factor.label} className="rounded-3xl border border-stone-700 bg-white/[0.03] p-4">
+          <article key={factor.label} className="min-w-0 rounded-3xl border border-stone-700 bg-white/[0.03] p-4">
             <div className="flex items-start justify-between gap-3">
-              <p className="text-xs uppercase tracking-[0.16em] text-stone-500">{t.factors[index]}</p>
-              <span className={`rounded-full border px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.14em] ${factorToneStyles[factor.tone]}`}>{t.tones[factor.tone]}</span>
+              <p className="max-w-[70%] text-xs uppercase tracking-[0.12em] text-stone-500">{t.factors[index]}</p>
+              <span className={`shrink-0 rounded-full border px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.1em] ${factorToneStyles[factor.tone]}`}>{t.tones[factor.tone]}</span>
             </div>
             <p className="mt-3 text-xl font-semibold text-white">{factorValues[index]}</p>
             <p className="mt-2 text-sm leading-6 text-stone-400">{t.impacts[index]}</p>

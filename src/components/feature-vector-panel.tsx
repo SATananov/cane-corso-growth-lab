@@ -2,6 +2,7 @@
 
 import type { GrowthPrediction } from "@/lib/growth-model";
 import { useLanguage } from "@/lib/i18n/language-context";
+import { localizeMlPhrase } from "@/lib/i18n/ml-phrase-copy";
 import type { LanguageCode } from "@/lib/i18n/languages";
 
 type FeatureVectorPanelProps = {
@@ -86,14 +87,14 @@ export function FeatureVectorPanel({ prediction }: FeatureVectorPanelProps) {
             <article key={feature.id} className="min-w-0 rounded-2xl border border-stone-700 bg-black/25 p-4">
               <div className="flex items-start justify-between gap-3">
                 <p className="text-sm font-semibold text-white">
-                  {t.featureLabels[feature.label] ?? feature.label}
+                  {localizeMlPhrase(feature.label, language)}
                 </p>
                 <p className="shrink-0 rounded-full border border-amber-200/15 px-3 py-1 text-xs text-amber-100/80">
-                  {feature.value} {feature.unit ?? ""}
+                  {typeof feature.value === "string" ? localizeMlPhrase(feature.value, language) : feature.value} {feature.unit ?? ""}
                 </p>
               </div>
               <p className="mt-3 text-xs leading-5 text-stone-500">
-                {t.featureExplanations[feature.explanation] ?? feature.explanation}
+                {localizeMlPhrase(feature.explanation, language)}
               </p>
             </article>
           ))}
@@ -102,7 +103,7 @@ export function FeatureVectorPanel({ prediction }: FeatureVectorPanelProps) {
         <div className="mt-5 rounded-2xl border border-amber-200/10 bg-amber-300/10 p-4">
           <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">{t.contract}</p>
           <p className="mt-2 break-words text-sm leading-6 text-amber-100/90">
-            {featureVector.featureContract.join(" → ")}
+            {featureVector.featureContract.map((item) => localizeMlPhrase(item, language)).join(" → ")}
           </p>
         </div>
       </div>

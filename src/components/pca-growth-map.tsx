@@ -2,6 +2,7 @@
 
 import type { GrowthPrediction } from "@/lib/growth-model";
 import { useLanguage } from "@/lib/i18n/language-context";
+import { localizeMlPhrase } from "@/lib/i18n/ml-phrase-copy";
 import type { LanguageCode } from "@/lib/i18n/languages";
 
 type PcaGrowthMapProps = { prediction: GrowthPrediction };
@@ -23,7 +24,7 @@ const copy: Record<LanguageCode, {
   },
   bg: {
     eyebrow: "Намаляване на размерността",
-    title: "PCA-style карта на растежа",
+    title: "PCA карта на растежа",
     description:
       "Проекцията превръща няколко характеристики на растежа в двуизмерна карта, за да може текущото куче да се сравни с референтни зони.",
     nearest: "Най-близка зона",
@@ -52,13 +53,13 @@ export function PcaGrowthMap({ prediction }: PcaGrowthMapProps) {
             <p className="text-xs uppercase tracking-[0.25em] text-amber-300/70">{t.eyebrow}</p>
             <h3 className="mt-2 text-2xl font-semibold text-white">{t.title}</h3>
             <p className="mt-3 max-w-3xl text-sm leading-6 text-stone-400">
-              {language === "en" ? projection.interpretation : t.description}
+              {localizeMlPhrase(projection.interpretation, language)}
             </p>
           </div>
           <div className="rounded-2xl border border-amber-200/15 bg-amber-300/10 px-4 py-3 text-right">
             <p className="text-xs uppercase tracking-[0.2em] text-amber-200/70">{t.nearest}</p>
             <p className="mt-1 text-lg font-semibold text-amber-100">
-              {projection.nearestReference.label || t.fallbackArea}
+              {projection.nearestReference.label ? localizeMlPhrase(projection.nearestReference.label, language) : t.fallbackArea}
             </p>
           </div>
         </div>
@@ -74,7 +75,7 @@ export function PcaGrowthMap({ prediction }: PcaGrowthMapProps) {
               return (
                 <g key={point.id}>
                   <circle cx={x} cy={y} r={point.type === "cluster" ? 2.2 : 1.6} fill="rgba(214, 180, 90, 0.45)" />
-                  <text x={x + 2.5} y={y - 2} fontSize="3" fill="rgba(231, 229, 228, 0.55)">{point.label}</text>
+                  <text x={x + 2.5} y={y - 2} fontSize="3" fill="rgba(231, 229, 228, 0.55)">{localizeMlPhrase(point.label, language)}</text>
                 </g>
               );
             })}

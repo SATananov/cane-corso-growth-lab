@@ -16,7 +16,8 @@
     "step38:defense-pack:qa": "node scripts/qa-step38-final-defense-demo-pack.mjs",
     "step39:final-submission-lock:qa": "node scripts/qa-step39-final-submission-readiness-lock.mjs",
     "step40:language-consistency:qa": "node scripts/qa-step40-final-language-consistency.mjs",
-    "step40-1:full-language-sweep:qa": "node scripts/qa-step40-1-full-app-language-sweep.mjs"
+    "step40-1:full-language-sweep:qa": "node scripts/qa-step40-1-full-app-language-sweep.mjs",
+    "step40-2:browser-language-ux:qa": "node scripts/qa-step40-2-browser-language-ux-cleanup.mjs"
   },
   "dependencies": {
     "next": "16.2.6",
