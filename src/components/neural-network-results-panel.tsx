@@ -4,6 +4,7 @@ import { formatMetric, formatPercent } from "@/lib/ml/model-results";
 import { neuralNetworkGrowthResults } from "@/lib/ml/neural-network-growth-results";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { buildGitHubSourceUrl } from "@/lib/source-links";
+import { formatStableInteger } from "@/lib/number-format";
 import type { LanguageCode } from "@/lib/i18n/languages";
 
 type PanelCopy = {
@@ -215,7 +216,7 @@ export function NeuralNetworkResultsPanel() {
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             <InfoCard label={t.taskLabel} value={result.task} />
             <InfoCard label={t.modelLabel} value={result.modelType} />
-            <InfoCard label={t.dataLabel} value={`${result.trainRows.toLocaleString()} ${t.trainLabel} / ${result.testRows.toLocaleString()} ${t.testLabel}`} />
+            <InfoCard label={t.dataLabel} value={`${formatStableInteger(result.trainRows)} ${t.trainLabel} / ${formatStableInteger(result.testRows)} ${t.testLabel}`} />
           </div>
         </div>
 
@@ -323,7 +324,7 @@ function MatrixRow({ label, values }: { label: string; values: [number, number] 
       <th className="px-4 py-3 font-semibold text-white">{label}</th>
       {values.map((value, index) => (
         <td key={`${label}-${index}`} className="px-4 py-3 text-stone-300">
-          {value.toLocaleString()}
+          {formatStableInteger(value)}
         </td>
       ))}
     </tr>

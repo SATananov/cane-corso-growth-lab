@@ -170,3 +170,17 @@ Final browser evidence command:
 ```bash
 pnpm step42:browser-evidence:qa
 ```
+
+## Step 43 — Owner Journey Review
+
+Step 43 adds a first-time user path to the running app. During the demo, open `/` or `/calculator` and show the owner-mode panel before showing the technical evidence pages.
+
+Recommended explanation:
+
+> A normal owner starts by entering a Cane Corso profile. The app returns an orientation signal, explains the next step and keeps the ML evidence available for review. The neural-network and methodology pages are transparent evidence, not a replacement for veterinary advice.
+
+Verification command:
+
+```bash
+pnpm step43:owner-journey:qa
+```

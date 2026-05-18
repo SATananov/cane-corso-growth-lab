@@ -4,6 +4,7 @@ import Link from "next/link";
 import { DogGrowthCalculator } from "@/components/dog-growth-calculator";
 import { MlExperimentGrid } from "@/components/ml-experiment-grid";
 import { UsgLabSeal } from "@/components/usg-lab-seal";
+import { OwnerJourneyPanel } from "@/components/owner-journey-panel";
 import { PageShell } from "@/components/page-shell";
 import { useLanguage } from "@/lib/i18n/language-context";
 
@@ -118,6 +119,8 @@ export function AppShell() {
           </div>
         </section>
       </div>
+
+      <OwnerJourneyPanel />
 
       <section
         id="ml-foundation"

@@ -848,3 +848,25 @@ pnpm step42:browser-evidence:qa
 ```
 
 Final browser evidence should include `/calculator`, `/data`, `/experiments`, `/visual-review`, `/course`, `/about`, the Step 37 neural-network panel, and at least one clicked Step 41 source-evidence card. The evidence remains safely worded: educational ML prototype, tabular neural-network growth review, and future visual AI roadmap.
+
+## Step 43 — First-Time User Journey & Owner Mode
+
+Step 43 adds an owner-friendly journey panel so the app explains what happens for a first-time user before they enter the technical ML layers. It does not change the neural-network training logic, datasets, metrics, routes or calculator formulas. It clarifies the product path: enter a Cane Corso profile, read the growth orientation signal, review the recommended next step and inspect the evidence only when needed.
+
+Key files:
+
+```txt
+src/components/owner-journey-panel.tsx
+src/components/app-shell.tsx
+src/app/calculator/page.tsx
+docs/qa/step43-owner-journey-mode.md
+scripts/qa-step43-owner-journey-mode.mjs
+```
+
+Verification command:
+
+```bash
+pnpm step43:owner-journey:qa
+```
+
+The owner-mode wording keeps the same safety boundary: it is an educational orientation tool, not a veterinary diagnosis, not official Cane Corso certification and not pedigree proof.

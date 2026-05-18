@@ -5,6 +5,7 @@ import {
   getClassGroupLabel,
 } from "@/lib/ml/breed-classifier-training";
 import { useLanguage } from "@/lib/i18n/language-context";
+import { formatStableInteger } from "@/lib/number-format";
 import type { LanguageCode } from "@/lib/i18n/languages";
 
 const copy: Record<LanguageCode, {
@@ -85,7 +86,7 @@ export function BreedClassifierTrainingPanel() {
               {t.minimum}
             </p>
             <p className="mt-2 text-2xl font-semibold text-white">
-              {plan.minimumDatasetGoal.toLocaleString()}+
+              {formatStableInteger(plan.minimumDatasetGoal)}+
             </p>
             <p className="mt-1 text-xs text-stone-400">{t.labelled}</p>
           </div>
@@ -94,7 +95,7 @@ export function BreedClassifierTrainingPanel() {
               {t.recommended}
             </p>
             <p className="mt-2 text-2xl font-semibold text-white">
-              {plan.recommendedDatasetGoal.toLocaleString()}+
+              {formatStableInteger(plan.recommendedDatasetGoal)}+
             </p>
             <p className="mt-1 text-xs text-stone-400">{t.labelled}</p>
           </div>
@@ -132,8 +133,8 @@ export function BreedClassifierTrainingPanel() {
                 <td className="px-4 py-4 font-semibold text-white">{item.label}</td>
                 <td className="px-4 py-4 text-amber-100/80">{getClassGroupLabel(item.group)}</td>
                 <td className="px-4 py-4 leading-6 text-stone-400">{item.purpose}</td>
-                <td className="px-4 py-4 text-stone-300">{item.minimumImages.toLocaleString()}</td>
-                <td className="px-4 py-4 text-stone-300">{item.recommendedImages.toLocaleString()}</td>
+                <td className="px-4 py-4 text-stone-300">{formatStableInteger(item.minimumImages)}</td>
+                <td className="px-4 py-4 text-stone-300">{formatStableInteger(item.recommendedImages)}</td>
               </tr>
             ))}
           </tbody>

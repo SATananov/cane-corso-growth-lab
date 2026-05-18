@@ -225,3 +225,9 @@ Final Step 42 evidence files:
 - `pnpm step42:browser-evidence:qa`.
 
 The final browser evidence confirms that the project can be presented as a complete educational ML prototype with a real tabular neural network, clickable source traceability, and safe interpretation boundaries.
+
+## Step 43 — First-Time User Journey & Owner Mode
+
+Step 43 improves the final user experience by adding a visible owner-mode journey panel. The panel explains what happens for a non-technical user: enter a Cane Corso profile, read the growth orientation signal, review the next step and inspect the model evidence if needed.
+
+This step does not change the neural-network model, the training data, the generated metrics or the growth formulas. It only makes the project easier to understand as a real app experience while preserving the safe boundary: educational orientation, not veterinary diagnosis, official certification or pedigree proof.

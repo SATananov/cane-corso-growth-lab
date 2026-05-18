@@ -5,6 +5,7 @@ import {
   visionDatasetReadinessSummary,
 } from "@/lib/ml/vision-dataset-readiness";
 import { useLanguage } from "@/lib/i18n/language-context";
+import { formatStableInteger } from "@/lib/number-format";
 import type { LanguageCode } from "@/lib/i18n/languages";
 
 const copy: Record<LanguageCode, {
@@ -96,7 +97,7 @@ export function VisionDatasetReadinessPanel() {
           </div>
           <div className="rounded-2xl border border-amber-200/10 bg-white/[0.03] p-4">
             <p className="text-xs uppercase tracking-[0.22em] text-stone-500">{t.goal}</p>
-            <p className="mt-2 text-2xl font-semibold text-white">{summary.imageFilesRequiredForPrototype.toLocaleString()}+</p>
+            <p className="mt-2 text-2xl font-semibold text-white">{formatStableInteger(summary.imageFilesRequiredForPrototype)}+</p>
           </div>
         </div>
       </div>

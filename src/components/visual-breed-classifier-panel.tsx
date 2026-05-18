@@ -3,6 +3,7 @@
 import { useLanguage } from "@/lib/i18n/language-context";
 import type { LanguageCode } from "@/lib/i18n/languages";
 import { localizeMlPhrase } from "@/lib/i18n/ml-phrase-copy";
+import { formatStableInteger } from "@/lib/number-format";
 import {
   getVisualBreedGroupLabel,
   visualBreedArtifacts,
@@ -109,12 +110,12 @@ export function VisualBreedClassifierPanel() {
         <div className="grid gap-3 sm:grid-cols-2 lg:min-w-[22rem]">
           <div className="rounded-2xl border border-amber-200/10 bg-white/[0.03] p-4">
             <p className="text-xs uppercase tracking-[0.22em] text-stone-500">{t.minimum}</p>
-            <p className="mt-2 text-2xl font-semibold text-white">{minimumTotal.toLocaleString()}+</p>
+            <p className="mt-2 text-2xl font-semibold text-white">{formatStableInteger(minimumTotal)}+</p>
             <p className="mt-1 text-xs text-stone-400">{t.labelledImages}</p>
           </div>
           <div className="rounded-2xl border border-amber-200/10 bg-white/[0.03] p-4">
             <p className="text-xs uppercase tracking-[0.22em] text-stone-500">{t.recommended}</p>
-            <p className="mt-2 text-2xl font-semibold text-white">{recommendedTotal.toLocaleString()}+</p>
+            <p className="mt-2 text-2xl font-semibold text-white">{formatStableInteger(recommendedTotal)}+</p>
             <p className="mt-1 text-xs text-stone-400">{t.labelledImages}</p>
           </div>
         </div>
@@ -150,7 +151,7 @@ export function VisualBreedClassifierPanel() {
                 <td className="px-4 py-4 text-amber-100/80">{localizeMlPhrase(getVisualBreedGroupLabel(item.group), language)}</td>
                 <td className="px-4 py-4 leading-6 text-stone-400">{localizeMlPhrase(item.modelRole, language)}</td>
                 <td className="px-4 py-4 leading-6 text-stone-400">{localizeMlPhrase(item.whyItMatters, language)}</td>
-                <td className="px-4 py-4 text-stone-300">{item.minimumImages.toLocaleString()} / {item.recommendedImages.toLocaleString()}</td>
+                <td className="px-4 py-4 text-stone-300">{formatStableInteger(item.minimumImages)} / {formatStableInteger(item.recommendedImages)}</td>
               </tr>
             ))}
           </tbody>
