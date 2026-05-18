@@ -209,3 +209,19 @@ Step 41 adds clickable evidence cards to improve the final project review experi
 This strengthens traceability: a reviewer can move from the app surface to the notebook, dataset, figure, training script or metrics JSON that supports the claim.
 
 This step is UI/link behavior only. It does not alter the neural-network training process, generated metrics, datasets, model outputs or safety boundaries.
+
+## Step 42 final browser evidence
+
+Step 42 adds the final browser evidence and screenshot pack. It documents the manual route-by-route browser pass, the screenshot naming convention, the Step 41 clickable evidence checks, and the final neural-network evidence that should be visible in `/experiments`.
+
+This step is documentation and QA only. It does not alter training code, model metrics, datasets, routes or app behavior.
+
+Final Step 42 evidence files:
+
+- `docs/submission/browser-evidence-lock.md`;
+- `reports/final-browser-evidence-summary.md`;
+- `docs/qa/step42-browser-evidence-screenshot-pack.md`;
+- `scripts/qa-step42-browser-evidence-screenshot-pack.mjs`;
+- `pnpm step42:browser-evidence:qa`.
+
+The final browser evidence confirms that the project can be presented as a complete educational ML prototype with a real tabular neural network, clickable source traceability, and safe interpretation boundaries.

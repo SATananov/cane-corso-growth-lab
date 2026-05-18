@@ -151,3 +151,44 @@ reports/neural-network-growth-prototype-results.json
 ## Screenshot safety note
 
 Do not present screenshots as medical proof, breed-purity proof, pedigree proof or official certification evidence. The screenshots demonstrate an educational ML prototype and safe result presentation.
+
+## Step 42 final browser evidence pass
+
+Step 42 adds a stricter browser evidence layer on top of this screenshot checklist. Use:
+
+```txt
+docs/submission/browser-evidence-lock.md
+```
+
+Additional required screenshots for Step 42:
+
+### 9. Clickable evidence card
+
+Capture an opened or clearly highlighted evidence card on `/experiments` or `/data` showing that notebook, dataset, figure or neural-network evidence cards are real GitHub source links.
+
+Recommended filename:
+
+```txt
+09-clickable-evidence-source-link.png
+```
+
+### 10. Final terminal verification
+
+Capture terminal output showing the final QA chain:
+
+```bash
+pnpm step42:browser-evidence:qa
+pnpm step41:clickable-evidence:qa
+pnpm step40-3:calculator-browser-polish:qa
+pnpm step39:final-submission-lock:qa
+python scripts/ml/train_growth_neural_network.py
+pnpm lint
+pnpm build
+```
+
+Recommended filename:
+
+```txt
+10-terminal-final-verification.png
+```
+

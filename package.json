@@ -19,7 +19,8 @@
     "step40-1:full-language-sweep:qa": "node scripts/qa-step40-1-full-app-language-sweep.mjs",
     "step40-2:browser-language-ux:qa": "node scripts/qa-step40-2-browser-language-ux-cleanup.mjs",
     "step40-3:calculator-browser-polish:qa": "node scripts/qa-step40-3-calculator-browser-polish.mjs",
-    "step41:clickable-evidence:qa": "node scripts/qa-step41-clickable-evidence-cards.mjs"
+    "step41:clickable-evidence:qa": "node scripts/qa-step41-clickable-evidence-cards.mjs",
+    "step42:browser-evidence:qa": "node scripts/qa-step42-browser-evidence-screenshot-pack.mjs"
   },
   "dependencies": {
     "next": "16.2.6",

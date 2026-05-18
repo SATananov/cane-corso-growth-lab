@@ -51,6 +51,9 @@ http://localhost:3000
 Run these checks before final submission:
 
 ```bash
+pnpm step42:browser-evidence:qa
+pnpm step41:clickable-evidence:qa
+pnpm step40-3:calculator-browser-polish:qa
 pnpm step39:final-submission-lock:qa
 pnpm step38:defense-pack:qa
 pnpm step37:neural-results-ui:qa
@@ -150,3 +153,20 @@ pnpm step41:clickable-evidence:qa
 ```
 
 If the GitHub repository is private, make sure the reviewer account has access before relying on the links during a live demo.
+
+## Step 42 final browser evidence
+
+Step 42 adds the final browser evidence checklist for submission. Use:
+
+```txt
+docs/submission/browser-evidence-lock.md
+reports/final-browser-evidence-summary.md
+```
+
+Before final handoff, capture the required screenshots from `/`, `/calculator`, `/data`, `/experiments`, `/visual-review`, `/course` and `/about`. On `/experiments` and `/data`, click at least one Step 41 evidence card to show that the browser UI opens the matching GitHub source file.
+
+Final browser evidence command:
+
+```bash
+pnpm step42:browser-evidence:qa
+```

@@ -821,3 +821,30 @@ pnpm step41:clickable-evidence:qa
 ```
 
 When the repository is private, the GitHub links require a logged-in account with access. If the repository is public, the links work for every reviewer.
+
+## Step 42 — Final Browser Evidence & Screenshot Pack
+
+Step 42 adds the final browser evidence lock for submission and defense. It does not change the application behavior, UI behavior, neural-network training logic, datasets or metrics. It documents how to collect final screenshots and how to verify the running browser experience after Step 41 made evidence cards clickable.
+
+New files:
+
+```txt
+docs/submission/browser-evidence-lock.md
+reports/final-browser-evidence-summary.md
+docs/qa/step42-browser-evidence-screenshot-pack.md
+scripts/qa-step42-browser-evidence-screenshot-pack.mjs
+```
+
+Updated file:
+
+```txt
+docs/submission/screenshot-checklist.md
+```
+
+Verification command:
+
+```bash
+pnpm step42:browser-evidence:qa
+```
+
+Final browser evidence should include `/calculator`, `/data`, `/experiments`, `/visual-review`, `/course`, `/about`, the Step 37 neural-network panel, and at least one clicked Step 41 source-evidence card. The evidence remains safely worded: educational ML prototype, tabular neural-network growth review, and future visual AI roadmap.
