@@ -74,17 +74,17 @@ assertIncludes(
 );
 assertIncludes(
   "src/components/owner-journey-panel.tsx",
-  "What happens if I use the app as an owner?",
+  "Have a Cane Corso? Start here.",
   "Owner journey includes English copy",
 );
 assertIncludes(
   "src/components/owner-journey-panel.tsx",
-  "Какво става, ако използвам приложението като собственик?",
+  "Имаш Cane Corso? Започни оттук.",
   "Owner journey includes Bulgarian copy",
 );
 assertIncludes(
   "src/components/owner-journey-panel.tsx",
-  "Cosa succede se uso l’app come proprietario?",
+  "Hai un Cane Corso? Inizia da qui.",
   "Owner journey includes Italian copy",
 );
 assertIncludes(
@@ -104,7 +104,7 @@ assertIncludes(
 );
 assertIncludes(
   "src/components/owner-journey-panel.tsx",
-  "не поставя диагноза",
+  "не поставя ветеринарна диагноза",
   "Owner journey keeps Bulgarian safety boundary",
 );
 assertIncludes(

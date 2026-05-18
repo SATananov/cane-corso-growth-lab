@@ -4,153 +4,203 @@ import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/language-context";
 import type { LanguageCode } from "@/lib/i18n/languages";
 
+type OwnerJourneyCard = { label: string; text: string };
+type OwnerJourneyStep = { title: string; text: string };
+
 const ownerJourneyCopy: Record<LanguageCode, {
   eyebrow: string;
   title: string;
   description: string;
+  quickTitle: string;
+  quickCards: OwnerJourneyCard[];
   primaryAction: string;
   secondaryAction: string;
   evidenceAction: string;
-  steps: { title: string; text: string }[];
+  steps: OwnerJourneyStep[];
   resultTitle: string;
-  resultCards: { label: string; text: string }[];
+  resultCards: OwnerJourneyCard[];
   safetyTitle: string;
   safetyText: string;
 }> = {
   en: {
-    eyebrow: "Owner mode",
-    title: "What happens if I use the app as an owner?",
+    eyebrow: "Owner path",
+    title: "Have a Cane Corso? Start here.",
     description:
-      "Start with one Cane Corso profile, read the growth signal, then open the evidence pages only when you want to understand how the result was produced.",
-    primaryAction: "Start with Growth Check",
-    secondaryAction: "See visual photo guide",
-    evidenceAction: "Open model evidence",
-    steps: [
+      "This is the simple owner path: enter the dog’s measurements, read an orientation signal, then decide whether to keep tracking, recheck the numbers or ask a professional.",
+    quickTitle: "What you should do first",
+    quickCards: [
       {
-        title: "Enter the profile",
-        text: "Use age, sex, weight, height and body-condition score. A demo profile is available when you only want to explore the app.",
+        label: "1. Open the calculator",
+        text: "Use the growth check before reading the technical ML pages.",
       },
       {
-        title: "Read the orientation signal",
-        text: "The calculator compares the current point with transparent growth geometry and explains the review zone.",
+        label: "2. Enter real measurements",
+        text: "Age, sex, weight and height are enough for the first orientation.",
       },
       {
-        title: "Check the recommended next step",
-        text: "The result tells you whether to continue tracking, review measurements calmly or ask a professional when something looks concerning.",
-      },
-      {
-        title: "Inspect the evidence",
-        text: "The methodology pages show the neural-network prototype, datasets, notebooks and clickable evidence cards behind the app.",
+        label: "3. Read the next action",
+        text: "The app explains whether the signal looks calm, needs review or deserves attention.",
       },
     ],
-    resultTitle: "How to read the result",
+    primaryAction: "Start growth check",
+    secondaryAction: "Photo guidance",
+    evidenceAction: "Model evidence",
+    steps: [
+      {
+        title: "Enter the dog profile",
+        text: "Start with one Cane Corso. Use the current age, sex, weight and height. The demo profile is only for exploring the app.",
+      },
+      {
+        title: "Read the signal",
+        text: "The calculator returns an orientation signal and explains why the dog is placed in that growth zone.",
+      },
+      {
+        title: "Choose the next step",
+        text: "Continue tracking, recheck measurements calmly, or speak with a veterinarian when the signal looks concerning.",
+      },
+      {
+        title: "Open evidence only when needed",
+        text: "The experiments and data pages are for checking notebooks, datasets, neural-network metrics and clickable source evidence.",
+      },
+    ],
+    resultTitle: "How to understand the result",
     resultCards: [
       {
-        label: "Green / calm signal",
-        text: "The profile appears close to the expected growth pattern. Keep tracking measurements over time.",
+        label: "Calm signal",
+        text: "The dog appears close to the expected growth pattern. Keep adding measurements over time.",
       },
       {
         label: "Review signal",
-        text: "The profile deserves a calmer second look. Recheck the measurements and compare with future entries.",
+        text: "Recheck the entered numbers and compare them with the next measurement before making conclusions.",
       },
       {
         label: "Attention signal",
-        text: "The app suggests caution, not a diagnosis. Use it as a reason to speak with a veterinarian or experienced professional.",
+        text: "This is not a diagnosis. It is a reason to ask a veterinarian or experienced professional for guidance.",
       },
     ],
-    safetyTitle: "Important safety boundary",
+    safetyTitle: "Safety boundary",
     safetyText:
       "The app is an educational orientation tool. It is not a veterinary diagnosis, it does not certify a Cane Corso, it does not prove pedigree and it does not replace veterinary advice.",
   },
   bg: {
-    eyebrow: "Режим за собственик",
-    title: "Какво става, ако използвам приложението като собственик?",
+    eyebrow: "Път за собственик",
+    title: "Имаш Cane Corso? Започни оттук.",
     description:
-      "Започваш с един профил на Cane Corso, прочиташ сигнала за растеж и отваряш доказателствените страници само ако искаш да разбереш как е получен резултатът.",
-    primaryAction: "Започни с проверка на растежа",
-    secondaryAction: "Виж фото указанията",
-    evidenceAction: "Отвори доказателствата",
-    steps: [
+      "Това е простият път за собственик: въвеждаш измерванията на кучето, прочиташ ориентировъчен сигнал и решаваш дали да продължиш да следиш, да провериш данните пак или да говориш със специалист.",
+    quickTitle: "Какво правиш първо",
+    quickCards: [
       {
-        title: "Въведи профила",
-        text: "Използвай възраст, пол, тегло, височина и телесна оценка. Има демо профил, ако само искаш да разгледаш приложението.",
+        label: "1. Отвори калкулатора",
+        text: "Започни с проверката на растежа, преди да четеш техническите ML страници.",
       },
       {
-        title: "Прочети ориентировъчния сигнал",
-        text: "Калкулаторът сравнява текущата точка с прозрачна геометрия на растежа и обяснява зоната за преглед.",
+        label: "2. Въведи реални измервания",
+        text: "Възраст, пол, тегло и височина са достатъчни за първа ориентация.",
       },
       {
-        title: "Виж препоръчителната следваща стъпка",
-        text: "Резултатът показва дали да продължиш да следиш, да премериш спокойно отново или да потърсиш специалист при притеснителен сигнал.",
-      },
-      {
-        title: "Провери доказателствата",
-        text: "Методологичните страници показват невронния прототип, данните, Jupyter тетрадките и отваряемите доказателствени карти зад приложението.",
+        label: "3. Прочети следващото действие",
+        text: "Приложението казва дали сигналът е спокоен, за повторна проверка или за внимание.",
       },
     ],
-    resultTitle: "Как да прочетеш резултата",
+    primaryAction: "Започни проверка на растежа",
+    secondaryAction: "Фото указания",
+    evidenceAction: "Доказателства за модела",
+    steps: [
+      {
+        title: "Въведи профила на кучето",
+        text: "Започни с едно Cane Corso. Използвай текуща възраст, пол, тегло и височина. Демо профилът е само за разглеждане.",
+      },
+      {
+        title: "Прочети сигнала",
+        text: "Калкулаторът връща ориентировъчен сигнал и обяснява защо кучето попада в тази зона на растеж.",
+      },
+      {
+        title: "Избери следваща стъпка",
+        text: "Продължи да следиш, провери спокойно измерванията пак или говори с ветеринар, когато сигналът изглежда притеснителен.",
+      },
+      {
+        title: "Отвори доказателствата само при нужда",
+        text: "Страниците с експерименти и данни са за тетрадки, набори от данни, метрики на невронната мрежа и отваряеми source доказателства.",
+      },
+    ],
+    resultTitle: "Как да разбереш резултата",
     resultCards: [
       {
         label: "Спокоен сигнал",
-        text: "Профилът изглежда близо до очаквания модел на растеж. Продължи да следиш измерванията във времето.",
+        text: "Кучето изглежда близо до очаквания модел на растеж. Продължи да добавяш измервания във времето.",
       },
       {
-        label: "Сигнал за преглед",
-        text: "Профилът заслужава спокоен втори поглед. Провери измерванията и сравни с бъдещи стойности.",
+        label: "Сигнал за повторна проверка",
+        text: "Провери въведените числа и ги сравни със следващото измерване, преди да правиш изводи.",
       },
       {
         label: "Сигнал за внимание",
-        text: "Приложението предлага повишено внимание, не диагноза. Използвай го като причина да говориш с ветеринар или опитен специалист.",
+        text: "Това не е диагноза. Това е причина да попиташ ветеринар или опитен специалист за насока.",
       },
     ],
-    safetyTitle: "Важна граница на безопасност",
+    safetyTitle: "Граница на безопасност",
     safetyText:
-      "Приложението е образователен ориентировъчен инструмент. То не поставя диагноза, не сертифицира Cane Corso, не доказва родословие и не замества ветеринарен съвет.",
+      "Приложението е образователен ориентир. То не поставя ветеринарна диагноза, не сертифицира Cane Corso, не доказва родословие и не замества ветеринарен съвет.",
   },
   it: {
-    eyebrow: "Modalità proprietario",
-    title: "Cosa succede se uso l’app come proprietario?",
+    eyebrow: "Percorso proprietario",
+    title: "Hai un Cane Corso? Inizia da qui.",
     description:
-      "Si parte da un profilo Cane Corso, si legge il segnale di crescita e si aprono le pagine di evidenza solo quando si vuole capire come è stato prodotto il risultato.",
-    primaryAction: "Inizia dal controllo crescita",
-    secondaryAction: "Vedi guida foto",
-    evidenceAction: "Apri evidenze modello",
-    steps: [
+      "Questo è il percorso semplice per il proprietario: inserisci le misure del cane, leggi un segnale orientativo e decidi se continuare il monitoraggio, ricontrollare i dati o parlare con un professionista.",
+    quickTitle: "Cosa fare per primo",
+    quickCards: [
       {
-        title: "Inserisci il profilo",
-        text: "Usa età, sesso, peso, altezza e punteggio corporeo. È disponibile un profilo demo se vuoi solo esplorare l’app.",
+        label: "1. Apri il calcolatore",
+        text: "Usa prima il controllo crescita, poi leggi le pagine tecniche ML solo se servono.",
       },
       {
-        title: "Leggi il segnale orientativo",
-        text: "Il calcolatore confronta il punto corrente con una geometria di crescita trasparente e spiega la zona di revisione.",
+        label: "2. Inserisci misure reali",
+        text: "Età, sesso, peso e altezza bastano per il primo orientamento.",
       },
       {
-        title: "Controlla il prossimo passo",
-        text: "Il risultato indica se continuare il monitoraggio, ricontrollare le misure con calma o parlare con un professionista in caso di segnale preoccupante.",
-      },
-      {
-        title: "Ispeziona le evidenze",
-        text: "Le pagine metodologiche mostrano il prototipo neurale, i dati, i notebook Jupyter e le schede di evidenza apribili dietro l’app.",
+        label: "3. Leggi il prossimo passo",
+        text: "L’app spiega se il segnale è calmo, da rivedere o da trattare con attenzione.",
       },
     ],
-    resultTitle: "Come leggere il risultato",
+    primaryAction: "Inizia controllo crescita",
+    secondaryAction: "Guida foto",
+    evidenceAction: "Evidenze modello",
+    steps: [
+      {
+        title: "Inserisci il profilo del cane",
+        text: "Inizia con un Cane Corso. Usa età, sesso, peso e altezza attuali. Il profilo demo serve solo per esplorare l’app.",
+      },
+      {
+        title: "Leggi il segnale",
+        text: "Il calcolatore restituisce un segnale orientativo e spiega perché il cane si trova in quella zona di crescita.",
+      },
+      {
+        title: "Scegli il prossimo passo",
+        text: "Continua il monitoraggio, ricontrolla le misure con calma o parla con un veterinario se il segnale sembra preoccupante.",
+      },
+      {
+        title: "Apri le evidenze solo quando servono",
+        text: "Le pagine esperimenti e dati servono per notebook, dataset, metriche della rete neurale ed evidenze sorgente apribili.",
+      },
+    ],
+    resultTitle: "Come capire il risultato",
     resultCards: [
       {
         label: "Segnale calmo",
-        text: "Il profilo appare vicino allo schema di crescita atteso. Continua a monitorare le misure nel tempo.",
+        text: "Il cane appare vicino allo schema di crescita atteso. Continua ad aggiungere misure nel tempo.",
       },
       {
-        label: "Segnale di revisione",
-        text: "Il profilo merita un secondo controllo. Ricontrolla le misure e confrontale con valori futuri.",
+        label: "Segnale da rivedere",
+        text: "Ricontrolla i numeri inseriti e confrontali con la prossima misurazione prima di trarre conclusioni.",
       },
       {
         label: "Segnale di attenzione",
-        text: "L’app suggerisce cautela, non una diagnosi. Usalo come motivo per parlare con un veterinario o un professionista esperto.",
+        text: "Non è una diagnosi. È un motivo per chiedere indicazioni a un veterinario o a un professionista esperto.",
       },
     ],
-    safetyTitle: "Limite di sicurezza importante",
+    safetyTitle: "Limite di sicurezza",
     safetyText:
-      "L’app è uno strumento educativo di orientamento. Non diagnostica la salute, non certifica un Cane Corso, non prova il pedigree e non sostituisce il parere veterinario.",
+      "L’app è uno strumento educativo di orientamento. Non fornisce diagnosi veterinarie, non certifica un Cane Corso, non prova il pedigree e non sostituisce il parere veterinario.",
   },
 };
 
@@ -168,7 +218,7 @@ export function OwnerJourneyPanel({ compact = false }: OwnerJourneyPanelProps) {
       className="usg-lab-surface rounded-[2rem] p-6"
       aria-labelledby="owner-journey-title"
     >
-      <div className="relative z-10 grid gap-6 xl:grid-cols-[0.95fr_1.05fr]">
+      <div className="relative z-10 grid gap-6 xl:grid-cols-[0.88fr_1.12fr]">
         <div>
           <p className="text-sm uppercase tracking-[0.25em] text-amber-300/70">
             {copy.eyebrow}
@@ -179,9 +229,23 @@ export function OwnerJourneyPanel({ compact = false }: OwnerJourneyPanelProps) {
           >
             {copy.title}
           </h2>
-          <p className="mt-4 max-w-3xl text-base leading-7 text-stone-400">
+          <p className="mt-4 max-w-3xl text-base leading-7 text-stone-300">
             {copy.description}
           </p>
+
+          <div className="mt-5 rounded-[1.5rem] border border-amber-200/15 bg-amber-300/10 p-4">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-200">
+              {copy.quickTitle}
+            </p>
+            <div className="mt-3 grid gap-3">
+              {copy.quickCards.map((card) => (
+                <article key={card.label} className="rounded-2xl border border-amber-200/10 bg-black/20 p-3">
+                  <p className="text-sm font-semibold text-white">{card.label}</p>
+                  <p className="mt-1 text-sm leading-6 text-stone-300">{card.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
 
           <div className="mt-6 flex flex-wrap gap-3">
             <Link

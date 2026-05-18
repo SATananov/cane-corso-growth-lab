@@ -22,7 +22,8 @@
     "step41:clickable-evidence:qa": "node scripts/qa-step41-clickable-evidence-cards.mjs",
     "step42:browser-evidence:qa": "node scripts/qa-step42-browser-evidence-screenshot-pack.mjs",
     "step42-1:hydration-stable:qa": "node scripts/qa-step42-1-hydration-stable-formatting.mjs",
-    "step43:owner-journey:qa": "node scripts/qa-step43-owner-journey-mode.mjs"
+    "step43:owner-journey:qa": "node scripts/qa-step43-owner-journey-mode.mjs",
+    "step43-1:owner-journey-clarity:qa": "node scripts/qa-step43-1-owner-journey-clarity.mjs"
   },
   "dependencies": {
     "next": "16.2.6",
