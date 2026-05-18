@@ -795,3 +795,29 @@ pnpm build
 ```
 
 The final source archive should be created from Git with `git archive --format=zip`, after confirming that local `HEAD` equals `origin/main`. Use `docs/submission/final-checklist.md` as the final handoff checklist before submission or presentation.
+
+## Step 41 — Clickable Evidence Cards
+
+Step 41 improves the final browser experience by turning evidence-looking cards into real source links. The notebook, dataset, figure and neural-network evidence cards now open the matching GitHub source file instead of behaving like static blocks.
+
+This step does not change model training, neural-network metrics, datasets, routes or safety wording. It only improves reviewer usability and makes the evidence trail easier to inspect from the running app.
+
+Key files:
+
+```txt
+src/lib/source-links.ts
+src/components/ml-research-summary.tsx
+src/components/dataset-overview-card.tsx
+src/components/research-figure-gallery.tsx
+src/components/neural-network-results-panel.tsx
+docs/qa/step41-clickable-evidence-cards.md
+scripts/qa-step41-clickable-evidence-cards.mjs
+```
+
+Verification command:
+
+```bash
+pnpm step41:clickable-evidence:qa
+```
+
+When the repository is private, the GitHub links require a logged-in account with access. If the repository is public, the links work for every reviewer.

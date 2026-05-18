@@ -4,9 +4,10 @@ import Image from "next/image";
 import { researchFigures } from "@/lib/ml/research-gallery";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { localizeMlPhrase } from "@/lib/i18n/ml-phrase-copy";
+import { buildGitHubSourceUrl } from "@/lib/source-links";
 import type { LanguageCode } from "@/lib/i18n/languages";
 
-const copy: Record<LanguageCode, { eyebrow: string; title: string; description: string; count: string; appUse: string; referenceFile: string }> = {
+const copy: Record<LanguageCode, { eyebrow: string; title: string; description: string; count: string; appUse: string; referenceFile: string; openFigure: string }> = {
   en: {
     eyebrow: "Methodology gallery",
     title: "Visual evidence for the growth model.",
@@ -14,6 +15,7 @@ const copy: Record<LanguageCode, { eyebrow: string; title: string; description: 
     count: "visual concepts",
     appUse: "App use",
     referenceFile: "Reference file",
+    openFigure: "Open figure",
   },
   bg: {
     eyebrow: "Галерия на методологията",
@@ -22,6 +24,7 @@ const copy: Record<LanguageCode, { eyebrow: string; title: string; description: 
     count: "визуални концепции",
     appUse: "Употреба в приложението",
     referenceFile: "Референтен файл",
+    openFigure: "Отвори фигурата",
   },
   it: {
     eyebrow: "Galleria metodologica",
@@ -30,6 +33,7 @@ const copy: Record<LanguageCode, { eyebrow: string; title: string; description: 
     count: "concetti visuali",
     appUse: "Uso nell’app",
     referenceFile: "File di riferimento",
+    openFigure: "Apri figura",
   },
 };
 
@@ -65,7 +69,18 @@ export function ResearchFigureGallery() {
                 <p className="text-xs uppercase tracking-[0.2em] text-stone-500">{t.appUse}</p>
                 <p className="mt-2 text-sm leading-6 text-stone-300">{localizeMlPhrase(figure.appConnection, language)}</p>
               </div>
-              <p className="mt-4 text-xs leading-5 text-stone-500">{t.referenceFile}: <span className="text-stone-400">{figure.sourcePath}</span></p>
+              <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <p className="break-all text-xs leading-5 text-stone-500">{t.referenceFile}: <span className="text-stone-400">{figure.sourcePath}</span></p>
+                <a
+                  href={buildGitHubSourceUrl(figure.sourcePath)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex w-fit rounded-full border border-amber-200/20 bg-amber-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-amber-100 transition hover:bg-amber-300 hover:text-stone-950 focus:outline-none focus:ring-2 focus:ring-amber-300/70"
+                  aria-label={`${t.openFigure}: ${figure.sourcePath}`}
+                >
+                  {t.openFigure}
+                </a>
+              </div>
             </div>
           </article>
         ))}

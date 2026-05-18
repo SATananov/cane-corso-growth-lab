@@ -3,6 +3,7 @@
 import { formatMetric, formatPercent } from "@/lib/ml/model-results";
 import { neuralNetworkGrowthResults } from "@/lib/ml/neural-network-growth-results";
 import { useLanguage } from "@/lib/i18n/language-context";
+import { buildGitHubSourceUrl } from "@/lib/source-links";
 import type { LanguageCode } from "@/lib/i18n/languages";
 
 type PanelCopy = {
@@ -36,6 +37,7 @@ type PanelCopy = {
   actualAttention: string;
   evidenceTitle: string;
   evidence: string[];
+  openEvidence: string;
   safetyTitle: string;
   safety: string;
   futureWork: string;
@@ -79,6 +81,7 @@ const copy: Record<LanguageCode, PanelCopy> = {
       "Отчет: reports/neural-network-growth-prototype.md",
       "JSON с метрики: reports/neural-network-growth-prototype-results.json",
     ],
+    openEvidence: "Open file",
     safetyTitle: "Safety boundary",
     safety:
       "This neural network is a tabular growth-review prototype. It is not a veterinary diagnostic system, not an official Cane Corso certification system and not an image-based breed classifier.",
@@ -122,6 +125,7 @@ const copy: Record<LanguageCode, PanelCopy> = {
       "Отчет: reports/neural-network-growth-prototype.md",
       "JSON с метрики: reports/neural-network-growth-prototype-results.json",
     ],
+    openEvidence: "Отвори файла",
     safetyTitle: "Граница за безопасност",
     safety:
       "Тази невронна мрежа е табличен прототип за сигнал за растеж. Тя не е ветеринарна диагноза, не е официална Cane Corso сертификация и не е породен класификатор, базиран на снимки.",
@@ -165,6 +169,7 @@ const copy: Record<LanguageCode, PanelCopy> = {
       "Отчет: reports/neural-network-growth-prototype.md",
       "JSON с метрики: reports/neural-network-growth-prototype-results.json",
     ],
+    openEvidence: "Apri file",
     safetyTitle: "Limite di sicurezza",
     safety:
       "Questa rete neurale è un prototipo tabellare per revisione della crescita. Non è diagnosi veterinaria, non è certificazione ufficiale Cane Corso e non è un classificatore di razza basato su immagini.",
@@ -178,6 +183,12 @@ export function NeuralNetworkResultsPanel() {
   const t = copy[language];
   const result = neuralNetworkGrowthResults;
   const hiddenLayers = result.hiddenLayerSizes.join(" → ");
+  const evidenceFiles = [
+    "scripts/ml/train_growth_neural_network.py",
+    "notebooks/12_tabular_neural_network_growth_prediction.ipynb",
+    "reports/neural-network-growth-prototype.md",
+    "reports/neural-network-growth-prototype-results.json",
+  ];
 
   const metricCards = [
     { label: t.metrics.accuracy, value: formatPercent(result.accuracy) },
@@ -270,11 +281,26 @@ export function NeuralNetworkResultsPanel() {
         <article className="rounded-3xl border border-stone-700 bg-black/25 p-5">
           <p className="text-sm font-semibold text-amber-100">{t.evidenceTitle}</p>
           <ul className="mt-4 grid gap-3 text-sm leading-6 text-stone-300">
-            {t.evidence.map((item) => (
-              <li key={item} className="rounded-2xl border border-stone-700 bg-white/[0.025] p-4">
-                {item}
-              </li>
-            ))}
+            {t.evidence.map((item, index) => {
+              const path = evidenceFiles[index] ?? item;
+
+              return (
+                <li key={item}>
+                  <a
+                    href={buildGitHubSourceUrl(path)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group block rounded-2xl border border-stone-700 bg-white/[0.025] p-4 transition hover:border-amber-300/45 hover:bg-amber-300/[0.08] focus:outline-none focus:ring-2 focus:ring-amber-300/70"
+                    aria-label={`${t.openEvidence}: ${path}`}
+                  >
+                    <span className="block text-stone-300">{item}</span>
+                    <span className="mt-3 inline-flex rounded-full border border-amber-200/20 bg-amber-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-amber-100 transition group-hover:bg-amber-300 group-hover:text-stone-950">
+                      {t.openEvidence}
+                    </span>
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </article>
       </div>

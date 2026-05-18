@@ -13,6 +13,7 @@ import {
 } from "@/lib/ml";
 import { useLanguage } from "@/lib/i18n/language-context";
 import { localizeMlPhrase } from "@/lib/i18n/ml-phrase-copy";
+import { buildGitHubSourceUrl } from "@/lib/source-links";
 import type { LanguageCode } from "@/lib/i18n/languages";
 
 const copy: Record<LanguageCode, {
@@ -31,7 +32,7 @@ const copy: Record<LanguageCode, {
   bestCurrentResult: string;
   safetyBoundary: string;
   safetyFallback: string;
-  assets: { notebooks: string; data: string; figures: string; appUse: string; referenceFile: string };
+  assets: { notebooks: string; data: string; figures: string; appUse: string; referenceFile: string; open: string };
 }> = {
   en: {
     methodologyStatus: "Methodology status",
@@ -49,7 +50,7 @@ const copy: Record<LanguageCode, {
     bestCurrentResult: "Best current result",
     safetyBoundary: "Safety boundary",
     safetyFallback: mlFoundationSummary.safetyNote,
-    assets: { notebooks: "Notebooks", data: "Data", figures: "Figures", appUse: "App use", referenceFile: "Reference file" },
+    assets: { notebooks: "Notebooks", data: "Data", figures: "Figures", appUse: "App use", referenceFile: "Reference file", open: "Open source" },
   },
   bg: {
     methodologyStatus: "Статус на методологията",
@@ -67,7 +68,7 @@ const copy: Record<LanguageCode, {
     bestCurrentResult: "Най-добър текущ резултат",
     safetyBoundary: "Граница за безопасност",
     safetyFallback: "Методологията показва ориентировъчни сигнали и не доказва диагноза, породна чистота, родословие, генетичен произход или официален статус.",
-    assets: { notebooks: "Jupyter тетрадки", data: "Данни", figures: "Фигури", appUse: "Употреба в приложението", referenceFile: "Референтен файл" },
+    assets: { notebooks: "Jupyter тетрадки", data: "Данни", figures: "Фигури", appUse: "Употреба в приложението", referenceFile: "Референтен файл", open: "Отвори файла" },
   },
   it: {
     methodologyStatus: "Stato metodologia",
@@ -85,7 +86,7 @@ const copy: Record<LanguageCode, {
     bestCurrentResult: "Miglior risultato attuale",
     safetyBoundary: "Limite di sicurezza",
     safetyFallback: "La metodologia mostra segnali orientativi e non prova diagnosi, purezza di razza, pedigree, origine genetica o status ufficiale.",
-    assets: { notebooks: "Notebook", data: "Dati", figures: "Figure", appUse: "Uso nell’app", referenceFile: "File di riferimento" },
+    assets: { notebooks: "Notebook", data: "Dati", figures: "Figure", appUse: "Uso nell’app", referenceFile: "File di riferimento", open: "Apri file" },
   },
 };
 
@@ -115,9 +116,9 @@ export function MlResearchSummary() {
       </section>
 
       <section className="grid gap-5 xl:grid-cols-3">
-        <AssetPanel title={t.assets.notebooks} assets={notebookAssets} language={language} />
-        <AssetPanel title={t.assets.data} assets={dataAssets} language={language} />
-        <AssetPanel title={t.assets.figures} assets={figureAssets} language={language} />
+        <AssetPanel title={t.assets.notebooks} assets={notebookAssets} language={language} openLabel={t.assets.open} />
+        <AssetPanel title={t.assets.data} assets={dataAssets} language={language} openLabel={t.assets.open} />
+        <AssetPanel title={t.assets.figures} assets={figureAssets} language={language} openLabel={t.assets.open} />
       </section>
     </div>
   );
@@ -158,21 +159,31 @@ function ModelTable({ eyebrow, title, bestLabel, rows }: ModelTableProps) {
   );
 }
 
-type AssetPanelProps = { title: string; assets: ResearchAsset[]; language: LanguageCode };
-function AssetPanel({ title, assets, language }: AssetPanelProps) {
+type AssetPanelProps = { title: string; assets: ResearchAsset[]; language: LanguageCode; openLabel: string };
+function AssetPanel({ title, assets, language, openLabel }: AssetPanelProps) {
   return (
     <section className="rounded-[2rem] border border-amber-200/10 bg-white/[0.035] p-6">
       <h3 className="text-2xl font-semibold text-white">{title}</h3>
       <div className="mt-5 grid gap-3">
         {assets.map((asset) => (
-          <article key={asset.path} className="rounded-2xl border border-stone-700 bg-black/25 p-4">
+          <a
+            key={asset.path}
+            href={buildGitHubSourceUrl(asset.path)}
+            target="_blank"
+            rel="noreferrer"
+            className="group block rounded-2xl border border-stone-700 bg-black/25 p-4 transition hover:border-amber-300/45 hover:bg-amber-300/[0.08] focus:outline-none focus:ring-2 focus:ring-amber-300/70"
+            aria-label={`${openLabel}: ${asset.path}`}
+          >
             <div className="flex items-start justify-between gap-3">
-              <p className="font-semibold text-white">{localizeMlPhrase(asset.title, language)}</p>
+              <p className="font-semibold text-white group-hover:text-amber-100">{localizeMlPhrase(asset.title, language)}</p>
               <span className="rounded-full border border-amber-200/15 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-amber-100/80">{localizeMlPhrase(asset.type, language)}</span>
             </div>
-            <p className="mt-2 font-mono text-xs text-amber-100/60">{asset.path}</p>
+            <p className="mt-2 break-all font-mono text-xs text-amber-100/60">{asset.path}</p>
             <p className="mt-3 text-sm leading-6 text-stone-400">{localizeMlPhrase(asset.description, language)}</p>
-          </article>
+            <span className="mt-4 inline-flex rounded-full border border-amber-200/20 bg-amber-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-amber-100 transition group-hover:bg-amber-300 group-hover:text-stone-950">
+              {openLabel}
+            </span>
+          </a>
         ))}
       </div>
     </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/lib/i18n/language-context";
+import { buildGitHubSourceUrl } from "@/lib/source-links";
 import type { LanguageCode } from "@/lib/i18n/languages";
 import {
   type DatasetOverviewItem,
@@ -19,6 +20,7 @@ const uiCopy: Record<LanguageCode, {
   usedFor: string;
   keyFields: string;
   preview: string;
+  openDataset: string;
   qualityLabel: Record<string, string>;
 }> = {
   en: {
@@ -28,6 +30,7 @@ const uiCopy: Record<LanguageCode, {
     usedFor: "Used for",
     keyFields: "Key fields",
     preview: "Safe sample preview",
+    openDataset: "Open dataset",
     qualityLabel: {
       "Best use": "Best use",
       Limitation: "Limitation",
@@ -42,6 +45,7 @@ const uiCopy: Record<LanguageCode, {
     usedFor: "Използва се за",
     keyFields: "Ключови полета",
     preview: "Безопасен примерен преглед",
+    openDataset: "Отвори данните",
     qualityLabel: {
       "Best use": "Най-подходящо за",
       Limitation: "Ограничение",
@@ -56,6 +60,7 @@ const uiCopy: Record<LanguageCode, {
     usedFor: "Usato per",
     keyFields: "Campi chiave",
     preview: "Anteprima campione sicura",
+    openDataset: "Apri dataset",
     qualityLabel: {
       "Best use": "Uso migliore",
       Limitation: "Limitazione",
@@ -191,7 +196,15 @@ export function DatasetOverviewCard({ dataset }: DatasetOverviewCardProps) {
             <span className="rounded-full border border-amber-300/25 bg-amber-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-amber-100">
               {stage}
             </span>
-            <span className="break-all text-xs text-stone-500">{dataset.path}</span>
+            <a
+              href={buildGitHubSourceUrl(dataset.path)}
+              target="_blank"
+              rel="noreferrer"
+              className="break-all rounded-full border border-amber-200/10 bg-black/25 px-3 py-1 text-xs text-stone-400 transition hover:border-amber-300/45 hover:text-amber-100 focus:outline-none focus:ring-2 focus:ring-amber-300/70"
+              aria-label={`${t.openDataset}: ${dataset.path}`}
+            >
+              {dataset.path}
+            </a>
           </div>
 
           <h2 className="mt-4 text-2xl font-semibold tracking-tight text-white md:text-4xl">
@@ -199,6 +212,14 @@ export function DatasetOverviewCard({ dataset }: DatasetOverviewCardProps) {
           </h2>
 
           <p className="mt-4 text-base leading-7 text-stone-400">{role}</p>
+          <a
+            href={buildGitHubSourceUrl(dataset.path)}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-5 inline-flex rounded-full border border-amber-200/20 bg-amber-300/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-amber-100 transition hover:bg-amber-300 hover:text-stone-950 focus:outline-none focus:ring-2 focus:ring-amber-300/70"
+          >
+            {t.openDataset}
+          </a>
         </div>
 
         <div className="grid w-full max-w-sm grid-cols-2 gap-3 rounded-3xl border border-stone-700 bg-black/25 p-4 xl:w-72">

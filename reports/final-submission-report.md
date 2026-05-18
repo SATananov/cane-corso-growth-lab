@@ -201,3 +201,11 @@ Final readiness evidence:
 - `docs/qa/step39-final-submission-readiness-lock.md`;
 - `scripts/qa-step39-final-submission-readiness-lock.mjs`;
 - `pnpm step39:final-submission-lock:qa`.
+
+## Step 41 evidence-card usability
+
+Step 41 adds clickable evidence cards to improve the final project review experience. The browser UI now links methodology assets, datasets, research figures and neural-network evidence files back to their GitHub source paths.
+
+This strengthens traceability: a reviewer can move from the app surface to the notebook, dataset, figure, training script or metrics JSON that supports the claim.
+
+This step is UI/link behavior only. It does not alter the neural-network training process, generated metrics, datasets, model outputs or safety boundaries.

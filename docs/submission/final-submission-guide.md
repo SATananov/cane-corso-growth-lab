@@ -136,3 +136,17 @@ git archive --format=zip --output=cane-corso-growth-lab_step39_github_exact_sour
 ```
 
 Before creating the ZIP, verify that `HEAD` equals `origin/main` so the archive matches GitHub.
+
+## Step 41 evidence-card usability
+
+Step 41 makes the evidence cards easier to verify during demo review. On `/experiments`, the notebook, data, figure and neural-network evidence cards now open their matching GitHub source files. On `/data`, each dataset card has a direct source-file action.
+
+Use this in the presentation after showing the neural-network panel: click one notebook or metrics JSON card to demonstrate that the browser UI is connected back to project files and not just static text.
+
+Verification command:
+
+```bash
+pnpm step41:clickable-evidence:qa
+```
+
+If the GitHub repository is private, make sure the reviewer account has access before relying on the links during a live demo.
