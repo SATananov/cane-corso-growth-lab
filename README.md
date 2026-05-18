@@ -9,7 +9,7 @@ The project is built as a separate research-and-application lab. It is not part 
 
 This repository is ready to be reviewed as a machine learning course project and as a small interactive product prototype.
 
-**Step 38 status:** the repository now includes a real Step 36 tabular neural network, a Step 37 browser-visible neural-network results panel and a Step 38 defense/demo walkthrough pack. The neural network is trained on structured growth data and remains a safe educational review signal, not a veterinary diagnostic system or image-based breed-certification model.
+**Step 44 status:** the repository now includes a real Step 36 tabular neural network, a Step 37 browser-visible neural-network results panel, Step 38–42 submission/evidence material and a Step 44 owner-facing visual result summary in the calculator. The neural network is trained on structured growth data and remains a safe educational review signal, not a veterinary diagnostic system or image-based breed-certification model.
 
 Submission-oriented files:
 
@@ -28,12 +28,15 @@ notebooks/README.md
 Recommended final checks before handing in the project:
 
 ```bash
-pnpm step38:defense-pack:qa
+pnpm step44:owner-visual-summary:qa
+pnpm step43-1:owner-journey-clarity:qa
+pnpm step42-1:hydration-stable:qa
+pnpm step42:browser-evidence:qa
+pnpm step41:clickable-evidence:qa
+pnpm step40-3:calculator-browser-polish:qa
+pnpm step39:final-submission-lock:qa
 pnpm step37:neural-results-ui:qa
 pnpm step36:neural-growth:qa
-pnpm step35:submission-docs:qa
-pnpm step34:visual-review-polish:qa
-pnpm step33-4:language-layout:qa
 pnpm ml:python:syntax
 pnpm lint
 pnpm build
@@ -731,12 +734,15 @@ The pack explains how to show `/calculator`, `/data`, `/experiments`, the Step 3
 Verification:
 
 ```bash
-pnpm step38:defense-pack:qa
+pnpm step44:owner-visual-summary:qa
+pnpm step43-1:owner-journey-clarity:qa
+pnpm step42-1:hydration-stable:qa
+pnpm step42:browser-evidence:qa
+pnpm step41:clickable-evidence:qa
+pnpm step40-3:calculator-browser-polish:qa
+pnpm step39:final-submission-lock:qa
 pnpm step37:neural-results-ui:qa
 pnpm step36:neural-growth:qa
-pnpm step35:submission-docs:qa
-pnpm step34:visual-review-polish:qa
-pnpm step33-4:language-layout:qa
 pnpm ml:python:syntax
 pnpm lint
 pnpm build
@@ -870,3 +876,17 @@ pnpm step43:owner-journey:qa
 ```
 
 The owner-mode wording keeps the same safety boundary: it is an educational orientation tool, not a veterinary diagnosis, not official Cane Corso certification and not pedigree proof.
+
+## Step 44 — Owner Visual Result Summary & Growth Chart
+
+Step 44 improves the real-user calculator experience. The calculator now starts with an owner-facing visual result summary before the technical ML evidence. The user first sees a simple status signal, a growth curve chart, a calm reference band, the current dog point, key takeaways and a recommended next action.
+
+The technical project evidence remains available below through a dedicated disclosure. This keeps the project review layer visible while preventing a non-technical owner from getting lost in raw numbers, PCA, clustering or feature-vector details.
+
+Verification command:
+
+```bash
+pnpm step44:owner-visual-summary:qa
+```
+
+Step 44 does not change the model, datasets, neural-network metrics or training logic. It changes the way the calculator explains the result to a real user.

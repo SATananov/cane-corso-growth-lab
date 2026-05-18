@@ -231,3 +231,11 @@ The final browser evidence confirms that the project can be presented as a compl
 Step 43 improves the final user experience by adding a visible owner-mode journey panel. The panel explains what happens for a non-technical user: enter a Cane Corso profile, read the growth orientation signal, review the next step and inspect the model evidence if needed.
 
 This step does not change the neural-network model, the training data, the generated metrics or the growth formulas. It only makes the project easier to understand as a real app experience while preserving the safe boundary: educational orientation, not veterinary diagnosis, official certification or pedigree proof.
+
+## Step 44 owner visual result summary
+
+Step 44 improves the calculator for a real user. Before the technical ML panels, the application now shows an owner-facing visual summary with a growth curve chart, reference band, current dog point, simple status signal, key takeaways and a recommended next action.
+
+This separates the user layer from the project evidence layer. A non-technical owner can understand the result first, while a reviewer can still open the technical explanation for regression, feature vectors, clustering, PCA and model evidence.
+
+The safety boundary remains unchanged: the result is educational orientation only, not veterinary diagnosis, official certification, pedigree proof or a breeding decision tool.

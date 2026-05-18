@@ -23,7 +23,8 @@
     "step42:browser-evidence:qa": "node scripts/qa-step42-browser-evidence-screenshot-pack.mjs",
     "step42-1:hydration-stable:qa": "node scripts/qa-step42-1-hydration-stable-formatting.mjs",
     "step43:owner-journey:qa": "node scripts/qa-step43-owner-journey-mode.mjs",
-    "step43-1:owner-journey-clarity:qa": "node scripts/qa-step43-1-owner-journey-clarity.mjs"
+    "step43-1:owner-journey-clarity:qa": "node scripts/qa-step43-1-owner-journey-clarity.mjs",
+    "step44:owner-visual-summary:qa": "node scripts/qa-step44-owner-visual-result-summary.mjs"
   },
   "dependencies": {
     "next": "16.2.6",

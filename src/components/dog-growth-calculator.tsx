@@ -12,6 +12,7 @@ import { GrowthIntelligenceReport } from "@/components/growth-intelligence-repor
 import { ModelBridgePanel } from "@/components/model-bridge-panel";
 import { PcaGrowthMap } from "@/components/pca-growth-map";
 import { PredictionSummary } from "@/components/prediction-summary";
+import { OwnerGrowthResultPanel, OwnerTechnicalDetailsIntro } from "@/components/owner-growth-result-panel";
 import {
   calculateGrowthPrediction,
   type DogGrowthInput,
@@ -186,15 +187,23 @@ export function DogGrowthCalculator() {
         </form>
 
         <div className="grid gap-5">
-          <PredictionSummary prediction={prediction} />
-          <GrowthFormulaPanel prediction={prediction} />
-          <BreedReferenceGeometryPanel input={input} />
-          <GrowthIntelligenceReport prediction={prediction} />
-          <GrowthClusterPanel prediction={prediction} />
-          <FeatureVectorPanel prediction={prediction} />
-          <PcaGrowthMap prediction={prediction} />
-          <ModelBridgePanel prediction={prediction} />
-          <GrowthCoordinateMap prediction={prediction} />
+          <OwnerGrowthResultPanel prediction={prediction} />
+          <details className="rounded-[2rem] border border-stone-700 bg-black/25 p-4" data-owner-technical-details>
+            <summary className="cursor-pointer list-none rounded-[1.5rem] border border-amber-200/15 bg-amber-300/10 p-4 text-sm font-semibold uppercase tracking-[0.18em] text-amber-100 transition hover:border-amber-200/35 hover:bg-amber-300/15 focus:outline-none focus:ring-2 focus:ring-amber-300/20">
+              <OwnerTechnicalDetailsIntro />
+            </summary>
+            <div className="mt-5 grid gap-5">
+              <PredictionSummary prediction={prediction} />
+              <GrowthFormulaPanel prediction={prediction} />
+              <BreedReferenceGeometryPanel input={input} />
+              <GrowthIntelligenceReport prediction={prediction} />
+              <GrowthClusterPanel prediction={prediction} />
+              <FeatureVectorPanel prediction={prediction} />
+              <PcaGrowthMap prediction={prediction} />
+              <ModelBridgePanel prediction={prediction} />
+              <GrowthCoordinateMap prediction={prediction} />
+            </div>
+          </details>
         </div>
       </div>
     </section>

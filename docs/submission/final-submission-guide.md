@@ -184,3 +184,17 @@ Verification command:
 ```bash
 pnpm step43:owner-journey:qa
 ```
+
+## Step 44 owner visual result summary
+
+Step 44 adds the final owner-facing calculator layer. During the demo, open `/calculator` and show the new visual result summary before opening the technical model details.
+
+The recommended explanation:
+
+1. the owner first sees a simple status signal;
+2. the chart shows the dog as a point against an educational reference curve;
+3. the takeaways explain the result in normal language;
+4. the next-action card explains what to do next;
+5. the technical model evidence is still available below for project review.
+
+This is the best way to explain that the application is usable by a normal owner while still being a machine learning project with visible evidence.
