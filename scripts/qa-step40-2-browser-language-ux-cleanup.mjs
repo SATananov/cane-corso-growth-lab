@@ -83,8 +83,9 @@ assertIncludes("src/components/pca-growth-map.tsx", "localizeMlPhrase(projection
 assertIncludes("src/components/growth-cluster-panel.tsx", "localizeMlPhrase(label, language)", "Growth cluster falls back to shared phrase localization");
 assertIncludes("src/components/growth-cluster-panel.tsx", "localizeMlPhrase(cluster.geometryNote, language)", "Growth cluster localizes geometry note");
 
-assertIncludes("src/components/growth-intelligence-report.tsx", "md:grid-cols-2 2xl:grid-cols-4", "Explainability factors avoid too-narrow four-column layout");
-assertIncludes("src/components/growth-intelligence-report.tsx", "max-w-[70%]", "Explainability factor labels reserve readable width");
+assertIncludes("src/components/growth-intelligence-report.tsx", "mt-6 grid gap-4 md:grid-cols-2", "Explainability factors use readable two-column layout");
+assertNotIncludes("src/components/growth-intelligence-report.tsx", "2xl:grid-cols-4", "Explainability factors no longer force too-narrow four-column layout");
+assertNotIncludes("src/components/growth-intelligence-report.tsx", "max-w-[70%]", "Explainability factor labels no longer squeeze into narrow width");
 
 if (failed) {
   console.error("\nStep 40.2 browser language and calculator UX cleanup QA FAIL");

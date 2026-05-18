@@ -756,6 +756,16 @@ Verification command:
 pnpm step40:language-consistency:qa
 ```
 
+### Step 40.3 — Calculator Browser Polish
+
+Step 40.3 is a targeted calculator/browser pass after manual Bulgarian-mode review. It localizes the remaining formula evidence rows, clustering note and calculator method copy, and widens the explainability factor cards so labels no longer appear vertical in the calculator layout. It does not change the neural-network model, datasets, metrics or app routes.
+
+Verification command:
+
+```bash
+pnpm step40-3:calculator-browser-polish:qa
+```
+
 ## Step 39 — Final Submission Readiness Lock
 
 Step 39 adds the final readiness lock for submission. It does not change the application behavior, neural-network training logic, UI behavior or ML data pipeline. It documents how to verify that GitHub, the final source ZIP, the defense material and the neural-network evidence are aligned.
